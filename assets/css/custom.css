@@ -2267,44 +2267,86 @@ body {
   }
 
   body:has(.robin-real-hero) .robin-real-hero {
-    display: grid;
+    position: relative;
+    display: block;
     width: 100vw;
     height: auto !important;
-    min-height: 0;
+    min-height: 40rem;
+    min-height: max(40rem, 100svh);
     margin-left: calc(50% - 50vw) !important;
-    grid-template-columns: minmax(0, 1fr);
-    overflow: visible;
+    overflow: hidden;
+    background: #101d24;
   }
 
   body .robin-real-hero .robin-real-copy {
-    padding: 6rem max(var(--robin-page-gutter), env(safe-area-inset-right)) 3rem max(var(--robin-page-gutter), env(safe-area-inset-left));
+    position: relative;
+    z-index: 3;
+    display: flex;
+    min-height: 40rem;
+    min-height: max(40rem, 100svh);
+    justify-content: center;
+    padding: clamp(7rem, 18svh, 9rem) max(var(--robin-page-gutter), env(safe-area-inset-right)) clamp(8.5rem, 18svh, 10rem) max(var(--robin-page-gutter), env(safe-area-inset-left));
+    color: #fff;
+    pointer-events: none;
+  }
+
+  body .robin-real-hero .robin-real-actions {
+    pointer-events: auto;
+  }
+
+  body .robin-real-hero .robin-real-copy h1 {
+    color: #fff !important;
+  }
+
+  body .robin-real-hero .robin-real-copy h1 em {
+    color: #8de0e1 !important;
   }
 
   body .robin-real-hero .robin-real-stage,
   body .robin-real-hero .robin-gripper-stage {
+    position: absolute;
+    inset: 0;
     width: 100%;
+    height: 100%;
     min-height: 0;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
+    background: #101d24;
+  }
+
+  body .robin-real-hero .robin-real-stage .robin-gripper-video {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: 56% center !important;
+    background: #101d24 !important;
+  }
+
+  body .robin-real-hero .robin-real-stage::after {
+    background: linear-gradient(90deg, rgba(3,12,17,.74), rgba(3,12,17,.18) 78%), linear-gradient(180deg, rgba(3,12,17,.35), rgba(3,12,17,.12) 52%, rgba(3,12,17,.72));
   }
 
   body .robin-real-hero > .robin-real-fullname {
-    position: static;
-    z-index: auto;
-    width: min(calc(100% - (var(--robin-page-gutter) * 2)), 48rem);
+    position: absolute;
+    z-index: 4;
+    right: max(var(--robin-page-gutter), env(safe-area-inset-right));
+    bottom: max(1.35rem, env(safe-area-inset-bottom));
+    left: max(var(--robin-page-gutter), env(safe-area-inset-left));
+    width: auto;
     max-width: none;
-    margin: 0 auto;
-    padding: 1.35rem 0 1.9rem;
-    color: #102a3a !important;
-    font-size: clamp(0.88rem, 2.5vw, 1.05rem) !important;
-    letter-spacing: 0.05em;
-    line-height: 1.45;
+    margin: 0;
+    padding: 0;
+    color: #fff !important;
+    font-size: clamp(.68rem, 2.5vw, .92rem) !important;
+    letter-spacing: .045em;
+    line-height: 1.5;
     text-align: center;
-    text-shadow: none;
+    text-shadow: 0 2px 14px rgba(0,0,0,.72);
     transform: none;
   }
 
   body .robin-real-hero .robin-real-fullname .robin-home-lab-emph {
-    color: #006b8f;
+    color: #8de0e1;
   }
 }
 
@@ -2322,7 +2364,15 @@ body {
   }
 
   .robin-real-actions {
-    gap: 0.85rem 1.1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+  }
+
+  .robin-real-actions a {
+    width: 100%;
+    justify-content: center;
+    margin: 0;
   }
 
   .robin-publications li::after,
