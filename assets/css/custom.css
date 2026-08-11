@@ -2508,9 +2508,30 @@ body:has(.robin-research-intro) {
 /* Selected / All 필터 */
 .robin-pub-filter {
   display: flex;
+  flex-wrap: wrap;
   gap: .8rem;
   justify-content: center;
   margin: .5rem 0 2.75rem;
+}
+
+/* 좁은 화면에서 버튼 3개가 한 줄을 강제해 문서를 밀어내던 문제 */
+@media (max-width: 520px) {
+  .robin-pub-filter {
+    gap: .5rem;
+  }
+
+  .robin-pub-filter-btn {
+    min-width: 0;
+    flex: 1 1 auto;
+    padding: .6rem 1.15rem;
+    font-size: .95rem;
+  }
+}
+
+/* 실제 썸네일이 따로 있는데도 모바일에서 되살아나던 장식 배경.
+   274행의 `.robin-publications li::after`가 특정성 싸움에서 이기고 있었다. */
+.robin-publications li::after {
+  display: none !important;
 }
 
 .robin-pub-filter-btn {
