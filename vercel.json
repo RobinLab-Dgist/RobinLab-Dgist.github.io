@@ -1,0 +1,5 @@
+{
+  "installCommand": "bash scripts/vercel-install.sh",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "public"
+}

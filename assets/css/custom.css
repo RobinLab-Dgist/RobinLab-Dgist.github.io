@@ -1,0 +1,2434 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   DGIST ROBIN LAB - MIT IMPROBABLE AI LAB AESTHETIC (Futuristic Dark / Light System)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+  /* ROBIN Lab typography: a clean Lexend Deca / Pretendard system. */
+  --font-body: 'Lexend Deca', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-heading: 'Lexend Deca', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f6f2;
+  --bg-tertiary: #eceae3;
+  --accent-cyan: #00f0ff;
+  --accent-blue: #0284c7;
+  --accent-glow: rgba(0, 240, 255, 0.2);
+  --border-subtle: rgba(15, 36, 48, 0.14);
+  --text-primary: #13222a;
+  --text-secondary: #4a5a62;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body) !important;
+  background-color: #ffffff;
+  color: var(--text-primary);
+  letter-spacing: -0.012em;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, .robin-real-hero h1, .robin-page-lede h1, .font-heading {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #ffffff;
+  color: var(--text-primary);
+  letter-spacing: -0.012em;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   1. TRANSPARENT HEADER WITH SUBTLE BOTTOM DIVIDER
+   ──────────────────────────────────────────────────────────────────────────── */
+header, .site-header {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+.light header, .light .site-header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   2. MIT IMPROBABLE AI HERO SECTION
+   ──────────────────────────────────────────────────────────────────────────── */
+.hero-gradient-title {
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #00f0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-vision-card {
+  position: relative;
+  background: rgba(18, 19, 24, 0.7);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-vision-card:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 45px rgba(0, 240, 255, 0.2);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   3. IMPROBABLE AI RESEARCH CARDS
+   ──────────────────────────────────────────────────────────────────────────── */
+.improbable-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.improbable-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.improbable-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(0, 240, 255, 0.15);
+}
+
+.improbable-card:hover::before {
+  opacity: 1;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   4. PUBLICATION & ACTION BADGES ([PDF], [Code], [Video], [Project])
+   ──────────────────────────────────────────────────────────────────────────── */
+.pub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.775rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.08);
+  color: #f87171 !important;
+}
+
+.pub-badge:hover {
+  transform: translateY(-1px);
+  background: #ef4444;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.pub-badge-code {
+  border-color: rgba(129, 140, 248, 0.3);
+  background: rgba(129, 140, 248, 0.08);
+  color: #818cf8 !important;
+}
+
+.pub-badge-code:hover {
+  background: #6366f1;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.pub-badge-video {
+  border-color: rgba(251, 146, 60, 0.3);
+  background: rgba(251, 146, 60, 0.08);
+  color: #fb923c !important;
+}
+
+.pub-badge-video:hover {
+  background: #f97316;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.pub-badge-project {
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.08);
+  color: #38bdf8 !important;
+}
+
+.pub-badge-project:hover {
+  background: #0284c7;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+/* ROBIN's opening scene: physical, cinematic, and intentionally low on UI chrome. */
+.robin-hero-cinematic { position:relative; display:grid; width:100vw; grid-template-columns:minmax(280px,.68fr) minmax(520px,1.32fr); gap:clamp(1.5rem,4vw,5rem); min-height:calc(100vh - 5rem); margin:-2.25rem 0 0 calc(50% - 50vw); padding:clamp(2rem,5vw,5.5rem) max(1.5rem,calc((100vw - 1200px)/2)); overflow:hidden; background:radial-gradient(ellipse at 76% 40%,#173b52 0%,#071521 44%,#02070d 100%); }
+.robin-hero-cinematic::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.32; background:linear-gradient(90deg,rgba(3,8,13,.92) 0%,rgba(3,8,13,.55) 42%,transparent 74%),repeating-linear-gradient(0deg,rgba(157,219,230,.035) 0 1px,transparent 1px 6px); }
+.robin-hero-copy { position:relative; z-index:4; align-self:center; }.robin-kicker { color:#8ed1dc; font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }.robin-hero-logo { display:block; width:min(280px,72vw); height:auto; margin:.85rem 0 1.5rem; filter:drop-shadow(0 10px 32px rgba(19,169,193,.18)) brightness(1.45); }
+.robin-hero-cinematic h1 { max-width:8ch; margin:0 0 1.25rem; color:#f2fbfc; font-size:clamp(3.5rem,7vw,7.2rem); font-weight:700; letter-spacing:-.075em; line-height:.85; }.robin-hero-cinematic h1 em { color:#62d0d5; font-style:normal; }.robin-lede { max-width:30rem; color:#b5cbd2; font-size:1rem; line-height:1.75; }
+.robin-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin:2rem 0 1.2rem; }.robin-button { display:inline-flex; border-radius:2px; padding:.8rem 1.05rem; font-size:.69rem; font-weight:700; letter-spacing:.08em; text-decoration:none !important; text-transform:uppercase; }.robin-button-primary { background:#b9f0f0; color:#06202d !important; }.robin-button-secondary { border:1px solid rgba(185,240,240,.42); color:#d9f1f3 !important; }.robin-note { color:#7696a1; font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; }
+.robin-concept-stage { position:relative; z-index:2; min-height:560px; margin:-2rem -3rem -2rem 0; }.robin-spline { position:absolute; inset:0; width:100%; height:100%; filter:drop-shadow(-25px 35px 70px rgba(0,0,0,.42)); }.robin-concept-label { position:absolute; right:3rem; bottom:2.2rem; color:rgba(203,240,242,.54); font-size:.58rem; font-weight:700; letter-spacing:.16em; pointer-events:none; }
+#site-header { position:relative; background:#fff !important; }
+#site-header :is(.navbar-nav a, .nav-link, .dropdown-toggle, button) { color:#0f172a !important; opacity:1 !important; text-shadow:none !important; }
+#site-header .navbar-brand { position:relative; display:block; width:248px; height:42px; background:url('/media/robin-logo.png') left center / 102px auto no-repeat; font-size:0; line-height:0; filter:none; }
+#site-header .navbar-brand::after { content:''; position:absolute; top:7px; bottom:7px; left:122px; width:118px; background:url('/media/dgist-logo.png') -38px center / 180px auto no-repeat; }
+@media (max-width:900px) { .robin-hero-cinematic { grid-template-columns:1fr; min-height:auto; margin:-1rem -1.5rem 0; padding:3.5rem 1.5rem 0; }.robin-hero-cinematic h1 { max-width:10ch; }.robin-concept-stage { min-height:480px; margin:-1.5rem -1.5rem 0; }.robin-concept-label { right:1.5rem; bottom:1.25rem; } }
+
+/* BAIR-inspired editorial hero: research identity first, no product-style visual effects. */
+.robin-bair-hero { display:grid; width:100vw; height:calc(100dvh - 5rem); min-height:0; margin:-2.25rem 0 0 calc(50% - 50vw); grid-template-columns:1fr; overflow:hidden; background:#fff; color:#171717; }.robin-bair-intro { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:0; padding:clamp(1.25rem,3vh,2.5rem) 1.5rem; text-align:center; }.robin-bair-kicker,.robin-bair-mark { margin:0; color:#475569; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }.robin-bair-bird { display:block; width:min(31vw,390px,32vh); height:auto; margin:.7rem auto .85rem; mix-blend-mode:multiply; }.robin-bair-hero h1 { margin:0; color:#13222a; font-size:clamp(3.2rem,6.2vw,6.8rem); font-weight:600; letter-spacing:-.075em; line-height:.84; }.robin-bair-hero h1 em { color:#005b7c; font-style:normal; }.robin-bair-summary { max-width:35rem; margin:.9rem auto .8rem; color:#3d4a53; font-size:clamp(.9rem,1vw,1.05rem); line-height:1.55; }.robin-bair-link { display:inline-flex; width:max-content; gap:.8rem; border-bottom:1px solid #171717; padding-bottom:.35rem; color:#171717 !important; font-size:.84rem; font-weight:700; text-decoration:none !important; }.robin-bair-link span { color:#005b7c; font-size:1.2em; }
+.robin-bair-index { display:flex; flex-direction:column; justify-content:space-between; border-left:1px solid #d8d6cf; padding:2rem clamp(2rem,4vw,5rem); background:#fff; }.robin-bair-index ol { margin:0; padding:0; list-style:none; }.robin-bair-index li { display:grid; grid-template-columns:3rem 1fr; border-top:1px solid #c9c7bf; padding:1.35rem 0 1.55rem; }.robin-bair-index li:last-child { border-bottom:1px solid #c9c7bf; }.robin-bair-index li span { color:#70777a; font-size:.72rem; font-variant-numeric:tabular-nums; }.robin-bair-index strong { display:block; color:#102a3a; font-size:clamp(1.25rem,2vw,2rem); font-weight:600; letter-spacing:-.035em; }.robin-bair-index li p { grid-column:2; margin:.55rem 0 0; color:#59666a; font-size:.9rem; line-height:1.55; }.robin-bair-footnote { margin:0; color:#697477; font-size:.66rem; line-height:1.5; letter-spacing:.08em; text-transform:uppercase; }
+@media (max-width:900px) { .robin-bair-hero { min-height:auto; margin:-1rem 0 0 calc(50% - 50vw); grid-template-columns:1fr; }.robin-bair-intro { padding:4rem 1.5rem 4.5rem; }.robin-bair-hero h1 { font-size:clamp(3.8rem,16vw,6.5rem); }.robin-bair-index { border-top:1px solid #d8d6cf; border-left:0; min-height:460px; padding:1.5rem; } }
+
+/* REAL-inspired hero: one clear research statement beside a real lab demonstration. */
+.robin-real-hero { display:grid; width:100vw; height:calc(100dvh - 5rem); min-height:0; margin:-2.25rem 0 0 calc(50% - 50vw); grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); overflow:hidden; background:#e8e8e8; color:#13222a; }.robin-real-copy { display:flex; flex-direction:column; justify-content:center; padding:clamp(3rem,7vw,8rem) clamp(2rem,7vw,8rem); }.robin-real-kicker,.robin-real-fullname { margin:0; color:#64748b; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }.robin-real-copy h1 { margin:1.45rem 0 1rem; color:#13222a; font-size:clamp(4.5rem,8vw,9.2rem); font-weight:600; letter-spacing:-.085em; line-height:.76; }.robin-real-copy h1 em { color:#005b7c; font-style:normal; }.robin-real-statement { max-width:30rem; margin:.35rem 0 0; color:#102a3a; font-size:clamp(1.25rem,2vw,2rem); font-weight:600; letter-spacing:-.04em; line-height:1.1; }.robin-real-summary { max-width:32rem; margin:1.35rem 0 1.7rem; color:#53646b; font-size:1rem; line-height:1.65; }.robin-real-actions { display:flex; flex-wrap:wrap; gap:1.25rem; }.robin-real-actions a { display:inline-flex; gap:.55rem; border-bottom:1px solid #13222a; padding-bottom:.35rem; color:#13222a; font-size:.8rem; font-weight:700; text-decoration:none; }.robin-real-actions a span { color:#005b7c; font-size:1.1rem; line-height:.8; }.robin-real-fullname { margin-top:3.5rem; font-size:.6rem; line-height:1.5; }.robin-real-stage { position:relative; min-height:0; overflow:hidden; background:#e8e8e8; }.robin-real-stage video { display:block; width:100%; height:100%; object-fit:cover; }.robin-real-stage::after { content:''; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,rgba(255,255,255,.25),transparent 24%),linear-gradient(0deg,rgba(7,25,38,.26),transparent 35%); }.robin-real-video-mark { position:absolute; z-index:1; right:clamp(1.5rem,4vw,4rem); bottom:clamp(1.5rem,4vw,4rem); width:min(200px,34%); opacity:0; transform:translateY(10px); transition:opacity .35s ease,transform .35s ease; }.robin-real-video-mark img { display:block; width:100%; height:auto; filter:brightness(0) invert(1); }.robin-real-video-mark p { margin:.65rem 0 0; color:#fff; font-size:.62rem; font-weight:700; letter-spacing:.12em; text-align:right; text-transform:uppercase; }.robin-real-stage:hover .robin-real-video-mark,.robin-real-stage:focus-within .robin-real-video-mark { opacity:1; transform:translateY(0); }
+@media (max-width:900px) { .robin-real-hero { height:auto; min-height:calc(100dvh - 5rem); margin:-1rem 0 0 calc(50% - 50vw); grid-template-columns:1fr; overflow:visible; }.robin-real-copy { padding:4rem 1.5rem 3rem; }.robin-real-copy h1 { font-size:clamp(4.5rem,19vw,7rem); }.robin-real-fullname { margin-top:2.5rem; }.robin-real-stage { min-height:60vw; }.robin-real-video-mark { opacity:1; transform:none; } }
+
+/* Enhanced Hero Extensions: Badges, Stat Chips, Modern Buttons & Video Overlay */
+.robin-hero-badges { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:.5rem; }
+.robin-badge-tag { display:inline-flex; align-items:center; padding:.25rem .65rem; border:1px solid #b4d0d5; border-radius:999px; background:#f4f9fa; color:#005b7c; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+.robin-badge-accent { display:inline-flex; align-items:center; padding:.25rem .65rem; border:1px solid rgba(0,91,124,.2); border-radius:999px; background:rgba(0,91,124,.08); color:#102a3a; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+.robin-hero-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; margin:1.25rem 0 1.5rem; padding:.85rem; border:1px solid #d4e1e5; border-radius:8px; background:rgba(255,255,255,.65); backdrop-filter:blur(8px); }
+.robin-stat-item { display:flex; flex-direction:column; gap:.15rem; }
+.robin-stat-num { color:#005b7c; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.7rem; font-weight:800; }
+.robin-stat-label { color:#102a3a; font-size:.75rem; font-weight:700; line-height:1.2; }
+.robin-btn-primary { display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1.15rem; border-radius:6px; background:#102a3a; color:#fff !important; font-size:.8rem; font-weight:700; text-decoration:none !important; transition:all .2s ease; box-shadow:0 4px 12px rgba(16,42,58,.15); }
+.robin-btn-primary:hover { background:#005b7c; transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,91,124,.25); }
+.robin-btn-secondary { display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1.15rem; border:1px solid #102a3a; border-radius:6px; background:transparent; color:#102a3a !important; font-size:.8rem; font-weight:700; text-decoration:none !important; transition:all .2s ease; }
+.robin-btn-secondary:hover { background:rgba(16,42,58,.06); border-color:#005b7c; color:#005b7c !important; transform:translateY(-2px); }
+.robin-btn-ghost { display:inline-flex; align-items:center; gap:.4rem; padding:.6rem .8rem; color:#40535b !important; font-size:.8rem; font-weight:700; text-decoration:none !important; transition:color .2s ease; }
+.robin-btn-ghost:hover { color:#005b7c !important; }
+.robin-video-overlay-tag { position:absolute; z-index:3; bottom:1.25rem; left:1.25rem; display:inline-flex; align-items:center; gap:.5rem; padding:.4rem .85rem; border:1px solid rgba(255,255,255,.3); border-radius:999px; background:rgba(12,25,32,.75); backdrop-filter:blur(10px); color:#fff; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; box-shadow:0 8px 24px rgba(0,0,0,.3); }
+.robin-live-dot { width:8px; height:8px; border-radius:50%; background:#00f0ff; box-shadow:0 0 8px #00f0ff; animation:robinPulse 2s infinite; }
+@keyframes robinPulse { 0% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(1.2); } 100% { opacity:1; transform:scale(1); } }
+
+
+/* Homepage sections share the hero's quiet, editorial system. */
+/* Keep all standard content pages legible in the site's light-only theme. */
+.page-wrapper :is(h1,h2,h3,h4) { color:#102a3a; }
+.page-wrapper :is(p,li) { color:#53646b; }
+.page-wrapper :is(a:not(.btn)) { color:#005b7c; }
+/* Lexend Deca is reserved for concise technical metadata, never long-form reading. */
+.robin-real-kicker,.robin-real-fullname,.robin-3d-caption,.robin-action-pillar-head p,.robin-team-label,.robin-conference-kicker,.robin-home-lab-emph { font-family:'Lexend Deca','Space Grotesk',sans-serif; }
+.robin-real-fullname .robin-home-lab-emph {
+  color: #8de0e1;
+  font-weight: 800;
+  font-size: 1.18em;
+  letter-spacing: 0.02em;
+  border-bottom: none;
+  text-shadow: 0 2px 12px rgba(5, 94, 126, 0.45);
+}
+
+/* Homepage-specific emphasis for the lab phrase under ROBIN video hero. */
+body .robin-real-hero .robin-real-fullname {
+  color: #ffffff;
+  font-size: clamp(1rem, 1.4vw, 1.32rem);
+  letter-spacing: 0.13em;
+}
+
+body .robin-real-hero .robin-real-fullname .robin-home-lab-emph {
+  color: #8de0e1;
+  font-size: 1.2em;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 112, 154, 0.55);
+}
+.robin-publications { margin-top:1rem; }.robin-publications-note { margin:0 0 2.5rem; color:#64748b; font-size:.95rem; }.robin-publications h2 { margin:3.5rem 0 1rem; border-top:1px solid #c9c7bf; padding-top:1rem; font-size:clamp(1.6rem,3.1vw,2.45rem); }.robin-publications ol { margin:0; padding:0; list-style:none; counter-reset:publication; }.robin-publications li { counter-increment:publication; position:relative; min-height:182px; margin-bottom:.4rem; border-top:1px solid #e1e4e6; padding:1.3rem 0 3.8rem 232px; color:#53646b; font-size:1rem; line-height:1.68; }.robin-publications li::before { content:counter(publication,decimal-leading-zero); position:absolute; z-index:2; top:1.55rem; left:0; color:#64748b; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.7rem; font-weight:600; }.robin-publications li::after { content:''; position:absolute; top:1.25rem; left:24px; width:188px; height:120px; border:1px solid #d8e0e3; border-radius:3px; background:#edf3f4 url('/images/publications/HIL-GS.gif') center/cover no-repeat; }.robin-publications em { color:#005b7c; font-weight:650; }.robin-publication-copy { display:flex; flex-direction:column; gap:.35rem; min-width:0; }.robin-publication-authors { color:#64748b; font-size:.84rem; line-height:1.5; }.robin-author-highlight { color:#102a3a; font-weight:800; }.robin-publication-title { color:#102a3a; font-size:1.12rem; font-weight:700; letter-spacing:-.02em; line-height:1.42; }.robin-publication-meta { color:#53646b; font-size:.88rem; line-height:1.5; }.robin-publications .robin-publication-entry > div { min-width:0; }.robin-publication-entry::after { display:none; }.robin-publication-entry video,.robin-publication-entry .robin-publication-image { position:absolute; z-index:1; top:1.25rem; left:24px; display:block; width:188px; height:120px; border-radius:3px; background:#121b20; object-fit:cover; }.pub-badges { position:absolute; left:232px; right:0; bottom:1rem; display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }.pub-badge { display:inline-flex; align-items:center; justify-content:center; min-height:1.55rem; border:1px solid #8aa8b5; border-radius:999px; padding:.2rem .6rem; color:#005b7c; background:#f5fafb; font-family:'Lexend Deca','Pretendard',sans-serif; font-size:.72rem; font-weight:700; line-height:1; text-decoration:none; transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease; }.pub-badge:hover { border-color:#005b7c; background:#e8f4f5; color:#003f57; transform:translateY(-1px); }.pub-badge.is-pending { border-color:#d4dce0; color:#8b989d; background:#f7f8f8; cursor:not-allowed; }.pub-badge-video { border-color:#005b7c; color:#fff; background:#005b7c; }.pub-badge-video:hover { border-color:#003f57; color:#fff; background:#003f57; }
+@media (max-width:700px) { .robin-publications li { min-height:0; padding:1rem 0 4.6rem 2.5rem; }.robin-publications li::after { position:static; display:block; width:100%; height:auto; aspect-ratio:16/9; margin-top:.85rem; }.robin-publication-entry video,.robin-publication-entry .robin-publication-image { position:static; width:100%; height:auto; aspect-ratio:16/9; margin-top:.85rem; }.pub-badges { left:2.5rem; right:0; bottom:1rem; } }
+.robin-projects-list { margin-top:1rem; }.robin-projects-list article { border-top:1px solid #c9c7bf; padding:1.3rem 0 1.7rem; }.robin-projects-list article:last-child { border-bottom:1px solid #c9c7bf; }.robin-projects-list h2 { margin:0; color:#102a3a; font-size:clamp(1.35rem,2.5vw,2.25rem); font-weight:600; letter-spacing:-.045em; line-height:1.18; }.robin-project-meta { margin:.7rem 0 .85rem !important; color:#005b7c !important; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.65rem !important; font-weight:600; letter-spacing:.04em; line-height:1.6 !important; }.robin-projects-list ul { margin:0; padding-left:1.25rem; }.robin-projects-list li { margin:.28rem 0; color:#53646b; font-size:.94rem; line-height:1.6; }
+.robin-3d-stage { background:radial-gradient(circle at 55% 40%,#f7fbfc 0%,#e5edf0 54%,#d8e2e6 100%); }
+.robin-3d-stage::after { content:''; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,rgba(255,255,255,.4),transparent 27%),linear-gradient(0deg,rgba(7,25,38,.09),transparent 35%); }
+.robin-3d-stage canvas { display:block; width:100%; height:100%; cursor:grab; outline:none; touch-action:none; }
+.robin-gripper-stage { background:#e8e8e8; }.robin-gripper-stage::after { background:transparent; }.robin-real-stage .robin-gripper-video { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
+.robin-3d-stage canvas:active { cursor:grabbing; }
+.robin-3d-caption { position:absolute; z-index:2; right:clamp(1.5rem,4vw,4rem); bottom:clamp(1.5rem,4vw,4rem); margin:0; color:#183744; font-size:.62rem; font-weight:700; letter-spacing:.14em; text-align:right; text-transform:uppercase; }
+.robin-3d-caption span { display:block; margin-top:.45rem; color:#5e7a84; font-size:.52rem; letter-spacing:.12em; }
+.robin-action-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin:1.75rem 0 .5rem; }
+#research-in-action :is(h1,h2) { font-size:clamp(3rem,6vw,5.5rem); letter-spacing:-.055em; line-height:1; }
+.robin-home-research-intro { max-width:60rem; margin:0 auto 2rem; color:#40535b; font-size:clamp(1.2rem,1.8vw,1.55rem); line-height:1.6; text-align:center; }
+.robin-action-card { overflow:hidden; border-top:1px solid #c9c7bf; padding-top:.75rem; }
+.robin-action-card video { display:block; width:100%; aspect-ratio:16/9; background:#e7ecee; object-fit:cover; }
+.robin-action-card div { display:grid; grid-template-columns:2rem 1fr; gap:.5rem; padding:.8rem 0 .15rem; }
+.robin-action-card p { margin:0; color:#64748b; font-size:.7rem; font-variant-numeric:tabular-nums; }
+.robin-action-card h3 { margin:0; color:#102a3a; font-size:1rem; font-weight:600; letter-spacing:-.02em; }
+.robin-action-card-featured { grid-column:span 2; }
+.robin-action-card-featured h3 { font-size:clamp(1.3rem,2vw,1.85rem); }
+.robin-action-card-featured video { max-height:min(58vh,620px); background:#15242b; }
+@media (max-width:700px) { .robin-action-grid { grid-template-columns:1fr; gap:1.1rem; }.robin-action-card-featured { grid-column:auto; } }
+.robin-action-pillars {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1320px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.robin-action-pillar { border-top:1px solid #c9c7bf; padding-top:.9rem; }
+.robin-action-pillar-head { display:grid; grid-template-columns:2rem 1fr; gap:.5rem; margin-bottom:.9rem; }
+.robin-action-pillar-head p { margin:0; color:#64748b; font-size:.7rem; font-variant-numeric:tabular-nums; }
+.robin-action-pillar-head h3 { margin:0; color:#102a3a; font-size:clamp(1.35rem,2.2vw,2.1rem); font-weight:600; letter-spacing:-.04em; }
+.robin-action-media { display:grid; width:100%; grid-template-columns:1fr; gap:0.8rem; }
+.robin-action-media video { display:block; width:100%; aspect-ratio:16/9; background:#e7ecee; object-fit:cover; border-radius:8px; }
+@media (max-width:900px) { .robin-action-pillars { grid-template-columns:1fr; } }
+.home-section { background:#fff; }
+.home-section:nth-of-type(odd) { background:#f7f6f2; }
+.robin-research-flow { margin:1.5rem 0; border-top:1px solid #c9c7bf; }
+.robin-research-row { display:grid; grid-template-columns:4rem minmax(0,1fr) auto; gap:1rem; align-items:start; border-bottom:1px solid #c9c7bf; padding:2rem 0; color:#13222a !important; text-decoration:none !important; transition:padding .2s ease, background .2s ease; }
+.robin-research-row:hover { padding-left:1rem; background:rgba(0,91,124,.045); }
+.robin-research-row > span { padding-top:.35rem; color:#64748b; font-size:.76rem; font-variant-numeric:tabular-nums; }
+.robin-research-row h3 { margin:0; color:#102a3a; font-size:clamp(1.6rem,3vw,2.8rem); font-weight:600; letter-spacing:-.045em; }
+.robin-research-row p { max-width:44rem; margin:.6rem 0 0; color:#53646b; font-size:.97rem; line-height:1.6; }
+.robin-research-row b { padding-top:.15rem; color:#005b7c; font-size:1.5rem; font-weight:400; }
+.robin-research-videos { display:grid; width:min(calc(100vw - 3rem),1100px); grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; margin:1.75rem 0 .75rem 50%; transform:translateX(-50%); }.robin-research-player :is(iframe,video) { display:block; width:100%; height:auto; border:0; }
+.robin-demo-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.25rem; margin:1.5rem 0; }
+.robin-demo-entry { display:grid; grid-template-columns:2rem 1fr; grid-template-rows:auto auto; gap:.65rem .75rem; color:#13222a; }
+.robin-demo-player { grid-column:1/-1; width:100%; aspect-ratio:16/9; overflow:hidden; background:#e7e5df; }.robin-demo-player iframe { display:block; width:100%; height:100%; border:0; }
+.robin-demo-entry span { padding-top:.2rem; color:#64748b; font-size:.72rem; }
+.robin-demo-entry strong { color:#102a3a; font-size:1.08rem; font-weight:600; line-height:1.3; }
+.robin-demo-entry em { grid-column:2; color:#005b7c; font-size:.75rem; font-style:normal; font-weight:600; }
+#publications .card, #news .card { border:1px solid #d8d6cf; border-radius:0; box-shadow:none; background:#fff; }
+#publications .card:hover, #news .card:hover { border-color:#005b7c; box-shadow:none; transform:none; }
+
+@media (max-width:800px) { .robin-demo-list,.robin-research-videos { grid-template-columns:1fr; }.robin-research-row { grid-template-columns:2.5rem minmax(0,1fr); }.robin-research-row b { display:none; } }
+@media (max-width:560px) { #site-header .navbar-brand { width:188px; background-size:90px auto; } #site-header .navbar-brand::after { left:104px; width:80px; background-size:140px auto; background-position:-29px center; } }
+
+/* Team begins with the PI as the lab's primary academic point of reference. */
+.robin-team-lead { margin:1rem 0 5rem; border-top:1px solid #c9c7bf; color:#13222a; }
+.robin-team-label { margin:1rem 0 4rem; color:#64748b; font-size:.72rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+.robin-team-heading { display:grid; grid-template-columns:minmax(0,1fr) 260px; column-gap:3rem; row-gap:1.5rem; align-items:start; padding-bottom:3rem; border-bottom:1px solid #c9c7bf; }
+.robin-team-heading h1 { margin:0; color:#102a3a; font-size:clamp(3.4rem,5.4vw,5.8rem); font-weight:600; letter-spacing:-.06em; line-height:.98; }
+@media (min-width:1180px) { .robin-team-heading h1 { white-space:nowrap; } }
+@media (min-width:801px) and (max-width:1179px) { .robin-team-heading h1 { white-space:normal; } }
+.robin-team-heading h1 em { color:#005b7c; font-style:normal; }.robin-team-role { max-width:38rem; margin:1.5rem 0 0; color:#53646b; font-size:1rem; line-height:1.6; }
+.robin-team-contact { grid-column:1; padding-bottom:.3rem; color:#53646b; font-size:.9rem; line-height:1.6; }.robin-team-contact a { color:#005b7c; font-weight:700; text-decoration:none; }.robin-team-contact p { margin:.8rem 0 0; }
+.robin-team-portrait { grid-column:2; grid-row:1 / span 2; width:260px; height:390px; margin:0; overflow:hidden; background:#e7e5df; }.robin-team-portrait img { display:block; width:100%; height:100%; object-fit:cover; object-position:center top; }
+.robin-team-history { display:grid; grid-template-columns:1fr 1fr; gap:3rem; padding-top:2rem; }.robin-team-history h2 { margin:0 0 1rem; color:#102a3a; font-size:1rem; font-weight:700; }.robin-team-history p { margin:.55rem 0; color:#53646b; font-size:.92rem; line-height:1.55; }.robin-team-history span { color:#758087; }
+.robin-conference-link { margin:3.5rem 0 0; border-top:1px solid #c9c7bf; border-bottom:1px solid #c9c7bf; padding:1.5rem 0 1.7rem; }.robin-conference-kicker { margin:0 0 .55rem; color:#64748b; font-size:.72rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }.robin-conference-link h2 { margin:0; color:#102a3a; font-size:clamp(1.55rem,3vw,2.35rem); font-weight:600; letter-spacing:-.05em; }.robin-conference-link p:not(.robin-conference-kicker) { max-width:44rem; margin:.65rem 0 1rem; color:#53646b; font-size:.95rem; line-height:1.6; }.robin-conference-link a { display:inline-flex; gap:.5rem; border-bottom:1px solid #13222a; padding-bottom:.3rem; color:#13222a; font-size:.82rem; font-weight:700; text-decoration:none; }.robin-conference-link a span { color:#005b7c; font-size:1.1rem; line-height:.8; }
+.robin-team-hobbies { margin-top:3rem; padding-top:1.25rem; border-top:1px solid #c9c7bf; }.robin-team-hobbies h2 { margin:0; color:#102a3a; font-size:1rem; font-weight:700; }.robin-team-hobbies > p { max-width:34rem; margin:.55rem 0 1rem; color:#53646b; font-size:.92rem; line-height:1.55; }
+.robin-team-members { margin:4.5rem 0 0; border-top:1px solid #c9c7bf; padding-top:1.25rem; color:#53646b; }.robin-team-members h2 { margin:0 0 2rem; color:#102a3a; font-size:clamp(2rem,4vw,3.5rem); font-weight:600; letter-spacing:-.055em; }.robin-member-group { border-top:1px solid #d8d6cf; padding:1.25rem 0 1.5rem; }.robin-member-group h3 { margin:0 0 .85rem; color:#102a3a; font-size:1rem; font-weight:700; }.robin-member-group :is(ul,p) { margin:0; color:#53646b; font-size:.94rem; line-height:1.7; }.robin-member-group ul { padding-left:1.25rem; }.robin-member-group a { color:#005b7c; font-weight:600; text-decoration:none; }
+.robin-hobby-static-gallery { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); margin-top:1rem; }
+.robin-hobby-static-gallery figure { margin:0; }
+.robin-hobby-static-gallery img { display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center; border:1px solid #d8e2e6; border-radius:10px; }
+.robin-hobby-static-gallery figcaption { margin-top:.45rem; color:#64748b; font-size:.84rem; }
+@media (max-width:800px) { .robin-team-lead { margin-bottom:3.5rem; }.robin-team-label { margin-bottom:2.5rem; }.robin-team-heading,.robin-team-history { grid-template-columns:1fr; gap:2rem; }.robin-team-contact,.robin-team-portrait { grid-column:auto; grid-row:auto; }.robin-team-portrait, body .robin-team-portrait { width:min(100%,340px) !important; height:auto !important; }.robin-team-portrait img { height:auto; }.robin-hobby-static-gallery { grid-template-columns:1fr 1fr; } .robin-team-heading h1 { font-size:clamp(3.25rem,16vw,5.5rem); white-space:normal; } }
+@media (max-width:560px) { .robin-hobby-static-gallery { grid-template-columns:1fr; } }
+.robin-member-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }.robin-member-card { min-width:0; overflow:hidden; border:1px solid #d8dfe2; background:#fff; }.robin-member-card img { display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; background:#eaf0f3; }.robin-member-card h4 { margin:1rem 1rem .3rem; color:#102a3a; font-size:1.05rem; font-weight:700; letter-spacing:-.025em; }.robin-member-card p { margin:0 1rem .7rem; color:#64748b; font-size:.82rem; line-height:1.45; }.robin-member-card a { display:block; overflow:hidden; margin:0 1rem 1rem; color:#005b7c; font-size:.76rem; font-weight:600; text-decoration:none; text-overflow:ellipsis; white-space:nowrap; }.robin-member-card a:hover { text-decoration:underline; }.robin-member-grid-undergraduate { grid-template-columns:repeat(4,minmax(0,1fr)); }.robin-member-grid-undergraduate .robin-member-card h4 { margin-top:.8rem; font-size:.95rem; }.robin-member-grid-undergraduate .robin-member-card p { margin-bottom:1rem; font-size:.76rem; }
+@media (max-width:800px) { .robin-member-grid,.robin-member-grid-undergraduate { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; }.robin-member-card h4 { margin:.8rem .8rem .25rem; font-size:.96rem; }.robin-member-card p { margin:0 .8rem .65rem; }.robin-member-card a { margin:0 .8rem .85rem; } }
+.robin-real-hero { height:min(calc(100dvh - 5rem),900px); }.robin-gripper-stage { align-self:center; width:100%; min-height:0; aspect-ratio:16 / 9; }
+@media (max-width:900px) { .robin-real-hero { height:auto; }.robin-gripper-stage { align-self:stretch; min-height:0; aspect-ratio:16 / 9; } }
+.robin-news-list { margin-top:1rem; border-top:1px solid #c9c7bf; }.robin-news-list article { display:grid; grid-template-columns:9rem minmax(0,1fr); column-gap:2rem; border-bottom:1px solid #d8dfe2; padding:1.5rem 0; }.robin-news-list article > p:first-child { margin:0; color:#64748b; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }.robin-news-list h2 { grid-column:2; margin:0; color:#102a3a; font-size:clamp(1.25rem,2vw,1.7rem); font-weight:600; letter-spacing:-.04em; line-height:1.2; }.robin-news-list h2 + p { grid-column:2; margin:.6rem 0 0; color:#53646b; line-height:1.6; }.robin-news-list a { color:#005b7c; font-weight:600; text-decoration:none; }.robin-news-list a:hover { text-decoration:underline; }
+.robin-publications { box-sizing:border-box; width:min(calc(100vw - 3rem),980px); margin:1rem 50% 0; transform:translateX(-50%); }
+footer .footer-license-icons,footer p.powered-by:has([data-hbx]) { display:none; }
+@media (max-width:700px) { .robin-publications { width:calc(100vw - 2rem); }.robin-news-list article { grid-template-columns:1fr; gap:.55rem; }.robin-news-list h2,.robin-news-list h2 + p { grid-column:auto; } }
+.robin-group-count { float:right; color:#64748b; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.58rem; font-weight:600; letter-spacing:.08em; }.robin-member-group-empty { padding-bottom:1.1rem; }.robin-member-empty-note { margin:0 !important; color:#8a989d !important; font-size:.82rem !important; font-style:italic; }.robin-member-card { position:relative; transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }.robin-member-card:hover { border-color:#6fa9b8; box-shadow:0 .9rem 1.6rem rgba(16,42,58,.12); transform:translateY(-5px); }.robin-member-tags { display:flex; flex-wrap:wrap; gap:.28rem; margin:0 1rem .7rem; }.robin-member-tags span { border:1px solid #c6dce1; border-radius:999px; padding:.2rem .42rem; color:#647d86; background:#f8fcfc; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.48rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; }.robin-member-socials { margin:0 1rem 1rem; }.robin-member-card .robin-social-badge { display:inline-flex; width:auto; margin:0; border:1px solid #8aa8b5; border-radius:999px; padding:.25rem .5rem; color:#005b7c; background:#f5fafb; font-size:.66rem; font-weight:700; text-decoration:none; }.robin-member-card .robin-social-badge.is-pending { border-color:#d4dce0; color:#8b989d; background:#f7f8f8; cursor:not-allowed; }
+.robin-social-badges { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.8rem; }.robin-social-badges .robin-social-badge { display:inline-flex; align-items:center; border:1px solid #8aa8b5; border-radius:999px; padding:.28rem .55rem; color:#005b7c; background:#f5fafb; font-size:.68rem; font-weight:700; text-decoration:none; }.robin-social-badges .robin-social-badge.is-pending { border-color:#d4dce0; color:#8b989d; background:#f7f8f8; cursor:not-allowed; }
+.robin-page-lede { margin-bottom:2.5rem; }.robin-page-kicker,.robin-card-kicker { margin:0 0 .6rem; color:#64748b; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }.robin-page-lede h1 { max-width:32rem; margin:0; color:#102a3a; font-size:clamp(2.6rem,6vw,5.2rem); font-weight:600; letter-spacing:-.075em; line-height:.96; }.robin-page-lede > p:last-child { max-width:42rem; margin:1.1rem 0 0; color:#53646b; font-size:1.02rem; line-height:1.7; }.robin-join-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }.robin-info-card,.robin-contact-card { min-height:12rem; border:1px solid #d8e0e3; border-radius:10px; padding:1.35rem; background:linear-gradient(145deg,#fff 0%,#f3f7f8 100%); box-shadow:0 .45rem 1rem rgba(16,42,58,.035); transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }.robin-info-card:hover,.robin-contact-card:hover { border-color:#6fa9b8; box-shadow:0 .9rem 1.5rem rgba(16,42,58,.1); transform:translateY(-3px); }.robin-info-card-featured { grid-row:span 2; display:flex; flex-direction:column; justify-content:center; background:linear-gradient(145deg,#f5fbfb 0%,#e5f2f3 100%); }.robin-info-card h2,.robin-contact-card h2 { margin:0 0 .75rem; color:#102a3a; font-size:clamp(1.35rem,2.2vw,2rem); font-weight:600; letter-spacing:-.045em; line-height:1.1; }.robin-info-card p,.robin-info-card li,.robin-contact-card p { color:#53646b; font-size:.92rem; line-height:1.6; }.robin-info-card ul,.robin-info-card ol { margin:.7rem 0 0; padding-left:1.15rem; }.robin-info-card li { margin:.35rem 0; }.robin-info-card a,.robin-contact-card a { color:#005b7c; font-weight:700; text-decoration:none; }.robin-info-card-note { background:#102a3a; }.robin-info-card-note h2,.robin-info-card-note p,.robin-info-card-note .robin-card-kicker { color:#f4f8f8; }.robin-info-card-note .robin-card-kicker { color:#9fc6cf; }.robin-card-link { display:inline-flex; gap:.45rem; align-items:center; margin-top:.6rem; border-bottom:1px solid currentColor; padding-bottom:.25rem; }.robin-card-link span { font-size:1.05rem; }.robin-contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:1rem; }.robin-contact-card h2 { margin-bottom:.8rem; }.robin-contact-address { grid-row:span 2; }.robin-contact-map { display:flex; min-height:14rem; flex-direction:column; justify-content:space-between; background:#eef5f6; }.robin-map-surface { position:relative; display:flex; min-height:8.5rem; align-items:center; justify-content:center; overflow:hidden; border:1px solid #c6dce1; background:linear-gradient(135deg,#e6f1f2 0 44%,#f7fbfb 44% 55%,#dcebed 55% 100%); }.robin-map-surface::before,.robin-map-surface::after { content:''; position:absolute; width:150%; height:1px; background:#b4d0d5; transform:rotate(24deg); }.robin-map-surface::after { transform:rotate(-34deg); }.robin-map-surface span { position:relative; z-index:1; border:1px solid #005b7c; border-radius:999px; padding:.45rem .7rem; color:#005b7c; background:#fff; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.55rem; font-weight:700; letter-spacing:.08em; }.robin-map-surface i { position:absolute; z-index:1; width:.38rem; height:.38rem; border:2px solid #005b7c; border-radius:50%; background:#fff; }.robin-map-surface i:nth-of-type(1) { top:24%; left:28%; }.robin-map-surface i:nth-of-type(2) { right:22%; bottom:28%; }.robin-map-surface i:nth-of-type(3) { top:36%; right:36%; }.robin-contact-direct { grid-column:2; }.robin-contact-email { display:inline-block; margin-top:.4rem; }.robin-contact-phone { margin:.45rem 0 0; color:#64748b !important; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.68rem !important; }
+.robin-news-timeline { position:relative; border-top:0; padding-left:7rem; }.robin-news-timeline::before { content:''; position:absolute; top:0; bottom:0; left:3.3rem; width:1px; background:#c9dce0; }.robin-news-timeline article { position:relative; display:block; padding:1.4rem 0 1.7rem; }.robin-news-timeline article::before { content:''; position:absolute; top:1.65rem; left:-3.78rem; width:.7rem; height:.7rem; border:3px solid #f5fbfb; border-radius:50%; background:#005b7c; box-shadow:0 0 0 1px #7faeb8; }.robin-news-timeline article > p:first-child { margin:0 0 .5rem; }.robin-news-timeline h2,.robin-news-timeline h2 + p { margin-left:0; }
+@media (max-width:800px) { .robin-join-grid,.robin-contact-grid { grid-template-columns:1fr; }.robin-info-card-featured,.robin-contact-address,.robin-contact-direct { grid-row:auto; grid-column:auto; }.robin-news-timeline { padding-left:2.7rem; }.robin-news-timeline::before { left:1rem; }.robin-news-timeline article::before { left:-2.05rem; } }
+.robin-research-topics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin:1.5rem 0 1.6rem; padding:0; list-style:none; }.robin-research-topics li { position:relative; display:flex; min-height:9.2rem; flex-direction:column; align-items:flex-start; justify-content:flex-start; overflow:hidden; border:1px solid #d8e0e3; border-radius:10px; padding:1rem; background:linear-gradient(145deg,#fff 0%,#f2f7f8 100%); box-shadow:0 .45rem 1rem rgba(16,42,58,.035); transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease,background .2s ease; }.robin-research-topics li::after { content:'↗'; position:absolute; top:.85rem; right:1rem; color:#8ca7b0; font-size:1rem; transition:color .2s ease,transform .2s ease; }.robin-research-topics li:hover { border-color:#6fa9b8; background:linear-gradient(145deg,#fff 0%,#e9f5f6 100%); box-shadow:0 .9rem 1.5rem rgba(16,42,58,.1); transform:translateY(-3px); }.robin-research-topics li:hover::after { color:#005b7c; transform:translate(2px,-2px); }.robin-research-topic-glyph { display:inline-flex; width:2rem; height:2rem; align-items:center; justify-content:center; margin-bottom:.8rem; border:1px solid #8eb7c1; border-radius:8px; color:#005b7c; background:#eef8f8; font-size:1.15rem; line-height:1; }.robin-research-topic-name { max-width:15rem; color:#102a3a; font-size:.9rem; font-weight:650; letter-spacing:-.025em; line-height:1.35; }.robin-research-topic-chip { margin-top:auto; border:1px solid #c6dce1; border-radius:999px; padding:.25rem .5rem; color:#647d86; background:#f8fcfc; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.52rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
+@media (max-width:800px) { .robin-research-topics { grid-template-columns:1fr; gap:.65rem; }.robin-research-topics li { min-height:0; padding:.85rem .9rem .9rem 3.6rem; }.robin-research-topic-glyph { position:absolute; top:.8rem; left:.85rem; margin:0; }.robin-research-topic-name { max-width:none; padding-right:1.2rem; }.robin-research-topic-chip { margin-top:.65rem; } }
+body { font-family: var(--font-body) !important; }
+h1, h2, h3, h4, .robin-real-hero h1, .robin-page-lede h1, .font-heading { font-family: var(--font-heading) !important; }
+.page-wrapper :is(p,li), .robin-real-summary, .robin-publication-meta, .robin-projects-list li, .robin-team-role, .robin-team-contact, .robin-team-history p, .robin-info-card p, .robin-info-card li, .robin-contact-card p, .robin-news-list h2 + p { color:#40535b; }
+.robin-publications-note, .robin-publication-authors, .robin-action-pillar-head p, .robin-research-row > span, .robin-demo-entry span, .robin-team-label, .robin-page-kicker, .robin-card-kicker { color:#4b5d66; }
+.robin-research-player { position:relative; overflow:hidden; border:1px solid #d3dfe2; border-radius:12px; padding:.55rem; background:#f5f9fa; box-shadow:0 .5rem 1.2rem rgba(16,42,58,.06); }
+.robin-research-player video { display:block; width:100%; aspect-ratio:16 / 9; border-radius:8px; background:#e9eff0; object-fit:cover; }
+.robin-research-player::after { content:attr(data-label); display:block; margin:.55rem .25rem .1rem; color:#40535b; font-size:.78rem; font-weight:650; line-height:1.35; }
+.robin-publication-entry { border:none !important; border-top:1px solid #d8e0e3 !important; border-radius:0 !important; background:transparent !important; box-shadow:none !important; padding-right:0 !important; padding-top:1.25rem !important; margin-top:0.75rem !important; }
+.robin-tool-page{max-width:72rem;margin:0 auto}.robin-tool-page .robin-page-lede{margin-bottom:3rem}.robin-tool-page .robin-page-lede h1 em{color:#005b7c;font-style:normal}.robin-research-map{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1rem;align-items:center}.robin-map-node{display:flex;min-height:12rem;flex-direction:column;justify-content:space-between;border:1px solid #c6dce1;border-radius:14px;padding:1.25rem;background:linear-gradient(145deg,#fff,#edf7f8);color:#102a3a;text-decoration:none;transition:.2s ease}.robin-map-node:hover{transform:translateY(-5px);border-color:#005b7c;box-shadow:0 1rem 2rem rgba(16,42,58,.12)}.robin-map-node span,.robin-radar-card b{color:#005b7c;font:600 .65rem 'Lexend Deca','Pretendard',sans-serif;letter-spacing:.1em}.robin-map-node strong{font-size:clamp(1.25rem,2.3vw,2rem);letter-spacing:-.05em}.robin-map-node small{color:#40535b}.robin-map-arrow{color:#8ca7b0;font-size:2rem}.robin-tool-links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:2.5rem}.robin-tool-links a,.robin-travel-feature a{color:#005b7c;font-weight:700;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:.25rem}.robin-radar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.robin-radar-card{display:flex;min-height:10rem;flex-direction:column;justify-content:space-between;border:1px solid #d8e0e3;border-radius:12px;padding:1.2rem;background:#fff;color:#102a3a;text-decoration:none;transition:.2s ease}.robin-radar-card:hover{transform:translateY(-4px);border-color:#6fa9b8;box-shadow:0 .8rem 1.5rem rgba(16,42,58,.1)}.robin-radar-card strong{font-size:1.2rem;letter-spacing:-.04em}.robin-radar-card span{color:#40535b;font-size:.8rem}.robin-radar-card.radar-large{grid-row:span 2;min-height:21.2rem;background:linear-gradient(145deg,#e9f5f6,#fff)}.robin-hardware-grid,.robin-travel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.robin-hardware-grid article,.robin-travel-grid article{border:1px solid #d8e0e3;border-radius:12px;padding:1.3rem;background:#fff}.robin-hardware-mark{display:grid;width:4.5rem;height:4.5rem;place-items:center;border-radius:12px;background:#102a3a;color:#fff;font:700 1rem 'Lexend Deca','Pretendard',sans-serif}.robin-hardware-grid h2,.robin-travel-grid h2{margin:1.2rem 0 .6rem;color:#102a3a;font-size:1.35rem;letter-spacing:-.04em}.robin-hardware-grid p,.robin-travel-grid li{color:#40535b;font-size:.92rem;line-height:1.65}.robin-hardware-grid article span{display:inline-block;margin:.4rem .25rem 0 0;border:1px solid #c6dce1;border-radius:999px;padding:.2rem .45rem;color:#005b7c;font-size:.65rem}.robin-travel-grid{grid-template-columns:1.2fr 1fr 1fr}.robin-travel-feature{background:linear-gradient(145deg,#102a3a,#18536a)!important;color:#fff}.robin-travel-feature h2,.robin-travel-feature p{color:#fff}.robin-travel-feature .robin-card-kicker{color:#9fc6cf}.robin-travel-feature a{color:#fff}.robin-travel-grid ul{margin:.7rem 0 0;padding-left:1.1rem}@media(max-width:800px){.robin-research-map{grid-template-columns:1fr;}.robin-map-arrow{transform:rotate(90deg);justify-self:center}.robin-radar-grid,.robin-hardware-grid,.robin-travel-grid{grid-template-columns:1fr}.robin-radar-card.radar-large{grid-row:auto;min-height:10rem}}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   GLOBAL WIDE CONTAINER LAYOUT (전체 좌우 폭 넓히기 1360px 강제 적용)
+   ══════════════════════════════════════════════════════════════════════════════ */
+/* 헤더 및 100vw Full-bleed 히어로 섹션은 전체 폭 100% 유지 */
+.page-wrapper, .page-header, .navbar {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Projects, Publications, Research 등 모든 일반 컨테이너 1360px로 시원하게 확장 */
+.universal-wrapper,
+.article-container,
+.container, 
+.container-fluid,
+.projects-container,
+.page-body,
+.page-body > div,
+main,
+main > article,
+.home-section,
+.robin-projects-list,
+.robin-publications, 
+.robin-tool-page,
+.robin-action-pillars,
+.robin-news-list,
+.robin-join-grid,
+.robin-team-members,
+.robin-team-lead,
+.robin-research-topics {
+  max-width: min(calc(100vw - 3rem), 1360px) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.universal-wrapper h1,
+.universal-wrapper h2,
+.universal-wrapper p,
+.page-lede,
+.robin-page-lede h1,
+.robin-page-lede > p {
+  max-width: 100% !important;
+}
+
+.robin-publications {
+  box-sizing: border-box;
+  margin: 1rem auto 0 !important;
+  transform: none !important;
+}
+.page-header .navbar > label{max-height:2.5rem}.page-header .navbar > label svg{width:1.25rem!important;height:1.25rem!important}
+@media(min-width:1024px){.page-header .navbar > label{display:none!important}.page-header,.page-header .header,.page-header .navbar{height:5rem!important;min-height:5rem!important}.page-header .navbar{align-items:center!important}}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ENRICHED HERO SECTION STYLES
+   ══════════════════════════════════════════════════════════════════════════════ */
+.robin-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.robin-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  background: #e6f4f6;
+  color: #005b7c;
+  border: 1px solid #b2d7e0;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.robin-real-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1.75rem;
+}
+
+.robin-action-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: #005b7c;
+  color: #ffffff !important;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(0, 91, 124, 0.22);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.robin-action-primary:hover {
+  background: #00455e;
+  transform: translateY(-2px);
+}
+
+.robin-action-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.58rem 1.1rem;
+  background: #ffffff;
+  color: #102a3a !important;
+  border: 1px solid #c0d5dc;
+  border-radius: 8px;
+  font-weight: 650;
+  font-size: 0.86rem;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.robin-action-secondary:hover {
+  border-color: #005b7c;
+  transform: translateY(-2px);
+}
+
+.robin-action-yt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.58rem 1.1rem;
+  background: #fff5f5;
+  color: #c5221f !important;
+  border: 1px solid #f9d2d2;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.86rem;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.robin-action-yt:hover {
+  background: #ffe8e8;
+  transform: translateY(-2px);
+}
+
+.robin-hero-stats {
+  display: flex;
+  gap: 1.8rem;
+  margin: 1.2rem 0 1.5rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid #d3dfe2;
+  border-radius: 10px;
+}
+
+.robin-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.robin-stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #005b7c;
+  line-height: 1;
+}
+
+.robin-stat-lbl {
+  font-size: 0.72rem;
+  color: #53646b;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.robin-hero-video-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(16, 42, 58, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.robin-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: #00f0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00f0ff;
+  animation: pulse-dot-anim 1.5s infinite;
+}
+
+@keyframes pulse-dot-anim {
+  0% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(0.9); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   REMOVE AUTOMATIC HUGO BLOX THEME DUMMY FOOTER & AUTHOR WIDGETS
+   ══════════════════════════════════════════════════════════════════════════════ */
+.article-widget, 
+.share-box, 
+.page-body-author, 
+.article-header-caption,
+.author-card,
+.media-author {
+  display: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ULTIMATE WIDE LAYOUT OVERRIDE (1360px Full Width Enforcement)
+   ══════════════════════════════════════════════════════════════════════════════ */
+body .container, 
+body .container-fluid, 
+body .universal-wrapper, 
+body .page-body, 
+body .page-body > div, 
+body .home-section, 
+body .home-section > div,
+body .section-markdown,
+body [class*="section"],
+body [class*="landing"],
+body main,
+body main > article,
+body .robin-projects-list,
+body .robin-publications,
+body .robin-news-list,
+body .robin-team-members,
+body .robin-team-lead,
+body .robin-tool-page,
+body .robin-join-grid {
+  max-width: 1360px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body .robin-projects-list article,
+body .robin-publications article,
+body .robin-news-list article {
+  width: 100% !important;
+  max-width: 1360px !important;
+}
+
+/* Hugo Blox 텍스트 폭 제한 완전 해제 */
+body .prose,
+body [class*="prose"],
+body .markdown,
+body .hb-markdown {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESEARCH PAGE WIDE LAYOUT UNIFICATION (영상 & 카드 폭 1360px 동일화)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.robin-research-topics,
+.robin-research-videos,
+.robin-research-flow,
+.robin-demo-list {
+  width: 100% !important;
+  max-width: 1360px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  transform: none !important;
+  box-sizing: border-box !important;
+}
+
+/* 중앙 연구 비디오 그리드 큼직하게 확장 */
+.robin-research-videos {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.8rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.robin-research-player {
+  width: 100% !important;
+  border-radius: 14px !important;
+  padding: 0.75rem !important;
+  box-shadow: 0 0.8rem 2rem rgba(16, 42, 58, 0.08) !important;
+}
+
+.robin-research-player video {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  border-radius: 10px !important;
+}
+
+/* 상단 Wearable Sensor Glove 등 토픽 카드 3컬럼 균형 */
+.robin-research-topics {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1.25rem !important;
+}
+
+.robin-research-topics li {
+  min-height: 10.5rem !important;
+  padding: 1.25rem !important;
+}
+
+@media (max-width: 900px) {
+  .robin-research-topics,
+  .robin-research-videos {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   HEADER NAVBAR LAYOUT FIX: flex + margin-left:auto 방식으로 메뉴 우측 정렬 고정
+   Tailwind justify-start 클래스를 이기기 위해 navbar 정렬 대신 공간 밀기 방식 사용
+   ══════════════════════════════════════════════════════════════════════════════ */
+/* navbar 자체를 flex로 강제 (Tailwind justify-start와 공존 가능) */
+#site-header .navbar {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* 로고 영역은 왼쪽 고정 */
+#site-header .navbar > .order-0 {
+  flex-shrink: 0 !important;
+}
+
+/* 메뉴 래퍼를 오른쪽으로 밀기 (justify-content 불필요) */
+#site-header #nav-menu {
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Keep the navigation right-aligned even on landing-page templates such as Team. */
+#site-header .navbar > #nav-menu {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+
+/* 홈/서브 모든 페이지 공통: nav-menu 뒤에 오는 빈 div (class="order-1 ml-auto ... lg:ml-0") 무력화
+   이 div가 flex 공간을 차지해 #nav-menu의 margin-left:auto가 무효화되는 버그 수정 */
+#site-header .navbar > div[class*="order-1"][class*="ml-auto"] {
+  margin-left: 0 !important;
+  flex-shrink: 0 !important;
+  max-width: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+
+#site-header .navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 2.2rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#site-header .nav-item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#site-header .nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.2rem 0 !important;
+  gap: 0.25rem !important;
+  font-size: 0.94rem !important;
+  font-weight: 650 !important;
+  white-space: nowrap !important;
+}
+
+/* Team 드롭다운 화살표 크기 및 마진 미세 조율 */
+#site-header .nav-item.dropdown .nav-link svg,
+#site-header .nav-item.dropdown .dropdown-toggle::after,
+#site-header .nav-item.dropdown [data-hbx-icon] {
+  margin-left: 0.2rem !important;
+  width: 0.65rem !important;
+  height: 0.65rem !important;
+  opacity: 0.75;
+}
+
+/* Projects 페이지 메타 텍스트 크기 확대 및 Strong 서식 강조 */
+.robin-project-meta {
+  font-size: 0.85rem !important;
+  margin: 0.6rem 0 0.9rem !important;
+}
+
+.robin-projects-list li strong {
+  color: #102a3a !important;
+  font-weight: 700 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   UNLIMITED LANDING SECTION CONTAINER WIDE OVERRIDE (상위 래퍼 조임 100% 해제)
+   ══════════════════════════════════════════════════════════════════════════════ */
+body .landing-section,
+body .landing-section .container,
+body .home-section,
+body .home-section .container,
+body .wg-markdown,
+body .wg-markdown .container,
+body [data-hb-section],
+body [data-hb-section] .container,
+body .section-markdown,
+body .section-markdown .container,
+body .page-body > section,
+body .page-body > section > div,
+body .robin-team-lead,
+body .robin-team-members,
+body .robin-team-heading,
+body .robin-team-history,
+body .robin-member-group {
+  width: 100% !important;
+  max-width: 1360px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* PI 교수님 프로필 텍스트 폭 제한 해제 */
+body .robin-team-role {
+  max-width: 100% !important;
+}
+
+/* PI 교수님 프로필 그리드 비율 확대 (사진 크기 300px로 넉넉하게 조정) */
+body .robin-team-heading {
+  grid-template-columns: minmax(0, 1fr) 360px !important;
+  column-gap: 6rem !important;
+}
+
+body .robin-team-portrait {
+  width: 360px !important;
+  height: 510px !important;
+}
+
+/* Members 석사 & 학부연구생 멤버 카드 그리드 4컬럼 와이드 배치 */
+body .robin-member-grid,
+body .robin-member-grid-undergraduate {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1.25rem !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1024px) {
+  body .robin-member-grid,
+  body .robin-member-grid-undergraduate {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body .robin-member-grid,
+  body .robin-member-grid-undergraduate {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Projects 하단 SNU 프로젝트 안내 각주 스타일 */
+.robin-projects-footnote {
+  margin-top: 2.5rem !important;
+  padding-top: 1.25rem !important;
+  border-top: 1px dashed #c0d2d6 !important;
+  color: #53646b !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+}
+
+.robin-projects-footnote a {
+  color: #005b7c !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+.robin-projects-footnote a:hover {
+  color: #00425c !important;
+}
+
+/* Highlight only the PI occurrence identified in each publication record. */
+.robin-publication-authors .robin-author-highlight {
+  color: #102a3a;
+  font-weight: 800;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   REFINED JOIN PAGE STYLES (CLEAN & MODERN CARDS)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Home page-only Join section protection (prevents inherited layout collisions). */
+#join-at-home,
+#join-at-home .robin-join-page {
+  width: 100% !important;
+  max-width: min(calc(100vw - 3rem), 1360px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#join-at-home .robin-join-page,
+#join-at-home .robin-join-page .robin-page-lede,
+#join-at-home .robin-join-detail-grid {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#join-at-home .robin-page-lede {
+  margin-bottom: 2rem !important;
+}
+
+#join-at-home .robin-page-lede h1 {
+  max-width: none !important;
+  margin-top: 0 !important;
+}
+
+#join-at-home .robin-page-lede > p:last-child,
+#join-at-home .robin-join-reason p,
+#join-at-home .robin-apply-intro,
+#join-at-home .robin-apply-list {
+  overflow-wrap: anywhere !important;
+}
+
+#join-at-home .robin-join-card {
+  min-width: 0 !important;
+}
+
+.robin-join-detail-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+.robin-join-card {
+  border: 1px solid #d8e0e3 !important;
+  border-radius: 14px !important;
+  padding: 2.2rem !important;
+  background: #ffffff !important;
+  box-shadow: 0 0.5rem 1.5rem rgba(16, 42, 58, 0.04) !important;
+}
+
+.robin-join-why {
+  background: linear-gradient(145deg, #ffffff 0%, #f4f8f9 100%) !important;
+}
+
+.robin-join-card h2 {
+  margin: 0.4rem 0 1.6rem !important;
+  color: #102a3a !important;
+  font-size: 1.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.robin-join-reason {
+  margin-bottom: 1.6rem !important;
+  padding-bottom: 1.4rem !important;
+  border-bottom: 1px solid #e1e8eb !important;
+}
+
+.robin-join-reason:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.robin-join-reason h3 {
+  margin: 0 0 0.55rem !important;
+  color: #005b7c !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+}
+
+.robin-join-reason p {
+  margin: 0 !important;
+  color: #40535b !important;
+  font-size: 1rem !important;
+  line-height: 1.82 !important;
+  letter-spacing: -0.005em !important;
+}
+
+.robin-page-lede p {
+  font-size: 1.06rem !important;
+  line-height: 1.75 !important;
+}
+
+.robin-page-lede h1 {
+  font-size: clamp(2.35rem, 5.4vw, 4.6rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.08em !important;
+}
+
+.robin-page-lede .robin-page-kicker {
+  font-size: 0.78rem !important;
+  letter-spacing: 0.14em !important;
+}
+
+.robin-apply-intro {
+  color: #40535b !important;
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+}
+
+.robin-apply-list {
+  margin: 1.2rem 0 2rem !important;
+  padding-left: 1.25rem !important;
+  color: #102a3a !important;
+  font-size: 1rem !important;
+  line-height: 1.78 !important;
+}
+
+.robin-apply-list li {
+  margin-bottom: 0.45rem !important;
+}
+
+.robin-apply-notice p:not(.robin-notice-heading) {
+  font-size: 0.97rem !important;
+  line-height: 1.7 !important;
+}
+
+.robin-apply-btn {
+  font-size: 0.94rem !important;
+}
+
+.robin-join-card h2 {
+  letter-spacing: -0.03em !important;
+}
+
+.robin-apply-notice {
+  padding: 1.35rem !important;
+  border: 1px solid #bce1e8 !important;
+  border-radius: 12px !important;
+  background: #edf7f9 !important;
+}
+
+.robin-notice-heading {
+  margin: 0 0 0.4rem !important;
+  color: #005b7c !important;
+  font-family: var(--font-heading) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+.robin-apply-notice p:not(.robin-notice-heading) {
+  margin: 0 0 1rem !important;
+  color: #2b4550 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+}
+
+.robin-apply-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  padding: 0.65rem 1.25rem !important;
+  background: #005b7c !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0, 91, 124, 0.2) !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+}
+
+.robin-apply-btn:hover {
+  background: #00425c !important;
+  transform: translateY(-2px) !important;
+}
+
+@media (max-width: 900px) {
+  .robin-join-detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Dedicated HOME Join variant: independent from /join page styles. */
+#join-at-home .robin-join-home {
+  padding: 0 !important;
+}
+
+#join-at-home .robin-join-home .robin-page-lede {
+  margin-bottom: 1.75rem !important;
+}
+
+#join-at-home .robin-join-home .robin-page-lede h1 {
+  max-width: min(44rem, 100%) !important;
+  font-size: clamp(2rem, 4.2vw, 3.2rem) !important;
+  letter-spacing: -0.052em !important;
+  line-height: 1.05 !important;
+}
+
+#join-at-home .robin-join-home .robin-page-kicker {
+  margin-bottom: 0.55rem !important;
+  letter-spacing: 0.1em !important;
+}
+
+#join-at-home .robin-join-home .robin-page-lede > p:last-child {
+  max-width: min(55ch, 100%) !important;
+  font-size: 1.04rem !important;
+  line-height: 1.72 !important;
+}
+
+#join-at-home .robin-join-home .robin-join-detail-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+  gap: 1.4rem !important;
+  margin-top: 0 !important;
+}
+
+#join-at-home .robin-join-home .robin-join-card {
+  padding: 1.5rem !important;
+  min-height: auto !important;
+  border-radius: 12px !important;
+}
+
+#join-at-home .robin-join-home .robin-join-card h2 {
+  font-size: clamp(1.4rem, 2vw, 1.75rem) !important;
+  margin: 0 0 1.1rem !important;
+}
+
+#join-at-home .robin-join-home .robin-join-reason {
+  margin-bottom: 1.25rem !important;
+  padding-bottom: 1.1rem !important;
+}
+
+#join-at-home .robin-join-home .robin-join-reason h3 {
+  font-size: 0.98rem !important;
+  line-height: 1.45 !important;
+}
+
+#join-at-home .robin-join-home .robin-apply-intro {
+  margin: 0.1rem 0 0 !important;
+  font-size: 0.98rem !important;
+}
+
+@media (max-width: 900px) {
+  #join-at-home .robin-join-home .robin-join-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  #join-at-home .robin-join-home .robin-join-card {
+    padding: 1.25rem 1rem !important;
+  }
+}
+
+/* Projects 페이지 과제 제목(H2) 글꼴을 깔끔하고 세련된 Modern Sans-serif 서체로 변경 */
+.robin-projects-list h2 {
+  font-family: 'Lexend Deca', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: clamp(1.2rem, 2vw, 1.65rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.3 !important;
+  color: #102a3a !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   GLOBAL UNIFIED HEADER NAVBAR (모든 페이지 상단 네비게이션 헤더 100% 완전 통일)
+   ══════════════════════════════════════════════════════════════════════════════ */
+body #site-header,
+body .site-header,
+body .page-header {
+  position: relative !important;
+  background: #ffffff !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  z-index: 1000 !important;
+}
+
+body #site-header .navbar,
+body .site-header .navbar,
+body #site-header .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  max-width: 1360px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0.8rem 1.5rem !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+
+/* 절대 좌표 중앙 쏠림 완전 해제 */
+body #site-header #nav-menu,
+body .site-header #nav-menu {
+  position: static !important;
+  left: auto !important;
+  transform: none !important;
+  margin: 0 0 0 auto !important;
+}
+
+body #site-header .navbar-nav,
+body .site-header .navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 2.2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+body #site-header .nav-item,
+body .site-header .nav-item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body #site-header .nav-link,
+body .site-header .nav-link,
+body .site-header a.nav-link {
+  font-family: 'Lexend Deca', 'Pretendard', -apple-system, sans-serif !important;
+  font-size: 0.94rem !important;
+  font-weight: 650 !important;
+  color: #102a3a !important;
+  padding: 0.2rem 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+body #site-header .nav-link:hover,
+body .site-header .nav-link:hover {
+  color: #005b7c !important;
+}
+
+/* Team 드롭다운 아이콘 전역 100% 통일 */
+body #site-header .nav-item.dropdown .nav-link svg,
+body #site-header .nav-item.dropdown .dropdown-toggle::after,
+body #site-header .nav-item.dropdown [data-hbx-icon],
+body .site-header .dropdown-toggle::after {
+  margin-left: 0.2rem !important;
+  width: 0.65rem !important;
+  height: 0.65rem !important;
+  opacity: 0.75 !important;
+}
+
+/* Homepage hero: a focused, video-first poster composition. */
+@media (min-width: 901px) {
+  .robin-real-hero {
+    position: relative;
+    display: block;
+    height: calc(100dvh - 3rem);
+    min-height: 620px;
+    margin: -2rem 0 0 calc(50% - 50vw) !important;
+    background: #e8e8e8;
+  }
+
+  .robin-real-copy {
+    position: absolute;
+    inset: 0 auto auto 0;
+    z-index: 3;
+    width: min(48rem, 62vw);
+    padding: clamp(6rem, 12vh, 9rem) clamp(2rem, 6vw, 6rem);
+    color: #fff;
+    pointer-events: none;
+  }
+
+  .robin-real-copy h1 {
+    margin: 1.2rem 0 1.1rem;
+    color: #fff;
+    font-size: clamp(5rem, 12vw, 11rem);
+    letter-spacing: -0.095em;
+    line-height: 0.76;
+  }
+
+  .robin-real-copy h1 em { color: #8de0e1; }
+  .robin-real-kicker,
+  .robin-real-fullname { color: rgba(255,255,255,.72); }
+  .robin-real-statement { color: #fff; font-size: clamp(1.25rem, 2.1vw, 2rem); }
+  .robin-real-summary { color: rgba(255,255,255,.76); }
+  .robin-real-actions { pointer-events: auto; }
+  .robin-real-actions a { color: #fff; border-color: rgba(255,255,255,.72); }
+  .robin-real-actions a span { color: #8de0e1; }
+  .robin-real-fullname { margin-top: 2.75rem; }
+
+  .robin-real-stage,
+  .robin-real-stage video { width: 100%; height: 100%; }
+  .robin-real-stage { background: #e8e8e8; }
+  /* Override the earlier, more-specific gripper rule so the video has no side bands. */
+  .robin-real-stage .robin-gripper-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    background: #e8e8e8 !important;
+  }
+  .robin-real-stage::after {
+    background: linear-gradient(90deg, rgba(3,12,17,.86) 0%, rgba(3,12,17,.52) 34%, rgba(3,12,17,.06) 72%), linear-gradient(0deg, rgba(3,12,17,.5), transparent 38%);
+  }
+}
+
+@media (max-width: 900px) {
+  .robin-real-stage video { object-fit: contain; }
+}
+
+/* Let the homepage hero begin at the viewport edge; the header overlays it. */
+body:has(.robin-real-hero) .page-header,
+body:has(.robin-real-hero) #site-header,
+body:has(.robin-real-hero) .site-header {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  background: #ffffff !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+body:has(.robin-real-hero) .robin-real-hero {
+  height: 100dvh;
+  margin-top: 0 !important;
+}
+
+body:has(.robin-real-hero) #about {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body:has(.robin-real-hero) #site-header .nav-link,
+body:has(.robin-real-hero) .site-header .nav-link {
+  color: #102a3a !important;
+}
+
+/* Maintain readable hero copy over the dark side of the video at every width. */
+body .robin-real-hero .robin-real-kicker,
+body .robin-real-hero .robin-real-fullname {
+  color: #b8f2f3 !important;
+}
+
+body .robin-real-hero .robin-real-statement {
+  color: #ffffff !important;
+}
+
+body .robin-real-hero .robin-real-summary {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+body .robin-real-hero .robin-real-copy h1 {
+  font-family: 'Michroma', 'Lexend Deca', sans-serif !important;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: .88;
+}
+
+body .robin-real-hero > .robin-real-fullname {
+  position: absolute;
+  z-index: 4;
+  right: auto;
+  bottom: clamp(1.5rem, 4vh, 3rem);
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - 3rem);
+  margin: 0;
+  color: #ffffff !important;
+  font-size: clamp(1.1rem, 1.65vw, 1.52rem) !important;
+  font-weight: 700;
+  letter-spacing: 0.065em;
+  line-height: 1.45;
+  text-align: center;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 900px) {
+  body .robin-real-hero .robin-real-copy {
+    padding-top: 6.5rem;
+  }
+}
+
+/* Research section headings stay legible on the page's white background. */
+body:has(.robin-research-intro) .page-body .mb-6.text-3xl.font-bold {
+  color: #102a3a !important;
+  -webkit-text-fill-color: #102a3a !important;
+}
+
+/* Projects headings use the same fixed contrast on the white page. */
+body:has(.robin-projects-list) .page-body .mb-6.text-3xl.font-bold,
+body:has(.robin-projects-list) .robin-projects-list h2 {
+  color: #102a3a !important;
+  -webkit-text-fill-color: #102a3a !important;
+}
+
+/* Publications headings stay visible on the white page in every theme state. */
+body:has(.robin-publications) .page-body .mb-6.text-3xl.font-bold,
+body:has(.robin-publications) .robin-publications h2 {
+  color: #102a3a !important;
+  -webkit-text-fill-color: #102a3a !important;
+}
+
+#join-at-home .robin-join-home .robin-join-card h2,
+.robin-join-standalone .robin-join-card h2 {
+  color: #102a3a !important;
+  -webkit-text-fill-color: #102a3a !important;
+}
+
+#join-at-home .robin-join-home .robin-join-reason h3,
+.robin-join-standalone .robin-join-reason h3 {
+  color: #005b7c !important;
+  -webkit-text-fill-color: #005b7c !important;
+}
+
+#join-at-home .robin-join-home .robin-join-reason p,
+#join-at-home .robin-join-home .robin-apply-intro,
+#join-at-home .robin-join-home .robin-apply-list li,
+.robin-join-standalone .robin-join-reason p,
+.robin-join-standalone .robin-apply-intro,
+.robin-join-standalone .robin-apply-list li {
+  color: #40535b !important;
+  -webkit-text-fill-color: #40535b !important;
+}
+
+#join-at-home .robin-join-home .robin-join-card strong,
+.robin-join-standalone .robin-join-card strong {
+  color: #102a3a !important;
+  -webkit-text-fill-color: #102a3a !important;
+}
+
+#join-at-home .robin-join-home,
+.robin-join-standalone {
+  --font-body: 'Noto Sans KR', 'Pretendard', sans-serif;
+}
+
+#join-at-home .robin-join-home .robin-join-page,
+#join-at-home .robin-join-home .robin-join-card,
+#join-at-home .robin-join-home .robin-page-lede,
+#join-at-home .robin-join-home .robin-apply-intro,
+#join-at-home .robin-join-home .robin-join-reason,
+.robin-join-standalone .robin-join-page,
+.robin-join-standalone .robin-join-card,
+.robin-join-standalone .robin-page-lede,
+.robin-join-standalone .robin-apply-intro,
+.robin-join-standalone .robin-join-reason {
+  font-family: 'Noto Sans KR', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+#join-at-home .robin-join-home .robin-join-card h2,
+#join-at-home .robin-join-home .robin-join-reason h3,
+#join-at-home .robin-join-home .robin-notice-heading,
+#join-at-home .robin-join-home .robin-apply-btn,
+.robin-join-standalone .robin-join-card h2,
+.robin-join-standalone .robin-join-reason h3,
+.robin-join-standalone .robin-notice-heading,
+.robin-join-standalone .robin-apply-btn {
+  font-family: 'Noto Sans KR', 'Pretendard', -apple-system, sans-serif !important;
+}
+
+#join-at-home .robin-join-home .robin-apply-intro a,
+#join-at-home .robin-join-home .robin-notice-heading,
+.robin-join-standalone .robin-apply-intro a,
+.robin-join-standalone .robin-notice-heading {
+  color: #005b7c !important;
+  -webkit-text-fill-color: #005b7c !important;
+}
+
+#join-at-home .robin-join-home .robin-apply-notice p:not(.robin-notice-heading),
+.robin-join-standalone .robin-apply-notice p:not(.robin-notice-heading) {
+  color: #2b4550 !important;
+  -webkit-text-fill-color: #2b4550 !important;
+}
+
+#join-at-home .robin-join-home .robin-apply-btn,
+.robin-join-standalone .robin-apply-btn {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Hardened JOIN layout overrides: class-scoped first, id-scoped fallback. */
+.robin-join-home,
+.robin-join-standalone {
+  width: 100% !important;
+  max-width: min(calc(100vw - 3rem), 1360px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#join-at-home,
+#join-at-home .robin-join-page {
+  width: 100% !important;
+  max-width: min(calc(100vw - 3rem), 1360px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.robin-join-home .robin-join-page,
+#join-at-home .robin-join-page,
+.robin-join-standalone,
+.robin-join-standalone .robin-join-page {
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.robin-join-home .robin-page-lede,
+#join-at-home .robin-page-lede,
+.robin-join-standalone .robin-page-lede {
+  margin-bottom: 1.75rem !important;
+}
+
+.robin-join-language-toggle {
+  display: inline-flex;
+  gap: 0.2rem;
+  margin: 0 0 1.5rem auto;
+  padding: 0.25rem;
+  border: 1px solid #c6dce1;
+  border-radius: 999px;
+  background: #f5fafb;
+}
+
+.robin-join-language-toggle button {
+  min-height: 2.1rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  color: #40535b;
+  background: transparent;
+  font-family: 'Lexend Deca', 'Noto Sans KR', 'Pretendard', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.robin-join-language-toggle button.is-active {
+  color: #ffffff;
+  background: #005b7c;
+  box-shadow: 0 2px 7px rgba(0, 91, 124, 0.2);
+}
+
+.robin-join-language-toggle button:focus-visible {
+  outline: 3px solid rgba(0, 91, 124, 0.32);
+  outline-offset: 2px;
+}
+
+.robin-join-language-panel[hidden] {
+  display: none !important;
+}
+
+.robin-join-home .robin-page-lede h1,
+#join-at-home .robin-page-lede h1,
+.robin-join-standalone .robin-page-lede h1 {
+  max-width: min(44rem, 100%) !important;
+  font-size: clamp(2rem, 4.2vw, 3.2rem) !important;
+  margin-top: 0 !important;
+  letter-spacing: -0.052em !important;
+  line-height: 1.05 !important;
+}
+
+.robin-join-home .robin-page-lede .robin-page-kicker,
+#join-at-home .robin-page-kicker,
+.robin-join-standalone .robin-page-kicker {
+  margin-bottom: 0.55rem !important;
+  letter-spacing: 0.1em !important;
+}
+
+.robin-join-home .robin-page-lede > p:last-child,
+#join-at-home .robin-page-lede > p:last-child,
+.robin-join-standalone .robin-page-lede > p:last-child {
+  max-width: min(55ch, 100%) !important;
+  font-size: 1.04rem !important;
+  line-height: 1.72 !important;
+}
+
+.robin-join-home .robin-join-detail-grid,
+#join-at-home .robin-join-detail-grid,
+.robin-join-standalone .robin-join-detail-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+  gap: 1.4rem !important;
+  margin-top: 0 !important;
+  align-items: start !important;
+}
+
+.robin-join-home .robin-join-card,
+#join-at-home .robin-join-card,
+.robin-join-standalone .robin-join-card {
+  min-width: 0 !important;
+  width: 100% !important;
+  padding: 1.5rem !important;
+  min-height: auto !important;
+  border-radius: 12px !important;
+}
+
+.robin-join-home .robin-join-card h2,
+#join-at-home .robin-join-card h2,
+.robin-join-standalone .robin-join-card h2 {
+  font-size: clamp(1.4rem, 2vw, 1.75rem) !important;
+  margin: 0 0 1.1rem !important;
+}
+
+.robin-join-home .robin-join-reason,
+#join-at-home .robin-join-reason,
+.robin-join-standalone .robin-join-reason {
+  margin-bottom: 1.25rem !important;
+  padding-bottom: 1.1rem !important;
+}
+
+.robin-join-home .robin-join-reason h3,
+#join-at-home .robin-join-reason h3,
+.robin-join-standalone .robin-join-reason h3 {
+  font-size: 0.98rem !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.robin-join-home .robin-join-reason p,
+#join-at-home .robin-join-reason p,
+.robin-join-standalone .robin-join-reason p {
+  margin: 0 !important;
+  color: #40535b !important;
+  font-size: 1rem !important;
+  line-height: 1.72 !important;
+  letter-spacing: -0.005em !important;
+}
+
+.robin-join-home .robin-apply-intro,
+#join-at-home .robin-apply-intro,
+.robin-join-standalone .robin-apply-intro {
+  margin: 0.1rem 0 0 !important;
+  color: #40535b !important;
+  font-size: 0.98rem !important;
+  line-height: 1.72 !important;
+}
+
+.robin-join-home .robin-apply-list li,
+#join-at-home .robin-apply-list li,
+.robin-join-standalone .robin-apply-list li {
+  margin-bottom: 0.45rem !important;
+}
+
+@media (max-width: 900px) {
+  .robin-join-home .robin-join-detail-grid,
+  #join-at-home .robin-join-detail-grid,
+  .robin-join-standalone .robin-join-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .robin-join-home .robin-join-card,
+  #join-at-home .robin-join-card,
+  .robin-join-standalone .robin-join-card {
+    padding: 1.25rem 1rem !important;
+  }
+}
+
+.robin-google-map {
+  min-height: 10rem;
+  overflow: hidden;
+  border: 1px solid #c6dce1;
+  border-radius: 8px;
+  background: #e6eef0;
+}
+
+.robin-google-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 10rem;
+  border: 0;
+}
+
+/* Keep the Team dropdown readable even when a dark theme state is persisted. */
+body #site-header .nav-dropdown-list,
+body .site-header .nav-dropdown-list {
+  min-width: 250px !important;
+  border: 1px solid #d8e0e3 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0.8rem 2rem rgba(16, 42, 58, 0.14) !important;
+}
+
+body #site-header .nav-dropdown-item,
+body .site-header .nav-dropdown-item {
+  background: #ffffff !important;
+}
+
+body #site-header .nav-dropdown-link,
+body .site-header .nav-dropdown-link {
+  color: #102a3a !important;
+  -webkit-text-fill-color: #102a3a !important;
+  background: transparent !important;
+  white-space: nowrap !important;
+}
+
+body #site-header .nav-dropdown-item:hover,
+body .site-header .nav-dropdown-item:hover,
+body #site-header .nav-dropdown-link:hover,
+body .site-header .nav-dropdown-link:hover {
+  color: #005b7c !important;
+  -webkit-text-fill-color: #005b7c !important;
+  background: #eef7f8 !important;
+}
+
+.robin-member-card h4 .robin-member-name-link {
+  display: inline;
+  margin: 0;
+  color: #102a3a !important;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+.robin-member-card h4 .robin-member-name-link:hover {
+  color: #005b7c !important;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.robin-member-card .robin-member-email {
+  display: block;
+  margin: 0.1rem 1rem 1.1rem;
+  padding: 0;
+  color: #005b7c;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.robin-member-card .robin-member-email:hover {
+  text-decoration: underline;
+}
+
+.robin-member-profile-page {
+  display: grid;
+  max-width: 960px;
+  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.robin-member-profile-page img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 1px solid #d8dfe2;
+  background: #eaf0f3;
+  object-fit: cover;
+}
+
+.robin-member-profile-page h1 {
+  margin: 0;
+  color: #102a3a;
+  font-size: clamp(2.3rem, 6vw, 4.8rem);
+  line-height: 0.98;
+}
+
+.robin-member-profile-role {
+  margin: 1rem 0;
+  color: #53646b;
+  font-size: 1rem;
+}
+
+.robin-member-profile-email,
+.robin-member-profile-back {
+  display: table;
+  margin-top: 0.8rem;
+  color: #005b7c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.robin-member-profile-back {
+  margin-top: 2rem;
+  border-bottom: 1px solid currentColor;
+}
+
+@media (max-width: 700px) {
+  .robin-member-profile-page {
+    grid-template-columns: 1fr;
+  }
+
+  .robin-member-profile-page img {
+    max-width: 340px;
+  }
+}
+
+/* Keep the cinematic homepage hero usable on compact laptops before the mobile breakpoint. */
+@media (min-width: 901px) and (max-width: 1150px) {
+  .robin-hero-cinematic {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .robin-hero-cinematic h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .robin-publications li {
+    overflow-wrap: anywhere;
+  }
+
+  .robin-contact-card,
+  .robin-info-card {
+    min-width: 0;
+  }
+}
+
+/* Give publication titles and visual previews stronger hierarchy. */
+.robin-publication-title {
+  font-size: clamp(1.22rem, 1.5vw, 1.38rem);
+  line-height: 1.38;
+}
+
+/* Keep authors, venue details, and publication actions legible beside larger media. */
+.robin-publication-authors {
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.robin-publication-meta {
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.pub-badge {
+  min-height: 1.85rem;
+  padding: .28rem .72rem;
+  font-size: .8rem;
+}
+
+@media (min-width: 701px) {
+  .robin-publications li {
+    min-height: 240px;
+    padding-left: 322px;
+  }
+
+  .robin-publications li::after,
+  .robin-publication-entry video,
+  .robin-publication-entry .robin-publication-image {
+    left: 28px;
+    width: 272px;
+    height: 174px;
+  }
+
+  .pub-badges {
+    left: 322px;
+  }
+}
+
+@media (max-width: 700px) {
+  .robin-publications li::after,
+  .robin-publication-entry video,
+  .robin-publication-entry .robin-publication-image {
+    width: calc(100% + 2.5rem);
+    max-width: none;
+    margin-left: -2.5rem;
+  }
+}
+
+/* Improve the scanability of the homepage recruitment section without changing its content. */
+#join-at-home .robin-join-home,
+#join-at-home .robin-join-home :is(p, li, h1, h2, h3, a) {
+  font-family: 'Lexend Deca', 'Pretendard', sans-serif !important;
+}
+
+#join-at-home .robin-join-home .robin-page-lede h1 {
+  max-width: 48rem !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.12 !important;
+}
+
+#join-at-home .robin-join-home .robin-page-lede h1 em {
+  color: #006b8f !important;
+  font-style: normal !important;
+}
+
+#join-at-home .robin-join-home .robin-page-lede > p:last-child {
+  width: 100% !important;
+  max-width: none !important;
+  color: #4b5f69 !important;
+  line-height: 1.82 !important;
+}
+
+#join-at-home .robin-join-home .robin-join-detail-grid {
+  gap: 1.75rem !important;
+}
+
+#join-at-home .robin-join-home .robin-join-card {
+  padding: clamp(1.5rem, 2.5vw, 2.25rem) !important;
+  background: #f8fbfc !important;
+  box-shadow: 0 0.8rem 2rem rgba(16, 42, 58, 0.045) !important;
+}
+
+#join-at-home .robin-join-home .robin-join-card h2 {
+  margin-bottom: 1.35rem !important;
+  font-size: clamp(1.55rem, 2vw, 1.85rem) !important;
+  line-height: 1.25 !important;
+}
+
+#join-at-home .robin-join-home .robin-join-reason {
+  margin-bottom: 1rem !important;
+  border: 0 !important;
+  border-left: 3px solid #9fcbd5 !important;
+  border-radius: 0 10px 10px 0 !important;
+  padding: 1.05rem 1.15rem !important;
+  background: #ffffff !important;
+}
+
+#join-at-home .robin-join-home .robin-join-reason:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 1.05rem !important;
+  border-left: 3px solid #9fcbd5 !important;
+}
+
+#join-at-home .robin-join-home .robin-join-reason h3 {
+  margin-bottom: 0.65rem !important;
+  font-size: 1.02rem !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.45 !important;
+}
+
+#join-at-home .robin-join-home .robin-join-reason p {
+  color: #425761 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.82 !important;
+}
+
+#join-at-home .robin-join-home .robin-apply-intro {
+  line-height: 1.82 !important;
+}
+
+#join-at-home .robin-join-home .robin-apply-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.3rem 0 1.7rem !important;
+  padding-left: 1.5rem !important;
+}
+
+#join-at-home .robin-join-home .robin-apply-list li {
+  margin: 0 !important;
+  border-radius: 8px;
+  padding: 0.7rem 0.8rem;
+  background: #ffffff;
+  line-height: 1.65 !important;
+}
+
+@media (max-width: 700px) {
+  #join-at-home .robin-join-home .robin-page-lede h1 {
+    font-size: clamp(2.15rem, 10vw, 3.15rem) !important;
+  }
+
+  #join-at-home .robin-join-home .robin-join-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  #join-at-home .robin-join-home .robin-join-reason {
+    padding: 0.9rem 0.85rem !important;
+  }
+}
+
+/* Give the detailed lab advantages a full reading row; application guidance follows below. */
+#join-at-home .robin-join-home .robin-join-detail-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+#join-at-home .robin-join-home .robin-join-why .robin-join-reason p {
+  max-width: 100ch;
+}
+
+@media (min-width: 901px) {
+  #join-at-home .robin-join-home .robin-join-apply {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.8fr);
+    column-gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  #join-at-home .robin-join-home .robin-join-apply > .robin-card-kicker,
+  #join-at-home .robin-join-home .robin-join-apply > h2 {
+    grid-column: 1 / -1;
+  }
+
+  #join-at-home .robin-join-home .robin-join-apply > .robin-apply-intro,
+  #join-at-home .robin-join-home .robin-join-apply > .robin-apply-list {
+    grid-column: 1;
+  }
+
+  #join-at-home .robin-join-home .robin-join-apply > .robin-apply-notice {
+    grid-column: 2;
+    grid-row: 3 / span 2;
+    margin: 0 !important;
+  }
+}
+
+/* Make the PI's primary profile links easier to notice and activate. */
+.robin-team-contact .robin-social-badges {
+  gap: 0.75rem;
+  margin-top: 1.15rem;
+}
+
+.robin-team-contact .robin-social-badges .robin-social-badge {
+  min-height: 2.6rem;
+  padding: 0.65rem 1.05rem;
+  border-width: 1.5px;
+  font-size: 0.82rem;
+  line-height: 1;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.robin-team-contact .robin-social-badges .robin-social-badge:hover {
+  border-color: #005b7c;
+  color: #ffffff;
+  background: #005b7c;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
+  body .robin-team-heading {
+    column-gap: 2rem !important;
+  }
+}
+
+/* Desktop-wide layout pass: use more horizontal space without oversized type. */
+@media (min-width: 1100px) {
+  body #site-header .navbar,
+  body .site-header .navbar,
+  body #site-header .container-fluid {
+    max-width: 1680px !important;
+    padding: 0.85rem 2.5rem !important;
+  }
+
+  body #site-header .navbar-nav,
+  body .site-header .navbar-nav {
+    gap: clamp(1.2rem, 1.7vw, 2.5rem) !important;
+  }
+
+  body #site-header .nav-link,
+  body .site-header .nav-link,
+  body .site-header a.nav-link {
+    font-size: clamp(0.96rem, 1vw, 1.08rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  body #site-header .nav-item.dropdown .nav-link svg,
+  body #site-header .nav-item.dropdown .dropdown-toggle::after,
+  body #site-header .nav-item.dropdown [data-hbx-icon] {
+    width: 0.7rem !important;
+    height: 0.7rem !important;
+  }
+
+  body .page-body > section:not(:has(.robin-real-hero)) > div,
+  body .page-body > section:not(:has(.robin-real-hero)) > div > .prose,
+  body .robin-team-lead,
+  body .robin-team-members,
+  body .robin-team-heading,
+  body .robin-team-history,
+  body .robin-member-group {
+    width: 100% !important;
+    max-width: 1520px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+    box-sizing: border-box !important;
+  }
+
+  body .robin-publications,
+  body .robin-projects-list,
+  body .robin-research-topics,
+  body .robin-research-videos,
+  body .robin-join-home,
+  body .robin-join-standalone {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .robin-publications {
+    width: 100%;
+    max-width: 1520px;
+  }
+
+  body:has(.robin-publications) .page-body .mb-6.text-3xl.font-bold {
+    font-size: 2.25rem !important;
+  }
+
+  .robin-publications h2 {
+    font-size: clamp(2rem, 2.8vw, 2.8rem);
+  }
+
+  .robin-publications li {
+    min-height: 270px;
+    padding-left: 386px;
+    font-size: 1rem;
+  }
+
+  .robin-publications li::after,
+  .robin-publication-entry video,
+  .robin-publication-entry .robin-publication-image {
+    left: 30px;
+    width: 330px;
+    height: 211px;
+  }
+
+  .robin-publication-title {
+    font-size: clamp(1.35rem, 1.55vw, 1.62rem);
+    line-height: 1.38;
+  }
+
+  .pub-badges {
+    left: 386px;
+  }
+
+  .robin-projects-list h2 {
+    font-size: clamp(1.45rem, 2vw, 1.85rem) !important;
+  }
+}
+
+/* Keep the expanded desktop navigation from leaking past compact viewports. */
+@media (max-width: 1099px) {
+  body #site-header #nav-toggle {
+    display: none !important;
+  }
+
+  body #site-header .navbar,
+  body .site-header .navbar {
+    flex-wrap: wrap !important;
+  }
+
+  body #site-header label[for="nav-toggle"] {
+    display: flex !important;
+    margin-left: auto !important;
+  }
+
+  body #site-header #show-button {
+    display: block !important;
+  }
+
+  body #site-header #hide-button {
+    display: none !important;
+  }
+
+  body #site-header #nav-toggle:checked ~ label #show-button {
+    display: none !important;
+  }
+
+  body #site-header #nav-toggle:checked ~ label #hide-button {
+    display: block !important;
+  }
+
+  body #site-header #nav-menu,
+  body .site-header #nav-menu {
+    display: none !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem 0 0.4rem !important;
+  }
+
+  body #site-header #nav-toggle:checked ~ #nav-menu {
+    display: flex !important;
+  }
+
+  body #site-header .navbar-nav,
+  body .site-header .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.8rem !important;
+  }
+}
+
+/*
+   Responsive layout contract
+   ──────────────────────────
+   One mobile/tablet/desktop model takes precedence over legacy component rules.
+   Breakpoints: phone ≤700px, tablet 701–1099px, desktop ≥1100px.
+*/
+:root {
+  --robin-page-gutter: clamp(1rem, 3vw, 2rem);
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+:where(.page-body, .page-body *, .page-header, .page-header *) {
+  min-width: 0;
+}
+
+:where(img, video, iframe, canvas, svg) {
+  max-width: 100%;
+}
+
+.robin-page-lede h1,
+.robin-team-heading h1,
+.robin-projects-list h2,
+.robin-publication-title,
+.robin-publication-authors,
+.robin-publication-meta,
+.robin-research-player::after {
+  overflow-wrap: anywhere;
+}
+
+/* Desktop retains the existing overlay hero; all other components use their wide grids. */
+@media (min-width: 1100px) {
+  body:has(.robin-real-hero) .robin-real-hero {
+    width: 100vw;
+    min-height: 620px;
+    height: min(100dvh, 900px);
+    margin-left: calc(50% - 50vw) !important;
+  }
+}
+
+/* Tablet: keep the mobile navigation and use one vertical, content-driven page model. */
+@media (max-width: 1099px) {
+  body #site-header .navbar,
+  body .site-header .navbar,
+  body #site-header .container-fluid {
+    padding-right: max(var(--robin-page-gutter), env(safe-area-inset-right)) !important;
+    padding-left: max(var(--robin-page-gutter), env(safe-area-inset-left)) !important;
+  }
+
+  body #site-header .navbar-nav,
+  body .site-header .navbar-nav {
+    width: 100%;
+  }
+
+  body #site-header .nav-dropdown-list,
+  body .site-header .nav-dropdown-list {
+    display: block !important;
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0.3rem 0 0 !important;
+    box-shadow: none !important;
+  }
+
+  .robin-research-videos,
+  .robin-publications {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    transform: none !important;
+  }
+
+  .robin-team-heading,
+  .robin-team-history,
+  .robin-join-detail-grid,
+  .robin-join-apply {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .robin-team-contact,
+  .robin-team-portrait {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .robin-team-portrait,
+  body .robin-team-portrait {
+    width: min(100%, 340px) !important;
+    height: auto !important;
+  }
+
+  body:has(.robin-real-hero) .robin-real-hero {
+    display: grid;
+    width: 100vw;
+    height: auto !important;
+    min-height: 0;
+    margin-left: calc(50% - 50vw) !important;
+    grid-template-columns: minmax(0, 1fr);
+    overflow: visible;
+  }
+
+  body .robin-real-hero .robin-real-copy {
+    padding: 6rem max(var(--robin-page-gutter), env(safe-area-inset-right)) 3rem max(var(--robin-page-gutter), env(safe-area-inset-left));
+  }
+
+  body .robin-real-hero .robin-real-stage,
+  body .robin-real-hero .robin-gripper-stage {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  body .robin-real-hero > .robin-real-fullname {
+    position: static;
+    z-index: auto;
+    width: min(calc(100% - (var(--robin-page-gutter) * 2)), 48rem);
+    max-width: none;
+    margin: 0 auto;
+    padding: 1.35rem 0 1.9rem;
+    color: #102a3a !important;
+    font-size: clamp(0.88rem, 2.5vw, 1.05rem) !important;
+    letter-spacing: 0.05em;
+    line-height: 1.45;
+    text-align: center;
+    text-shadow: none;
+    transform: none;
+  }
+
+  body .robin-real-hero .robin-real-fullname .robin-home-lab-emph {
+    color: #006b8f;
+  }
+}
+
+/* Phone: one column, fluid media, and touch-friendly actions. */
+@media (max-width: 700px) {
+  body .robin-real-hero .robin-real-copy h1 {
+    font-size: clamp(3.6rem, 18vw, 6rem);
+    letter-spacing: -0.025em;
+    line-height: 0.96;
+  }
+
+  body .robin-real-hero .robin-real-statement {
+    font-size: clamp(1.12rem, 5vw, 1.45rem);
+    line-height: 1.25;
+  }
+
+  .robin-real-actions {
+    gap: 0.85rem 1.1rem;
+  }
+
+  .robin-publications li::after,
+  .robin-publication-entry video,
+  .robin-publication-entry .robin-publication-image {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .robin-publications li,
+  .robin-publication-copy,
+  .robin-publication-authors,
+  .robin-publication-meta {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .pub-badges {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  body #site-header .navbar,
+  body .site-header .navbar,
+  body #site-header .container-fluid {
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7rem !important;
+  }
+
+  .robin-publications li {
+    padding-left: 2rem;
+  }
+
+  .pub-badges {
+    left: 2rem;
+  }
+
+  .robin-team-contact .robin-social-badges .robin-social-badge {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Entry-specific publication artwork and an honest fallback for unavailable media. */
+.robin-publication-image.robin-publication-image-contain {
+  border: 1px solid #d8e0e3;
+  background: #fff;
+  object-fit: contain;
+}
+
+.robin-publication-placeholder {
+  position: absolute;
+  z-index: 1;
+  top: 1.25rem;
+  left: 24px;
+  display: flex;
+  box-sizing: border-box;
+  width: 188px;
+  height: 120px;
+  flex-direction: column;
+  gap: .8rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cad8dc;
+  border-radius: 3px;
+  background:
+    linear-gradient(135deg, rgb(0 91 124 / 8%), transparent 55%),
+    #edf3f4;
+  color: #52676f;
+  font-family: 'Lexend Deca', 'Pretendard', sans-serif;
+  padding: 1rem;
+  font-size: clamp(.86rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: .06em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.robin-publication-placeholder img {
+  display: block;
+  width: min(78%, 190px);
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgb(0 39 63 / 14%));
+}
+
+@media (min-width: 701px) {
+  body .robin-publication-entry > :is(video, .robin-publication-image, .robin-publication-placeholder) {
+    position: absolute;
+    top: 1.25rem;
+    left: 28px;
+    box-sizing: border-box;
+    width: 272px;
+    height: 174px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  body .robin-publication-entry > :is(video, .robin-publication-image, .robin-publication-placeholder) {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: .85rem 0 0;
+  }
+}

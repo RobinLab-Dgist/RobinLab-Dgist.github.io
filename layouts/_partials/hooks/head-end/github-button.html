@@ -1,0 +1,185 @@
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const dialog = document.getElementById('pi-hobby-dialog');
+  const openers = document.querySelectorAll('[data-pi-hobby-open]');
+  const closer = document.querySelector('[data-pi-hobby-close]');
+  if (!dialog || !openers.length || !closer) return;
+  openers.forEach((opener) => opener.addEventListener('click', () => {
+    const hobby = opener.dataset.hobby;
+    const input = hobby && document.getElementById(`hobby-${hobby}`);
+    if (input) input.checked = true;
+    dialog.showModal();
+  }));
+  closer.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-join-language]').forEach((join) => {
+    const selectLanguage = (language) => {
+      join.dataset.joinLanguage = language;
+      join.querySelectorAll('[data-join-language-option]').forEach((button) => {
+        const selected = button.dataset.joinLanguageOption === language;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', String(selected));
+      });
+      join.querySelectorAll('[data-join-language-panel]').forEach((panel) => {
+        panel.hidden = panel.dataset.joinLanguagePanel !== language;
+      });
+    };
+
+    join.querySelectorAll('[data-join-language-option]').forEach((button) => {
+      button.addEventListener('click', () => selectLanguage(button.dataset.joinLanguageOption));
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const publications = document.querySelector('.robin-publications');
+  if (!publications) return;
+
+  publications.querySelectorAll('li').forEach((entry) => {
+    const video = entry.querySelector('video source');
+    if (!video || entry.querySelector('.pub-badge-video')) return;
+
+    let badges = entry.querySelector('.pub-badges');
+    if (!badges) {
+      badges = document.createElement('div');
+      badges.className = 'pub-badges';
+      entry.appendChild(badges);
+    }
+    const badge = document.createElement('a');
+    badge.className = 'pub-badge pub-badge-video';
+    badge.textContent = 'Video';
+    badge.href = video.getAttribute('src');
+    badge.target = '_blank';
+    badge.rel = 'noopener noreferrer';
+    badge.setAttribute('aria-label', 'Video preview');
+    badges.appendChild(badge);
+    entry.appendChild(badges);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.robin-research-player video').forEach((video) => {
+    video.controls = false;
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.setAttribute('autoplay', '');
+    video.setAttribute('muted', '');
+    video.setAttribute('loop', '');
+    video.removeAttribute('controls');
+  });
+  const topicTags = {
+    Interface: '#HapticInterface', Perception: '#Perception', Teleoperation: '#Teleoperation',
+    'Digital Twin': '#GaussianSplatting', Simulation: '#Simulation', HRI: '#HumanRobotInteraction',
+    'Imitation Learning': '#ImitationLearning', 'Reinforcement Learning': '#ReinforcementLearning',
+    'Robot Foundation Models': '#RobotFoundationModels'
+  };
+  document.querySelectorAll('.robin-research-topic-chip').forEach((chip) => {
+    chip.textContent = topicTags[chip.textContent.trim()] || `#${chip.textContent.trim().replace(/\s+/g, '')}`;
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.robin-research-player').forEach((player) => {
+    const video = player.querySelector('video');
+    if (video && !player.dataset.label) player.dataset.label = video.getAttribute('aria-label') || 'Research preview';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.robin-publications li').forEach((entry) => {
+    if (entry.querySelector('.robin-publication-copy')) return;
+    const host = entry.querySelector('.robin-publication-entry > div') || entry;
+    const source = document.createElement('div');
+    Array.from(host.childNodes).forEach((node) => {
+      if (!(node.nodeType === Node.ELEMENT_NODE && (node.matches('video, .pub-badges') || node.closest('.pub-badges')))) source.appendChild(node.cloneNode(true));
+    });
+    const text = source.textContent.trim();
+    const match = text.match(/^(.*?)[“"](.*?)[”"]([,\s]*)(.*)$/s);
+    const copy = document.createElement('div');
+    copy.className = 'robin-publication-copy';
+    if (match) {
+      const authors = document.createElement('div');
+      authors.className = 'robin-publication-authors';
+      authors.textContent = match[1].replace(/,\s*$/, '');
+      const title = document.createElement('div');
+      title.className = 'robin-publication-title';
+      title.textContent = match[2].replace(/,\s*$/, '');
+      const meta = document.createElement('div');
+      meta.className = 'robin-publication-meta';
+      meta.textContent = match[4];
+      copy.append(authors, title, meta);
+    } else {
+      const title = document.createElement('div');
+      title.className = 'robin-publication-title';
+      title.textContent = text;
+      copy.appendChild(title);
+    }
+    const badges = entry.querySelector('.pub-badges');
+    host.replaceChildren(copy);
+    if (badges) entry.appendChild(badges);
+    const authorText = copy.querySelector('.robin-publication-authors');
+    if (authorText) {
+      const highlightedOccurrence = Number(entry.dataset.highlightYLee || 1);
+      let occurrence = 0;
+      authorText.innerHTML = authorText.textContent.replace(/\bY\. Lee\b/g, (name) => {
+        occurrence += 1;
+        return occurrence === highlightedOccurrence
+          ? `<strong class="robin-author-highlight">${name}</strong>`
+          : name;
+      });
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const publicationVideos = document.querySelectorAll('.robin-publication-entry video');
+
+  if ('IntersectionObserver' in window) {
+    const preloadVisibleVideos = new IntersectionObserver((entries) => {
+      entries.forEach(({ isIntersecting, target: video }) => {
+        if (isIntersecting) {
+          if (video.preload !== 'auto') {
+            video.preload = 'auto';
+            video.load();
+          }
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { rootMargin: '480px 0px' });
+    publicationVideos.forEach((video) => preloadVisibleVideos.observe(video));
+  } else {
+    publicationVideos.forEach((video) => {
+      video.preload = 'auto';
+      video.load();
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const heroVideo = document.querySelector('.robin-gripper-video');
+  if (!heroVideo) return;
+
+  heroVideo.loop = false;
+  const holdFinalFrame = () => {
+    if (!Number.isFinite(heroVideo.duration)) return;
+    // The source clip returns to its opening pose during its final second.
+    // Hold on the authored ROBIN end card before that reset begins.
+    const finalFrameTime = Math.max(0, heroVideo.duration - 1);
+    if (heroVideo.currentTime < finalFrameTime) return;
+    heroVideo.pause();
+    heroVideo.currentTime = finalFrameTime;
+  };
+
+  heroVideo.addEventListener('timeupdate', holdFinalFrame);
+  heroVideo.addEventListener('ended', holdFinalFrame);
+});
+</script>

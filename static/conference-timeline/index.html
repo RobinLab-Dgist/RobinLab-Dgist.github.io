@@ -1,0 +1,870 @@
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2026–2029 주요 학회 개최지 통합표</title><style>
+body{margin:0;padding:26px;background:#fafafa;color:#212529;font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif}
+.wrap{max-width:1200px;margin:0 auto}
+h1{font-size:21px;margin:0 0 4px}
+.sub{color:#868e96;font-size:13px;margin-bottom:16px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:4px;color:#495057;align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.scroll{overflow-x:auto}
+.inner{min-width:960px}
+.sec{font-size:15px;font-weight:700;margin:26px 0 8px;padding-bottom:6px;border-bottom:2px solid #343a40}
+.board{position:relative}
+.row{display:grid;grid-template-columns:118px 1fr}
+.row:nth-child(even) .track{background-color:#f4f5f7}
+.lab{font-weight:700;font-size:13px;display:flex;align-items:center;padding:4px 6px 4px 0}
+.track{position:relative;height:60px;background-image:linear-gradient(to right,#dee2e6 1px,transparent 1px);background-size:25% 100%;border-right:1px solid #dee2e6}
+.track::after{content:"";position:absolute;top:0;bottom:0;left:13.64%;border-left:1.5px dashed #fa5252;opacity:.55}
+.yhead .track{height:22px;background:none;border-right:none}
+.yhead .track::after{content:"기준일 7/18";border:none;color:#fa5252;font-size:10px;top:auto;bottom:-2px;left:13.64%;transform:translateX(3px);white-space:nowrap}
+.yt{display:grid;grid-template-columns:repeat(4,1fr)}
+.yt div{text-align:center;font-size:12px;font-weight:700;color:#868e96;align-self:end}
+.c{position:absolute;top:6px;border-radius:7px;padding:4px 7px;font-size:11px;line-height:1.3;border:1px solid transparent;white-space:nowrap;z-index:2}
+.c b{display:block;font-size:11.5px}
+.c span{color:#495057;font-size:10px}
+.as{background:#fff4e6;border-color:#ffd8a8}.as b{color:#d9480f}
+.eu{background:#e7f1fb;border-color:#a5d8ff}.eu b{color:#1971c2}
+.na{background:#e9f7ec;border-color:#b2f2bb}.na b{color:#2f9e44}
+.sa{background:#f3ebfa;border-color:#d0bfff}.sa b{color:#7048e8}
+.me{background:#fff0f4;border-color:#fcc2d7}.me b{color:#c2255c}
+.oc{background:#e3fafc;border-color:#99e9f2}.oc b{color:#0c8599}
+.tba{background:#f1f3f5;border:1px dashed #ced4da}.tba b{color:#868e96;font-weight:600}.tba span{color:#adb5bd}
+.end{opacity:.5}
+.tag{font-style:normal;font-size:9px;background:#495057;color:#fff;border-radius:4px;padding:1px 4px;margin-left:4px;vertical-align:1px}
+.rg{font-style:normal;font-size:9px;border:1px solid currentColor;border-radius:4px;padding:0 3px;margin-left:4px;vertical-align:1px}
+.dl{position:absolute;bottom:2px;font-size:9px;color:#7048e8;font-weight:700;white-space:nowrap;z-index:1;line-height:1}
+.dl i{font-style:normal;font-size:8px;margin-right:2px}
+.dl.est{color:#9b8ad1;font-weight:600}
+.dl.past{opacity:.35}
+.note{margin-top:24px;font-size:12px;color:#868e96;line-height:1.6}
+</style><style>/* Update Required Modal Overlay */
+.lilys-update-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal */
+.lilys-update-modal {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 320px;
+  max-width: 400px;
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.lilys-update-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #71717a;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.lilys-update-modal__close:hover {
+  background: #f4f4f5;
+  color: #18181b;
+}
+
+.lilys-update-modal__icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.lilys-update-modal__title {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #18181b;
+  margin-bottom: 8px;
+}
+
+.lilys-update-modal__desc {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #71717a;
+  margin-bottom: 24px;
+}
+
+.lilys-update-modal__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lilys-update-modal__btn {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lilys-update-modal__btn--primary {
+  background: #d4f542;
+  border: none;
+  color: #1a1a1a;
+}
+
+.lilys-update-modal__btn--primary:hover {
+  background: #c9ea3d;
+}
+
+.lilys-update-modal__btn--secondary {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  color: #71717a;
+}
+
+.lilys-update-modal__btn--secondary:hover {
+  background: #f4f4f5;
+  color: #18181b;
+}
+</style><style>/* Popup Overlay */
+.lilys-disable-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Popup */
+.lilys-disable-popup {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 200px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.lilys-disable-popup__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #71717A;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lilys-disable-popup__close:hover {
+  color: #18181B;
+}
+
+.lilys-disable-popup__title {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #18181B;
+  margin-bottom: 16px;
+}
+
+.lilys-disable-popup__btn {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #E4E4E7;
+  border-radius: 8px;
+  background: #ffffff;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #18181B;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.lilys-disable-popup__btn:last-child {
+  margin-bottom: 0;
+}
+
+.lilys-disable-popup__btn:hover {
+  background: #F4F4F5;
+}
+
+.lilys-disable-popup__btn--secondary {
+  border: none;
+  color: #71717A;
+  font-size: 13px;
+}
+
+.lilys-disable-popup__btn--secondary:hover {
+  background: transparent;
+  color: #18181B;
+}
+</style><style>/* Website Button Wrapper */
+.lilys-website-button-wrapper {
+  position: fixed;
+  right: -88px; /* 접힌 상태: 아이콘만 보이도록 */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999999;
+  transition: right 0.3s ease;
+}
+
+/* Wrapper hover시 펼침 */
+.lilys-website-button-wrapper:hover {
+  right: 0;
+}
+
+/* 드래그 중에는 transition 비활성화 */
+.lilys-website-button-wrapper.lilys-website-button--dragging {
+  transition: none !important;
+}
+
+/* Close Button */
+.lilys-website-button__close {
+  position: absolute;
+  top: -4px;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1000000;
+}
+
+.lilys-website-button__close-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.lilys-website-button-wrapper:hover .lilys-website-button__close {
+  opacity: 1;
+}
+
+.lilys-website-button__close:hover {
+  opacity: 0.8;
+}
+
+/* Website Button */
+.lilys-website-button {
+  position: relative;
+
+  height: 40px;
+  width: 130px;
+  padding: 0 10px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: #ffffff;
+  border: 1px solid #E4E4E7;
+  border-radius: 10px 0 0 10px;
+
+  box-shadow: 0px 4px 30px 0px #ADADAD66;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 드래그 중에는 transition 비활성화 */
+.lilys-website-button--dragging {
+  cursor: grabbing !important;
+}
+
+/* Loading state */
+.lilys-website-button--loading {
+  width: 145px;
+}
+
+.lilys-website-button-wrapper--loading {
+  right: -103px; /* 아이콘만 보이도록 */
+}
+
+.lilys-website-button-wrapper--loading:hover {
+  right: 0;
+}
+
+/* Completed state */
+.lilys-website-button--completed {
+  justify-content: flex-start;
+  width: 120px;
+}
+
+.lilys-website-button-wrapper--completed {
+  right: -78px; /* 아이콘만 보이도록 */
+}
+
+.lilys-website-button-wrapper--completed:hover {
+  right: 0;
+}
+
+.lilys-website-button-wrapper--completed:hover .lilys-website-button--completed {
+  width: 135px;
+}
+
+.lilys-website-button:disabled {
+  cursor: default;
+}
+
+.lilys-website-button:disabled:hover {
+  transform: none;
+}
+
+/* Icon */
+.lilys-website-button__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Icon container (for check badge) */
+.lilys-website-button__icon-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Check badge */
+.lilys-website-button__check {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+/* Text */
+.lilys-website-button__text {
+  margin-left: 7px;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+/* Loading state - Spinner */
+.lilys-website-button__spinner {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Arrow icon */
+.lilys-website-button__arrow {
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+</style><style>.lilys-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999999;
+
+  padding: 12px 20px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  opacity: 0;
+  animation: lilys-toast-fade-in 0.3s ease forwards;
+}
+
+.lilys-toast--hiding {
+  animation: lilys-toast-fade-out 0.3s ease forwards;
+}
+
+@keyframes lilys-toast-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes lilys-toast-fade-out {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+</style><style>/* PDF Button - 둥근 floating 버튼 */
+.lilys-pdf-button {
+  position: fixed;
+  top: 80px;
+  right: 30px;
+  z-index: 999999;
+
+  height: 40px;
+  min-width: 157px;
+  padding: 0 10px;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: #ffffff;
+  border: 1px solid #E4E4E7;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Completed state - space between for arrow */
+.lilys-pdf-button--completed {
+  justify-content: space-between;
+}
+
+.lilys-pdf-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.lilys-pdf-button:disabled {
+  cursor: default;
+}
+
+.lilys-pdf-button:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon */
+.lilys-pdf-button__icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Content wrapper (아이콘 + 텍스트 그룹) */
+.lilys-pdf-button__content {
+  display: flex;
+  align-items: center;
+}
+
+/* Icon container (for check badge) */
+.lilys-pdf-button__icon-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Check badge */
+.lilys-pdf-button__check {
+  position: absolute;
+  right: -4px;
+  bottom: -3px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+/* Text */
+.lilys-pdf-button__text {
+  margin-left: 7px;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+/* Loading state - Spinner */
+.lilys-pdf-button__spinner {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Arrow icon */
+.lilys-pdf-button__arrow {
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+</style><style>/* YouTube Button - Title variant (타이틀 아래) */
+.lilys-youtube-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  min-width: 157px;
+  padding: 0 10px;
+  margin: 0;
+  border: 1px solid #E4E4E7;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: none;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+/* Completed state - space between for arrow */
+.lilys-youtube-btn--completed {
+  justify-content: space-between;
+}
+
+.lilys-youtube-btn:hover {
+  opacity: 1;
+}
+
+.lilys-youtube-btn:disabled {
+  cursor: default;
+}
+
+/* Title variant - 유튜브 타이틀 아래 */
+.lilys-youtube-btn--title {
+  margin: 13px 8px 13px 0;
+}
+
+/* Icon */
+.lilys-youtube-btn__icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Left wrapper (icon + text) for completed state */
+.lilys-youtube-btn__left {
+  display: flex;
+  align-items: center;
+}
+
+/* Icon container (for check badge) */
+.lilys-youtube-btn__icon-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Check badge */
+.lilys-youtube-btn__check {
+  position: absolute;
+  right: -4px;
+  bottom: -1px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+/* Text */
+.lilys-youtube-btn__text {
+  margin-left: 7px;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+/* Loading state - Spinner */
+.lilys-youtube-btn__spinner {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Arrow icon */
+.lilys-youtube-btn__arrow {
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* ========================================
+   Sidebar variant - 카드 형태 (관련 동영상 위)
+   ======================================== */
+.lilys-youtube-btn-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 61px;
+  padding: 14.5px 16px;
+  margin-bottom: 60px;
+  background: #ffffff;
+  border: 1px solid #E4E4E7;
+  border-radius: 10px;
+  box-shadow: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+
+.lilys-youtube-btn-card--loading {
+  cursor: default;
+}
+
+/* Logo wrapper */
+.lilys-youtube-btn-card__logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Logo icon */
+.lilys-youtube-btn-card__logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Logo container (for check badge) */
+.lilys-youtube-btn-card__logo-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Check badge */
+.lilys-youtube-btn-card__check {
+  position: absolute;
+  right: -4px;
+  bottom: -1px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+/* Logo text (LilysAI) */
+.lilys-youtube-btn-card__logo-text {
+  height: 29px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Status text (로딩/완료 상태에서 로고 텍스트 자리에 표시) */
+.lilys-youtube-btn-card__status-text {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #1a1a1a;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Spinner */
+.lilys-youtube-btn-card__spinner {
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+/* Action button (연두색 버튼) */
+.lilys-youtube-btn-card__action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: #DFFF32;
+  border-radius: 8px;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: #1a1a1a;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lilys-youtube-btn-card__action-btn:hover {
+  background: #c9ea3d;
+}
+
+/* Arrow inside action button */
+.lilys-youtube-btn-card__arrow {
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  pointer-events: none;
+}
+</style>
+<style>
+:root{--ink:#102a3a;--muted:#53646b;--line:#d8e0e3;--accent:#005b7c;--surface:#fff;--soft:#f2f7f8}
+body{background:linear-gradient(135deg,#f8fbfb 0%,#fff 48%,#f5f8f9 100%);color:var(--ink);font-family:Inter,Pretendard,'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+.wrap{max-width:1280px;padding:clamp(1rem,3vw,2.75rem)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:end;margin-bottom:1.25rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(1.8rem,4vw,3.6rem);letter-spacing:-.07em;line-height:.98;color:var(--ink)}
+.sub{max-width:48rem;margin:.65rem 0 0;color:var(--muted);line-height:1.6}
+.stat-grid{display:grid;grid-template-columns:repeat(3,minmax(6rem,1fr));gap:.5rem;min-width:min(100%,20rem)}
+.stat{border:1px solid var(--line);border-radius:10px;padding:.75rem;background:rgba(255,255,255,.8)}.stat b{display:block;color:var(--accent);font-size:1.25rem}.stat span{color:var(--muted);font-size:.65rem;text-transform:uppercase;letter-spacing:.08em}
+.tools{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:1rem 0}.tools input,.tools select{border:1px solid #bdcdd2;border-radius:999px;padding:.6rem .8rem;background:#fff;color:var(--ink);font:inherit;font-size:.82rem}.tools input{min-width:min(100%,18rem)}
+.scroll{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.72);box-shadow:0 .8rem 2rem rgba(16,42,58,.05);padding:.75rem}.sec{color:var(--ink);letter-spacing:-.025em}.track{background-color:#fbfdfd!important}.c{box-shadow:0 .25rem .6rem rgba(16,42,58,.08);transition:transform .18s ease,box-shadow .18s ease}.c:hover{z-index:4;transform:translateY(-3px);box-shadow:0 .7rem 1.2rem rgba(16,42,58,.16)}
+.empty{display:none;margin:1rem 0;color:var(--muted);font-size:.9rem}
+@media(max-width:700px){.hero{grid-template-columns:1fr;gap:1rem}.stat-grid{min-width:0}.tools input{flex:1 1 100%}.scroll{padding:.5rem}.inner{min-width:860px}}
+</style></head><body><div class="wrap">
+<div class="hero"><div><h1>2026–2029 주요 학회 개최지 통합표</h1><div class="sub">로보틱스·비전·머신러닝·AI 분야의 주요 학회 일정과 개최 도시를 한 화면에서 확인하세요.</div></div><div class="stat-grid"><div class="stat"><b>25</b><span>Venues</span></div><div class="stat"><b>4</b><span>Years</span></div><div class="stat"><b>7</b><span>Regions</span></div></div></div>
+<div class="tools"><input id="venueSearch" type="search" placeholder="학회·도시 검색" aria-label="학회 또는 도시 검색"><select id="yearFilter" aria-label="연도 필터"><option value="">전체 연도</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option></select><select id="regionFilter" aria-label="지역 필터"><option value="">전체 지역</option><option value="as">아시아</option><option value="eu">유럽</option><option value="na">북미</option><option value="sa">남미</option><option value="me">중동</option><option value="oc">오세아니아</option></select></div>
+<div class="legend">
+<span><i class="dot" style="background:#ff922b"></i>아시아</span>
+<span><i class="dot" style="background:#4dabf7"></i>유럽</span>
+<span><i class="dot" style="background:#51cf66"></i>북미</span>
+<span><i class="dot" style="background:#9775fa"></i>남미</span>
+<span><i class="dot" style="background:#f06595"></i>중동</span>
+<span><i class="dot" style="background:#3bc9db"></i>오세아니아</span>
+<span><i class="dot" style="background:#ced4da"></i>TBA · 지역 미정</span>
+<span><i class="tag">종료</i> 기준일 이전 종료</span>
+<span><i class="rg" style="color:#495057">권역</i> 권역·도시 미공개</span>
+<span style="color:#7048e8;font-weight:700">▲ 제출 마감(확정)</span>
+<span style="color:#9b8ad1">△ 제출 마감(예년 기준 추정)</span>
+</div>
+<div class="scroll"><div class="inner">
+<div class="sec">Robotics · Robot Learning · Control</div>
+<div class="board">
+<div class="row yhead"><div class="lab"></div><div class="track yt"><div>2026</div><div>2027</div><div>2028</div><div>2029</div></div></div>
+<div class="row"><div class="lab">ICRA</div><div class="track"><div class="c eu end" style="left:10.42%"><b>Vienna<i class="tag">종료</i></b><span>Austria · 6/1–5</span></div><div class="c as" style="left:34.88%"><b>Seoul</b><span>Korea · 5/24–28</span></div><div class="c na" style="left:59.27%"><b>Guadalajara</b><span>Mexico · 5/15–19</span></div><div class="c eu" style="left:83.74%"><b>Milan</b><span>Italy · 5/7–12</span></div><div class="dl" style="left:17.61%" title="ICRA 2027 제출 마감 · 확정"><i>▲</i>9/15</div><div class="dl est" style="left:42.61%" title="ICRA 2028 제출 마감 · 예년 기준 추정"><i>△</i>9월</div><div class="dl est" style="left:67.61%" title="ICRA 2029 제출 마감 · 예년 기준 추정"><i>△</i>9월</div></div></div>
+<div class="row"><div class="lab">IROS</div><div class="track"><div class="c na" style="left:18.41%"><b>Pittsburgh</b><span>USA · 9/27–10/1</span></div><div class="c eu" style="left:43.35%"><b>Florence</b><span>Italy · 9/26–10/1</span></div><div class="c oc" style="left:68.82%"><b>Sydney</b><span>Australia · 10/2–6</span></div><div class="c tba" style="right:7.39%"><b>TBA</b><span>예년 9–10월경</span></div><div class="dl est past" style="left:4.23%" title="IROS 2026 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:29.17%" title="IROS 2027 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:54.17%" title="IROS 2028 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:79.17%" title="IROS 2029 제출 마감 · 예년 기준 추정"><i>△</i>3월</div></div></div>
+<div class="row"><div class="lab">RSS</div><div class="track"><div class="c oc end" style="left:13.31%"><b>Sydney<i class="tag">종료</i></b><span>Australia · 7/13–17</span></div><div class="c eu" style="left:38.44%"><b>Athens</b><span>Greece · 날짜 미공개</span></div><div class="c tba" style="left:63.44%"><b>TBA</b><span>예년 7월경</span></div><div class="c tba" style="right:11.56%"><b>TBA</b><span>예년 7월경</span></div><div class="dl est past" style="left:2.08%" title="RSS 2026 제출 마감 · 예년 기준 추정"><i>△</i>2월</div><div class="dl est" style="left:27.08%" title="RSS 2027 제출 마감 · 예년 기준 추정"><i>△</i>2월</div><div class="dl est" style="left:52.08%" title="RSS 2028 제출 마감 · 예년 기준 추정"><i>△</i>2월</div><div class="dl est" style="left:77.08%" title="RSS 2029 제출 마감 · 예년 기준 추정"><i>△</i>2월</div></div></div>
+<div class="row"><div class="lab">CoRL</div><div class="track"><div class="c na" style="left:21.37%"><b>Austin</b><span>USA · 11/9–12</span></div><div class="c tba" style="left:46.77%"><b>TBA</b><span>예년 11월경</span></div><div class="c tba" style="left:71.77%"><b>TBA</b><span>예년 11월경</span></div><div class="c tba" style="right:3.23%"><b>TBA</b><span>예년 11월경</span></div><div class="dl est past" style="left:10.69%" title="CoRL 2026 제출 마감 · 예년 기준 추정"><i>△</i>6월</div><div class="dl est" style="left:35.69%" title="CoRL 2027 제출 마감 · 예년 기준 추정"><i>△</i>6월</div><div class="dl est" style="left:60.69%" title="CoRL 2028 제출 마감 · 예년 기준 추정"><i>△</i>6월</div><div class="dl est" style="left:85.69%" title="CoRL 2029 제출 마감 · 예년 기준 추정"><i>△</i>6월</div></div></div>
+<div class="row"><div class="lab">HRI</div><div class="track"><div class="c eu end" style="left:5.17%"><b>Edinburgh<i class="tag">종료</i></b><span>UK · 3/16–19</span></div><div class="c na" style="left:29.64%"><b>Santa Clara</b><span>USA · 3/8–12</span></div><div class="c tba" style="left:55.11%"><b>TBA</b><span>예년 3월경</span></div><div class="c tba" style="left:80.11%"><b>TBA</b><span>예년 3월경</span></div><div class="dl est" style="left:18.75%" title="HRI 2027 제출 마감 · 예년 기준 추정"><i>△</i>10월</div><div class="dl est" style="left:43.75%" title="HRI 2028 제출 마감 · 예년 기준 추정"><i>△</i>10월</div><div class="dl est" style="left:68.75%" title="HRI 2029 제출 마감 · 예년 기준 추정"><i>△</i>10월</div></div></div>
+<div class="row"><div class="lab">WAFR</div><div class="track"><div class="c eu end" style="left:11.36%"><b>Oulu<i class="tag">종료</i></b><span>Finland · 6/15–17</span></div><div class="c tba" style="left:61.36%"><b>TBA</b><span>예년 6월경</span></div><div class="dl est past" style="left:2.08%" title="WAFR 2026 제출 마감 · 예년 기준 추정"><i>△</i>2월</div><div class="dl est" style="left:52.08%" title="WAFR 2028 제출 마감 · 예년 기준 추정"><i>△</i>2월</div></div></div>
+<div class="row"><div class="lab">Humanoids</div><div class="track"><div class="c na" style="left:23.32%"><b>Santa Clara</b><span>USA · 12/7–9</span></div><div class="c tba" style="left:47.45%"><b>TBA</b><span>예년 11–12월경</span></div><div class="c tba" style="left:72.45%"><b>TBA</b><span>예년 11–12월경</span></div><div class="c tba" style="right:2.55%"><b>TBA</b><span>예년 11–12월경</span></div><div class="dl est" style="left:14.52%" title="Humanoids 2026 제출 마감 · 예년 기준 추정"><i>△</i>7월 말</div><div class="dl est" style="left:39.52%" title="Humanoids 2027 제출 마감 · 예년 기준 추정"><i>△</i>7월 말</div><div class="dl est" style="left:64.52%" title="Humanoids 2028 제출 마감 · 예년 기준 추정"><i>△</i>7월 말</div><div class="dl est" style="left:89.52%" title="Humanoids 2029 제출 마감 · 예년 기준 추정"><i>△</i>7월 말</div></div></div>
+<div class="row"><div class="lab">IV</div><div class="track"><div class="c na end" style="left:11.83%"><b>Detroit<i class="tag">종료</i></b><span>USA · 6/22–25</span></div><div class="c oc" style="left:36.36%"><b>Perth</b><span>Australia · 6/15–18</span></div><div class="c eu" style="left:62.16%"><b>Barcelona</b><span>Spain · 6/27–30</span></div><div class="c tba" style="right:13.64%"><b>TBA</b><span>예년 6월경</span></div><div class="dl est past" style="left:2.08%" title="IV 2026 제출 마감 · 예년 기준 추정"><i>△</i>2월</div><div class="dl est" style="left:27.08%" title="IV 2027 제출 마감 · 예년 기준 추정"><i>△</i>2월</div><div class="dl est" style="left:52.08%" title="IV 2028 제출 마감 · 예년 기준 추정"><i>△</i>2월</div><div class="dl est" style="left:77.08%" title="IV 2029 제출 마감 · 예년 기준 추정"><i>△</i>2월</div></div></div>
+<div class="row"><div class="lab">ITSC</div><div class="track"><div class="c eu" style="left:17.61%"><b>Naples</b><span>Italy · 9/15–18</span></div><div class="c na" style="left:42.61%"><b>Boston</b><span>USA · 날짜 미공개</span></div><div class="c as" style="left:67.41%"><b>Tokyo</b><span>Japan · 9/12–15</span></div><div class="c tba" style="right:7.39%"><b>TBA</b><span>예년 9월경</span></div><div class="dl est past" style="left:5.11%" title="ITSC 2026 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:30.11%" title="ITSC 2027 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:55.11%" title="ITSC 2028 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:80.11%" title="ITSC 2029 제출 마감 · 예년 기준 추정"><i>△</i>3월</div></div></div>
+<div class="row"><div class="lab">UR</div><div class="track"><div class="c as end" style="left:13.44%"><b>Ibaraki, Osaka<i class="tag">종료</i></b><span>Japan · 7/15–18</span></div><div class="c tba" style="left:38.44%"><b>TBA</b><span>예년 7월경</span></div><div class="c tba" style="left:63.44%"><b>TBA</b><span>예년 7월경</span></div><div class="c tba" style="right:11.56%"><b>TBA</b><span>예년 7월경</span></div><div class="dl est past" style="left:5.11%" title="UR 2026 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:30.11%" title="UR 2027 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:55.11%" title="UR 2028 제출 마감 · 예년 기준 추정"><i>△</i>3월</div><div class="dl est" style="left:80.11%" title="UR 2029 제출 마감 · 예년 기준 추정"><i>△</i>3월</div></div></div>
+<div class="row"><div class="lab">ICCAS</div><div class="track"><div class="c as" style="left:20.50%"><b>Sapporo</b><span>Japan · 10/27–30</span></div><div class="c as" style="left:45.90%"><b>Jeju</b><span>Korea · 11/2–5</span></div><div class="c tba" style="left:69.69%"><b>TBA</b><span>예년 10월경</span></div><div class="c tba" style="right:5.31%"><b>TBA</b><span>예년 10월경</span></div><div class="dl est" style="left:15.46%" title="ICCAS 2026 제출 마감 · 예년 기준 추정"><i>△</i>8월</div><div class="dl est" style="left:40.46%" title="ICCAS 2027 제출 마감 · 예년 기준 추정"><i>△</i>8월</div><div class="dl est" style="left:65.46%" title="ICCAS 2028 제출 마감 · 예년 기준 추정"><i>△</i>8월</div><div class="dl est" style="right:9.54%" title="ICCAS 2029 제출 마감 · 예년 기준 추정"><i>△</i>8월</div></div></div>
+<div class="row"><div class="lab">iSpaRo</div><div class="track"><div class="c eu" style="left:20.97%"><b>Cologne</b><span>Germany · 11/3–6</span></div><div class="c tba" style="left:46.77%"><b>TBA</b><span>예년 11월경</span></div><div class="c tba" style="left:71.77%"><b>TBA</b><span>예년 11월경</span></div><div class="c tba" style="right:3.23%"><b>TBA</b><span>예년 11월경</span></div><div class="dl est past" style="left:13.44%" title="iSpaRo 2026 제출 마감 · 예년 기준 추정"><i>△</i>7월</div><div class="dl est" style="left:38.44%" title="iSpaRo 2027 제출 마감 · 예년 기준 추정"><i>△</i>7월</div><div class="dl est" style="left:63.44%" title="iSpaRo 2028 제출 마감 · 예년 기준 추정"><i>△</i>7월</div><div class="dl est" style="left:88.44%" title="iSpaRo 2029 제출 마감 · 예년 기준 추정"><i>△</i>7월</div></div></div>
+</div>
+<div class="sec">Computer Vision · Machine Learning · AI</div>
+<div class="board">
+<div class="row yhead"><div class="lab"></div><div class="track yt"><div>2026</div><div>2027</div><div>2028</div><div>2029</div></div></div>
+<div class="row"><div class="lab">CVPR</div><div class="track"><div class="c na end" style="left:10.55%"><b>Denver<i class="tag">종료</i></b><span>USA · 6/3–7</span></div><div class="c na" style="left:36.69%"><b>Seattle</b><span>USA · 6/20–24</span></div><div class="c na" style="left:61.36%"><b>San Antonio</b><span>USA · 날짜 미공개</span></div><div class="c na" style="right:13.64%"><b>Los Angeles</b><span>USA · 날짜 미공개</span></div><div class="dl est" style="left:21.71%" title="CVPR 2027 제출 마감 · 예년 기준 추정"><i>△</i>11월 중순</div><div class="dl est" style="left:46.71%" title="CVPR 2028 제출 마감 · 예년 기준 추정"><i>△</i>11월</div><div class="dl est" style="left:71.71%" title="CVPR 2029 제출 마감 · 예년 기준 추정"><i>△</i>11월</div></div></div>
+<div class="row"><div class="lab">WACV</div><div class="track"><div class="c na end" style="left:4.50%"><b>Tucson<i class="tag">종료</i></b><span>USA · 3/6–10</span></div><div class="c na" style="left:25.20%"><b>Orlando</b><span>USA · 1/4–8</span></div><div class="c tba" style="left:52.08%"><b>TBA</b><span>예년 1–3월경</span></div><div class="c tba" style="left:77.08%"><b>TBA</b><span>예년 1–3월경</span></div><div class="dl est past" style="left:13.44%" title="WACV 2027 R1 제출 마감 · 예년 기준 추정"><i>△</i>7월</div><div class="dl est" style="left:38.44%" title="WACV 2028 제출 마감 · 예년 기준 추정"><i>△</i>7월</div><div class="dl est" style="left:63.44%" title="WACV 2029 제출 마감 · 예년 기준 추정"><i>△</i>7월</div></div></div>
+<div class="row"><div class="lab">BMVC</div><div class="track"><div class="c eu" style="left:22.31%"><b>Lancaster</b><span>UK · 11/23–26</span></div><div class="c tba" style="left:46.77%"><b>TBA</b><span>예년 11월경</span></div><div class="c tba" style="left:71.77%"><b>TBA</b><span>예년 11월경</span></div><div class="c tba" style="right:3.23%"><b>TBA</b><span>예년 11월경</span></div><div class="dl past" style="left:10.22%" title="BMVC 2026 제출 마감 · 확정"><i>▲</i>5/29</div><div class="dl est" style="left:35.22%" title="BMVC 2027 제출 마감 · 예년 기준 추정"><i>△</i>5월 말</div><div class="dl est" style="left:60.22%" title="BMVC 2028 제출 마감 · 예년 기준 추정"><i>△</i>5월 말</div><div class="dl est" style="left:85.22%" title="BMVC 2029 제출 마감 · 예년 기준 추정"><i>△</i>5월 말</div></div></div>
+<div class="row"><div class="lab">ICCV</div><div class="track"><div class="c as" style="left:43.82%"><b>Hong Kong</b><span>China · 10/2–8</span></div><div class="c me" style="right:5.31%"><b>Dubai</b><span>UAE · 날짜 미공개</span></div><div class="dl est" style="left:29.57%" title="ICCV 2027 제출 마감 · 예년 기준 추정"><i>△</i>3월 초</div><div class="dl est" style="left:79.57%" title="ICCV 2029 제출 마감 · 예년 기준 추정"><i>△</i>3월 초</div></div></div>
+<div class="row"><div class="lab">ECCV</div><div class="track"><div class="c eu" style="left:17.14%"><b>Malmö</b><span>Sweden · 9/8–12</span></div><div class="c tba" style="left:67.61%"><b>TBA</b><span>예년 9월경</span></div><div class="dl est past" style="left:4.50%" title="ECCV 2026 제출 마감 · 예년 기준 추정"><i>△</i>3월 초</div><div class="dl est" style="left:54.50%" title="ECCV 2028 제출 마감 · 예년 기준 추정"><i>△</i>3월 초</div></div></div>
+<div class="row"><div class="lab">3DV</div><div class="track"><div class="c na end" style="left:5.44%"><b>Vancouver<i class="tag">종료</i></b><span>Canada · 3/20–23</span></div><div class="c eu" style="left:31.59%"><b>Thessaloniki</b><span>Greece · 4/6–9</span></div><div class="c tba" style="left:55.78%"><b>TBA</b><span>예년 3–4월경</span></div><div class="c tba" style="left:80.78%"><b>TBA</b><span>예년 3–4월경</span></div><div class="dl est" style="left:16.26%" title="3DV 2027 제출 마감 · 예년 기준 추정"><i>△</i>8월 말</div><div class="dl est" style="left:41.20%" title="3DV 2028 제출 마감 · 예년 기준 추정"><i>△</i>8월 말</div><div class="dl est" style="left:66.20%" title="3DV 2029 제출 마감 · 예년 기준 추정"><i>△</i>8월 말</div></div></div>
+<div class="row"><div class="lab">ISMAR</div><div class="track"><div class="c eu" style="left:19.02%"><b>Bari</b><span>Italy · 10/5–9</span></div><div class="c as" style="left:44.42%"><b>Kobe</b><span>Japan · 10/11–15</span></div><div class="c eu" style="left:69.29%"><b>Cyprus<i class="rg">권역</i></b><span>도시 TBA · 10/9–13</span></div><div class="c na" style="right:6.12%"><b>Canada<i class="rg">권역</i></b><span>도시 TBA · 10월 초</span></div><div class="dl est past" style="left:8.33%" title="ISMAR 2026 제출 마감 · 예년 기준 추정"><i>△</i>5월 초</div><div class="dl est" style="left:33.33%" title="ISMAR 2027 제출 마감 · 예년 기준 추정"><i>△</i>5월 초</div><div class="dl est" style="left:58.33%" title="ISMAR 2028 제출 마감 · 예년 기준 추정"><i>△</i>5월 초</div><div class="dl est" style="left:83.33%" title="ISMAR 2029 제출 마감 · 예년 기준 추정"><i>△</i>5월 초</div></div></div>
+<div class="row"><div class="lab">SIGGRAPH Asia</div><div class="track"><div class="c as" style="left:22.92%"><b>Kuala Lumpur</b><span>Malaysia · 12/1–4</span></div><div class="c tba" style="left:48.52%"><b>TBA</b><span>예년 12월경</span></div><div class="c tba" style="left:73.52%"><b>TBA</b><span>예년 12월경</span></div><div class="c tba" style="right:1.48%"><b>TBA</b><span>예년 12월경</span></div><div class="dl est past" style="left:9.14%" title="SIGGRAPH Asia 2026 제출 마감 · 예년 기준 추정"><i>△</i>5월</div><div class="dl est" style="left:34.14%" title="SIGGRAPH Asia 2027 제출 마감 · 예년 기준 추정"><i>△</i>5월</div><div class="dl est" style="left:59.14%" title="SIGGRAPH Asia 2028 제출 마감 · 예년 기준 추정"><i>△</i>5월</div><div class="dl est" style="left:84.14%" title="SIGGRAPH Asia 2029 제출 마감 · 예년 기준 추정"><i>△</i>5월</div></div></div>
+<div class="row"><div class="lab">ICLR</div><div class="track"><div class="c sa end" style="left:7.73%"><b>Rio de Janeiro<i class="tag">종료</i></b><span>Brazil · 4/23–27</span></div><div class="c na" style="left:32.86%"><b>북미 서부<i class="rg">권역</i></b><span>도시·날짜 미공개</span></div><div class="c tba" style="left:57.86%"><b>TBA</b><span>예년 4–5월경</span></div><div class="c tba" style="left:82.86%"><b>TBA</b><span>예년 4–5월경</span></div><div class="dl est" style="left:18.21%" title="ICLR 2027 제출 마감 · 예년 기준 추정"><i>△</i>9월 말</div><div class="dl est" style="left:43.21%" title="ICLR 2028 제출 마감 · 예년 기준 추정"><i>△</i>9월 말</div><div class="dl est" style="left:68.21%" title="ICLR 2029 제출 마감 · 예년 기준 추정"><i>△</i>9월 말</div></div></div>
+<div class="row"><div class="lab">ICML</div><div class="track"><div class="c as end" style="left:12.84%"><b>Seoul<i class="tag">종료</i></b><span>Korea · 7/6–11</span></div><div class="c tba" style="left:38.44%"><b>TBA</b><span>예년 7월경</span></div><div class="c na" style="left:63.44%"><b>미국 동부<i class="rg">권역</i></b><span>도시·날짜 미공개</span></div><div class="c tba" style="right:11.56%"><b>TBA</b><span>예년 7월경</span></div><div class="dl est past" style="left:1.81%" title="ICML 2026 제출 마감 · 예년 기준 추정"><i>△</i>1월 말</div><div class="dl est" style="left:26.81%" title="ICML 2027 제출 마감 · 예년 기준 추정"><i>△</i>1월 말</div><div class="dl est" style="left:51.81%" title="ICML 2028 제출 마감 · 예년 기준 추정"><i>△</i>1월 말</div><div class="dl est" style="left:76.81%" title="ICML 2029 제출 마감 · 예년 기준 추정"><i>△</i>1월 말</div></div></div>
+<div class="row"><div class="lab">NeurIPS</div><div class="track"><div class="c oc" style="left:23.25%"><b>Sydney</b><span>Australia · 12/6–12</span></div><div class="c eu" style="left:48.39%"><b>Europe<i class="rg">권역</i></b><span>도시·날짜 미공개</span></div><div class="c na" style="left:73.39%"><b>Western US<i class="rg">권역</i></b><span>도시·날짜 미공개</span></div><div class="c tba" style="right:1.48%"><b>TBA</b><span>예년 12월경</span></div><div class="dl est past" style="left:9.27%" title="NeurIPS 2026 제출 마감 · 예년 기준 추정"><i>△</i>5월 중순</div><div class="dl est" style="left:34.27%" title="NeurIPS 2027 제출 마감 · 예년 기준 추정"><i>△</i>5월</div><div class="dl est" style="left:59.27%" title="NeurIPS 2028 제출 마감 · 예년 기준 추정"><i>△</i>5월</div><div class="dl est" style="left:84.27%" title="NeurIPS 2029 제출 마감 · 예년 기준 추정"><i>△</i>5월</div></div></div>
+<div class="row"><div class="lab">AAAI</div><div class="track"><div class="c as end" style="left:1.28%"><b>Singapore<i class="tag">종료</i></b><span>1/20–27</span></div><div class="c na" style="left:28.09%"><b>Montréal</b><span>Canada · 2/16–23</span></div><div class="c tba" style="left:52.08%"><b>TBA</b><span>예년 1–2월경</span></div><div class="c tba" style="left:77.08%"><b>TBA</b><span>예년 1–2월경</span></div><div class="dl" style="left:14.31%" title="AAAI 2027 제출 마감 · 확정"><i>▲</i>7/28</div><div class="dl est" style="left:39.31%" title="AAAI 2028 제출 마감 · 예년 기준 추정"><i>△</i>7월 말</div><div class="dl est" style="left:64.31%" title="AAAI 2029 제출 마감 · 예년 기준 추정"><i>△</i>7월 말</div></div></div>
+<div class="row"><div class="lab">AAMAS</div><div class="track"><div class="c eu end" style="left:9.95%"><b>Paphos<i class="tag">종료</i></b><span>Cyprus · 5/25–29</span></div><div class="c tba" style="left:34.95%"><b>TBA</b><span>예년 5월경</span></div><div class="c tba" style="left:59.95%"><b>TBA</b><span>예년 5월경</span></div><div class="c tba" style="left:84.95%"><b>TBA</b><span>예년 5월경</span></div><div class="dl est" style="left:19.69%" title="AAMAS 2027 제출 마감 · 예년 기준 추정"><i>△</i>10월</div><div class="dl est" style="left:44.69%" title="AAMAS 2028 제출 마감 · 예년 기준 추정"><i>△</i>10월</div><div class="dl est" style="left:69.69%" title="AAMAS 2029 제출 마감 · 예년 기준 추정"><i>△</i>10월</div></div></div>
+</div>
+</div></div>
+<div class="note">도시 또는 권역이 공개된 일정과 TBA 일정 표시 · TBA의 시기는 예년 개최 시기 기준 추정<br>Update 기준일 : 2026.07.24</div>
+
+<script>
+(() => {
+  const search = document.getElementById('venueSearch');
+  const year = document.getElementById('yearFilter');
+  const region = document.getElementById('regionFilter');
+  const chips = [...document.querySelectorAll('.c')];
+  chips.forEach((chip) => { chip.dataset.search = `${chip.textContent} ${chip.closest('.row')?.querySelector('.lab')?.textContent || ''}`.toLowerCase(); });
+  const apply = () => {
+    const q = search.value.trim().toLowerCase();
+    chips.forEach((chip) => {
+      const matchText = !q || chip.dataset.search.includes(q);
+      const matchYear = !year.value || chip.textContent.includes(year.value);
+      const matchRegion = !region.value || chip.classList.contains(region.value);
+      chip.style.display = matchText && matchYear && matchRegion ? '' : 'none';
+    });
+  };
+  [search, year, region].forEach((control) => control.addEventListener('input', apply));
+  [year, region].forEach((control) => control.addEventListener('change', apply));
+})();
+</script></div></body></html>
