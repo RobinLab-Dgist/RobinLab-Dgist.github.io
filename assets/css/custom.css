@@ -2432,3 +2432,149 @@ body {
     margin: .85rem 0 0;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESEARCH PAGE READABILITY PASS
+   앞선 규칙들이 !important를 널리 쓰고 있어 여기(파일 끝)에 모아 덮어쓴다.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* 인트로 문단이 페이지 전체 폭으로 늘어나 마지막 줄만 짧게 떨어지는 문제.
+   (max-w-prose는 위쪽 `body [class*="prose"]` 규칙이 이미 무력화함) */
+.robin-research-intro {
+  max-width: 58rem !important;
+  margin-inline: auto;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* 섹션 간 여백 축소: 기본 6rem 상/하 = 사이 12rem */
+body:has(.robin-research-intro) {
+  --hb-spacing-section: 2.75rem;
+}
+
+/* 토픽 카드: 장식 글리프 제거 + 태그를 읽을 수 있는 크기로 */
+.robin-research-topic-glyph {
+  display: none !important;
+}
+
+/* min-height는 margin-top:auto가 태그를 카드 바닥으로 밀 여유를 만든다.
+   너무 줄이면 제목과 태그가 붙어버린다. */
+.robin-research-topics li {
+  min-height: 9.5rem !important;
+  padding: 1.35rem !important;
+}
+
+.robin-research-topic-name {
+  font-size: 1.02rem !important;
+  line-height: 1.4 !important;
+}
+
+.robin-research-topic-chip {
+  padding: .3rem .6rem !important;
+  font-size: .74rem !important;
+  letter-spacing: .02em !important;
+}
+
+/* 영상 하단 캡션 */
+.robin-research-player::after {
+  margin-top: .7rem !important;
+  font-size: .95rem !important;
+  line-height: 1.45 !important;
+}
+
+/* 학회·저널 약어 (본문 [ICRA] 표기를 JS가 승격시킨 것) */
+.robin-venue-abbr {
+  color: #005b7c;
+  font-weight: 800;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+
+/* 배지는 원래 카드 바닥에 absolute로 고정돼 제목과 크게 벌어졌다.
+   흐름으로 되돌려 venue 줄 바로 아래에 붙인다. */
+.robin-publications .pub-badges {
+  position: static !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  margin-top: .8rem;
+}
+
+/* 배지 자리로 비워두던 아래 여백 회수 */
+.robin-publications li {
+  padding-bottom: 1.4rem !important;
+}
+
+/* Selected / All 필터 */
+.robin-pub-filter {
+  display: flex;
+  gap: .8rem;
+  justify-content: center;
+  margin: .5rem 0 2.75rem;
+}
+
+.robin-pub-filter-btn {
+  min-width: 9rem;
+  border: 1.5px solid #c6dce1;
+  border-radius: 999px;
+  padding: .72rem 2rem;
+  color: #40535b;
+  background: #fff;
+  font-family: 'Lexend Deca', 'Pretendard', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  cursor: pointer;
+  transition: border-color .16s ease, background .16s ease, color .16s ease;
+}
+
+.robin-pub-filter-btn:hover {
+  border-color: #6fa9b8;
+  background: #f2f9fa;
+}
+
+.robin-pub-filter-btn.is-active {
+  border-color: #005b7c;
+  color: #fff;
+  background: #005b7c;
+}
+
+.robin-publications.is-filtered li:not([data-selected]),
+.robin-publications.is-patent li:not([data-pubnum^="P"]) {
+  display: none;
+}
+
+/* 페이지 최상단 제목이 하위 섹션 제목(h2, 최대 2.8rem)보다 커야 위계가 산다.
+   Research는 섹션 제목이 페이지 제목과 같은 클래스라 first-of-type으로 구분한다. */
+body:has(.robin-research-intro) .page-body section:first-of-type .mb-6.text-3xl.font-bold,
+body:has(.robin-projects-list) .page-body section:first-of-type .mb-6.text-3xl.font-bold,
+body:has(.robin-publications) .page-body section:first-of-type .mb-6.text-3xl.font-bold {
+  font-size: clamp(2.5rem, 4vw, 3.4rem) !important;
+  line-height: 1.14;
+  letter-spacing: -.035em;
+}
+
+/* 사진 옆 번호를 J1/C1/P1 형식으로. 오래된 논문이 1번이라
+   새 논문이 추가돼도 기존 번호가 밀리지 않는다. */
+.robin-publications li[data-pubnum]::before {
+  content: attr(data-pubnum);
+  font-size: .78rem;
+  font-weight: 700;
+  color: #005b7c;
+  letter-spacing: -.01em;
+}
+
+/* 상위 백분위 표기 */
+.robin-venue-top {
+  color: #c0392b;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* 글리프를 왼쪽에 절대배치하던 모바일 규칙의 들여쓰기 회수 */
+@media (max-width: 800px) {
+  .robin-research-topics li {
+    min-height: 0 !important;
+    padding: 1rem !important;
+  }
+}

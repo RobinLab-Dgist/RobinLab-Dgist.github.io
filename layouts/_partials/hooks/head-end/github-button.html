@@ -114,6 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const meta = document.createElement('div');
       meta.className = 'robin-publication-meta';
       meta.textContent = match[4];
+      // 본문의 [ICRA] 표기는 (ICRA)로, Top n%는 별도 색으로 승격.
+      // textContent를 먼저 넣었으므로 innerHTML은 이미 이스케이프된 상태다.
+      meta.innerHTML = meta.innerHTML
+        .replace(/\[([^\]]+)\]/g, '<strong class="robin-venue-abbr">($1)</strong>')
+        .replace(/\bTop\s+\d+(?:\.\d+)?%/g, '<strong class="robin-venue-top">$&</strong>')
+        .replace(/\bOral\s+Paper\b/g, '<strong class="robin-venue-top">$&</strong>');
       copy.append(authors, title, meta);
     } else {
       const title = document.createElement('div');
@@ -136,6 +142,40 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.querySelector('.robin-publications');
+  const buttons = root ? root.querySelectorAll('.robin-pub-filter-btn') : [];
+  if (!buttons.length) return;
+
+  // 모드별로 남길 항목의 셀렉터. all은 전부 표시.
+  const MODES = {
+    selected: { cls: 'is-filtered', keep: 'li[data-selected]' },
+    patent: { cls: 'is-patent', keep: 'li[data-pubnum^="P"]' },
+    all: { cls: null, keep: null },
+  };
+
+  const apply = (mode) => {
+    const conf = MODES[mode] || MODES.all;
+    Object.values(MODES).forEach(({ cls }) => cls && root.classList.remove(cls));
+    if (conf.cls) root.classList.add(conf.cls);
+    buttons.forEach((btn) => {
+      const on = btn.dataset.filter === mode;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', String(on));
+    });
+    // 남는 항목이 없는 분류는 제목까지 숨긴다
+    root.querySelectorAll('ol').forEach((ol) => {
+      const keep = !conf.keep || ol.querySelector(conf.keep);
+      ol.hidden = !keep;
+      const heading = ol.previousElementSibling;
+      if (heading && heading.tagName === 'H2') heading.hidden = !keep;
+    });
+  };
+
+  buttons.forEach((btn) => btn.addEventListener('click', () => apply(btn.dataset.filter)));
+  apply('selected');
 });
 
 document.addEventListener('DOMContentLoaded', () => {
