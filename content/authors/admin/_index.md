@@ -1,6 +1,6 @@
 ---
-title: "Yong-Seok Lee"
-first_name: "Yong-Seok"
+title: "Yong seok Lee"
+first_name: "Yong seok"
 last_name: "Lee"
 username: "admin"
 role: "Assistant Professor / Principal Investigator"
@@ -31,7 +31,7 @@ user_groups:
   - "Principal Investigators"
 ---
 
-**Yong-Seok Lee** is an Assistant Professor in the Department of Robotics and Mechatronics Engineering at DGIST and the Director of **ROBIN Lab** (ROBot INterface, INteraction, and INtelligence Laboratory).
+**Yong seok Lee** is an Assistant Professor in the Department of Robotics and Mechatronics Engineering at DGIST and the Director of **ROBIN Lab** (ROBot INterface, INteraction, and INtelligence Laboratory).
 
 Prior to joining DGIST, he was a BK Assistant Professor at Seoul National University and a Staff Engineer at Samsung Research. His team advances **Physical AI** through high-fidelity robot interfaces, digital twins, and robot learning.
 
