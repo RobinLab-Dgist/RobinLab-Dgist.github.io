@@ -2732,7 +2732,8 @@ body .robin-real-hero .robin-real-footer {
   position: absolute;
   z-index: 4;
   right: max(var(--robin-page-gutter), env(safe-area-inset-right));
-  bottom: max(1.35rem, env(safe-area-inset-bottom));
+  top: max(6.5rem, env(safe-area-inset-top));
+  bottom: auto;
   left: max(var(--robin-page-gutter), env(safe-area-inset-left));
   display: flex;
   flex-direction: column;
@@ -2745,10 +2746,10 @@ body .robin-real-hero .robin-real-footer {
 body .robin-real-hero .robin-real-footer .robin-real-fullname {
   margin: 0;
   color: #fff !important;
-  font-size: clamp(.68rem, 2.5vw, .92rem) !important;
+  font-size: clamp(.9rem, 2.1vw, 1.45rem) !important;
   font-weight: 700;
-  letter-spacing: .045em;
-  line-height: 1.5;
+  letter-spacing: .065em;
+  line-height: 1.4;
   text-shadow: 0 2px 14px rgba(0,0,0,.72);
 }
 
