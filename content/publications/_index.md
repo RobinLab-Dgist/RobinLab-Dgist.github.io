@@ -10,7 +10,7 @@ sections:
       text: |-
         <section class="robin-publications">
           <p class="robin-publications-note">† indicates corresponding authors. For the most current links and PDFs, visit <a href="https://scholar.google.com/citations?user=iMjIpUkAAAAJ&amp;hl=ko" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>.</p>
-          <div class="robin-pub-filter" role="group" aria-label="Publication filter"><button type="button" class="robin-pub-filter-btn" data-filter="selected">Selected</button><button type="button" class="robin-pub-filter-btn" data-filter="all">All</button><button type="button" class="robin-pub-filter-btn" data-filter="patent">Patents</button></div>
+          <div class="robin-pub-filter" role="group" aria-label="Publication filter"><button type="button" class="robin-pub-filter-btn" data-filter="selected">Selected</button><button type="button" class="robin-pub-filter-btn" data-filter="all">All</button></div>
           <h2>Preprint</h2>
           <ol>
             <li data-pubnum="PR1" class="robin-publication-entry" data-highlight-y-lee="2"><div>H. Lee, Y. Lee, K. Lee, D. J. Lee†, and Y. Lee†, “RORA: Realistic Object Reconstruction with Articulation” <em>arXiv preprint</em> [arXiv:2608.04842], 2026.</div><img class="robin-publication-image robin-publication-image-contain" src="/images/publications/RORA.png" alt="RORA realistic object reconstruction with articulation overview"><div class="pub-badges"><a class="pub-badge" href="https://arxiv.org/abs/2608.04842" target="_blank" rel="noopener noreferrer">Paper</a></div></li>
