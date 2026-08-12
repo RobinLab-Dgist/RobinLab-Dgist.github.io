@@ -239,8 +239,8 @@ header, .site-header {
 .robin-concept-stage { position:relative; z-index:2; min-height:560px; margin:-2rem -3rem -2rem 0; }.robin-spline { position:absolute; inset:0; width:100%; height:100%; filter:drop-shadow(-25px 35px 70px rgba(0,0,0,.42)); }.robin-concept-label { position:absolute; right:3rem; bottom:2.2rem; color:rgba(203,240,242,.54); font-size:.58rem; font-weight:700; letter-spacing:.16em; pointer-events:none; }
 #site-header { position:relative; background:#fff !important; }
 #site-header :is(.navbar-nav a, .nav-link, .dropdown-toggle, button) { color:#0f172a !important; opacity:1 !important; text-shadow:none !important; }
-#site-header .navbar-brand { position:relative; display:block; width:240px; height:54px; background:url('/media/dgist-logo.png') left center / auto 36px no-repeat; font-size:0; line-height:0; filter:none; }
-#site-header .navbar-brand::after { content:''; position:absolute; top:9px; bottom:9px; left:118px; width:108px; background:url('/media/robin-logo.png') left center / auto 36px no-repeat; }
+#site-header .navbar-brand { position:relative; display:block; width:350px; height:68px; background:url('/media/dgist-logo.png') left center / auto 46px no-repeat; font-size:0; line-height:0; filter:none; }
+#site-header .navbar-brand::after { content:''; position:absolute; top:2px; bottom:2px; left:145px; width:195px; background:url('/media/robin-logo.png') left center / auto 65px no-repeat; }
 @media (max-width:900px) { .robin-hero-cinematic { grid-template-columns:1fr; min-height:auto; margin:-1rem -1.5rem 0; padding:3.5rem 1.5rem 0; }.robin-hero-cinematic h1 { max-width:10ch; }.robin-concept-stage { min-height:480px; margin:-1.5rem -1.5rem 0; }.robin-concept-label { right:1.5rem; bottom:1.25rem; } }
 
 /* BAIR-inspired editorial hero: research identity first, no product-style visual effects. */
@@ -359,7 +359,7 @@ body .robin-real-hero .robin-real-fullname .robin-home-lab-emph {
 #publications .card:hover, #news .card:hover { border-color:#005b7c; box-shadow:none; transform:none; }
 
 @media (max-width:800px) { .robin-demo-list,.robin-research-videos { grid-template-columns:1fr; }.robin-research-row { grid-template-columns:2.5rem minmax(0,1fr); }.robin-research-row b { display:none; } }
-@media (max-width:560px) { #site-header .navbar-brand { width:202px; height:48px; background-size:auto 30px; } #site-header .navbar-brand::after { left:98px; width:90px; background-size:auto 30px; background-position:left center; } }
+@media (max-width:560px) { #site-header .navbar-brand { width:300px; height:60px; background-size:auto 38px; } #site-header .navbar-brand::after { top:3px; bottom:3px; left:128px; width:162px; background-size:auto 54px; background-position:left center; } }
 
 /* Team begins with the PI as the lab's primary academic point of reference. */
 .robin-team-lead { margin:1rem 0 5rem; border-top:1px solid #c9c7bf; color:#13222a; }
