@@ -2717,6 +2717,12 @@ body:has(.robin-research-intro) .page-body section:not(:first-of-type) .mb-6.tex
   }
 }
 
+/* Keep the PI name and degree on separate lines at every viewport size. */
+body .robin-team-heading h1 .robin-team-name,
+body .robin-team-heading h1 em {
+  display: block;
+}
+
 /* Compact the transition from homepage research to recruitment. */
 @media (min-width: 901px) {
   #research-in-action {
