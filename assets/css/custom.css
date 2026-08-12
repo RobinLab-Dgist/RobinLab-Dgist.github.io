@@ -2403,10 +2403,6 @@ body {
     margin: 0;
   }
 
-  .robin-real-actions .robin-action-primary {
-    grid-column: 1 / -1;
-  }
-
   .robin-publications li::after,
   .robin-publication-entry video,
   .robin-publication-entry .robin-publication-image {
