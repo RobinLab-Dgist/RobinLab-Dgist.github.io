@@ -26,7 +26,7 @@
 /* Make the simplified homepage hero legible without obscuring the video. */
 body .robin-real-hero .robin-real-stage::after { display: none !important; }
 body .robin-real-hero .robin-real-footer { position:absolute; z-index:4; top:max(6.5rem,env(safe-area-inset-top)); right:max(var(--robin-page-gutter),env(safe-area-inset-right)); left:max(var(--robin-page-gutter),env(safe-area-inset-left)); display:flex; justify-content:center; text-align:center; }
-body .robin-real-hero .robin-real-footer .robin-real-fullname { margin:0; border:0; border-radius:0; padding:0; color:#fff !important; background:transparent; box-shadow:none; font-size:clamp(1.15rem,2.7vw,1.9rem) !important; font-weight:700; letter-spacing:.065em; line-height:1.4; text-shadow:0 2px 3px rgba(0,0,0,.98),0 0 10px rgba(0,0,0,.92); }
+body .robin-real-hero .robin-real-footer .robin-real-fullname { margin:0; border:0; border-radius:0; padding:0; color:#fff !important; background:transparent; box-shadow:none; font-size:clamp(2rem,4.8vw,3.5rem) !important; font-weight:700; letter-spacing:.065em; line-height:1.4; text-shadow:0 2px 3px rgba(0,0,0,.98),0 0 10px rgba(0,0,0,.92); }
 body .robin-real-hero > .robin-real-actions { position:absolute; z-index:4; right:max(var(--robin-page-gutter),env(safe-area-inset-right)); bottom:max(1.35rem,env(safe-area-inset-bottom)); left:max(var(--robin-page-gutter),env(safe-area-inset-left)); display:flex; justify-content:center; gap:.75rem; margin:0; }
 body .robin-real-hero > .robin-real-actions a { border:1px solid rgba(255,255,255,.8); border-bottom:0; box-shadow:0 .35rem .9rem rgba(0,0,0,.28); }
 body .robin-real-hero > .robin-real-actions .robin-action-secondary { background:rgba(255,255,255,.94); }
@@ -35,7 +35,7 @@ body .robin-real-hero .robin-real-footer .robin-home-lab-emph { color:#70e3e7 !i
 
 /* Increase the lab identity's presence and protect cyan emphasis on bright frames. */
 body .robin-real-hero .robin-real-footer .robin-real-fullname {
-  font-size: clamp(1.15rem, 2.7vw, 1.9rem) !important;
+  font-size: clamp(2rem, 4.8vw, 3.5rem) !important;
 }
 
 body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
