@@ -2808,6 +2808,26 @@ body .robin-real-hero .robin-real-footer .robin-real-actions a {
   }
 }
 
+/* Maintain contrast over bright video frames without covering the footage. */
+body .robin-real-hero .robin-real-footer .robin-real-fullname {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  text-shadow: 0 2px 3px rgba(0,0,0,.98), 0 0 10px rgba(0,0,0,.92);
+}
+
+body .robin-real-hero .robin-real-statement {
+  max-width: 30rem;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: .5rem;
+  padding: .7rem .9rem;
+  background: rgba(4,15,21,.64);
+  box-shadow: 0 .35rem 1rem rgba(0,0,0,.42);
+  color: #fff !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.95);
+}
+
 /* Homepage hero controls and lab identity. */
 body .robin-real-hero .robin-real-stage::after { display: none !important; }
 body .robin-real-hero .robin-real-footer { position:absolute; z-index:4; top:max(6.5rem,env(safe-area-inset-top)); right:max(var(--robin-page-gutter),env(safe-area-inset-right)); left:max(var(--robin-page-gutter),env(safe-area-inset-left)); display:flex; justify-content:center; text-align:center; }
