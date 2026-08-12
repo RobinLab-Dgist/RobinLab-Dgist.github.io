@@ -2583,6 +2583,38 @@ body:has(.robin-research-intro) {
   padding-bottom: 1.4rem !important;
 }
 
+/* RORA 표지는 862x1058 세로형이라 가로 썸네일 칸(330x211)에 contain으로 넣으면
+   폭을 절반밖에 못 쓴다. 이 항목만 칸을 세로로 키운다. */
+.robin-publications li[data-pubnum="PR1"] {
+  min-height: 215px;
+}
+
+.robin-publications li[data-pubnum="PR1"] .robin-publication-image {
+  height: 180px !important;
+}
+
+@media (min-width: 1100px) {
+  .robin-publications li[data-pubnum="PR1"] {
+    min-height: 320px;
+  }
+
+  .robin-publications li[data-pubnum="PR1"] .robin-publication-image {
+    height: 280px !important;
+  }
+}
+
+/* 모바일에서는 썸네일이 폭 100%로 흐르므로 원본 비율을 그대로 쓴다 */
+@media (max-width: 700px) {
+  .robin-publications li[data-pubnum="PR1"] {
+    min-height: 0;
+  }
+
+  .robin-publications li[data-pubnum="PR1"] .robin-publication-image {
+    height: auto !important;
+    aspect-ratio: 862 / 1058 !important;
+  }
+}
+
 /* Selected / All 필터 */
 .robin-pub-filter {
   display: flex;

@@ -11,6 +11,10 @@ sections:
         <section class="robin-publications">
           <p class="robin-publications-note">† indicates corresponding authors. For the most current links and PDFs, visit <a href="https://scholar.google.com/citations?user=iMjIpUkAAAAJ&amp;hl=ko" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>.</p>
           <div class="robin-pub-filter" role="group" aria-label="Publication filter"><button type="button" class="robin-pub-filter-btn" data-filter="selected">Selected</button><button type="button" class="robin-pub-filter-btn" data-filter="all">All</button></div>
+          <h2>Preprint</h2>
+          <ol>
+            <li data-pubnum="PR1" class="robin-publication-entry" data-highlight-y-lee="2"><div>H. Lee, Y. Lee, K. Lee, D. J. Lee†, and Y. Lee†, “RORA: Realistic Object Reconstruction with Articulation” <em>arXiv preprint</em> [arXiv:2608.04842], 2026.</div><img class="robin-publication-image robin-publication-image-contain" src="/images/publications/RORA.png" alt="RORA realistic object reconstruction with articulation overview"><div class="pub-badges"><a class="pub-badge" href="https://arxiv.org/abs/2608.04842" target="_blank" rel="noopener noreferrer">Paper</a></div></li>
+          </ol>
           <h2>International Journal</h2>
           <ol>
             <li data-pubnum="J9" data-selected="" class="robin-publication-entry" data-highlight-y-lee="1"><div>Y. Lee, H. Park, H. Kim, H. Ji, and D. J. Lee, “Human-in-the-Loop Object Segmentation for 3D Gaussian-Splatting” <em>Advanced Intelligent Systems</em> [AISY] (IF 6.1, Top 10%), 2026.</div><img class="robin-publication-image robin-publication-image-contain" src="/images/publications/HIL-OS.png" alt="Human-in-the-Loop Object Segmentation pipeline overview"><div class="pub-badges"><a class="pub-badge" href="https://advanced.onlinelibrary.wiley.com/doi/epdf/10.1002/aisy.202501025" target="_blank" rel="noopener noreferrer">Paper</a><a class="pub-badge" href="https://www.youtube.com/watch?v=aKyhMFH4LUs" target="_blank" rel="noopener noreferrer">YouTube</a></div></li>
