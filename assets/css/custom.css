@@ -521,6 +521,22 @@ main > article,
   transform: translateY(-2px);
 }
 
+.robin-real-actions a .robin-action-brand-icon {
+  display: inline-flex;
+  width: 1.05rem;
+  height: 1.05rem;
+  align-items: center;
+  color: inherit !important;
+  font-size: inherit;
+  line-height: 1;
+}
+
+.robin-action-brand-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .robin-hero-stats {
   display: flex;
   gap: 1.8rem;

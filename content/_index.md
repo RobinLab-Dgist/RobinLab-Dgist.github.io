@@ -20,8 +20,8 @@ sections:
               <a href="/research/" class="robin-action-primary">Explore Research <span>→</span></a>
               <a href="/publications/" class="robin-action-secondary">Publications <span>📄</span></a>
               <a href="#join-at-home" class="robin-action-secondary">Open Positions <span>→</span></a>
-              <a href="https://www.youtube.com/channel/UCC_Sw4ynsuwJ_RiO1LQwHew" target="_blank" rel="noopener noreferrer" class="robin-action-yt">YouTube <span>↗</span></a>
-              <a href="https://github.com/DGIST-ROBIN" target="_blank" rel="noopener noreferrer" class="robin-action-secondary">GitHub <span>↗</span></a>
+              <a href="https://www.youtube.com/channel/UCC_Sw4ynsuwJ_RiO1LQwHew" target="_blank" rel="noopener noreferrer" class="robin-action-yt">YouTube <span class="robin-action-brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></span></a>
+              <a href="https://github.com/DGIST-ROBIN" target="_blank" rel="noopener noreferrer" class="robin-action-secondary">GitHub <span class="robin-action-brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 .7a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.8 5.4-5.5 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .7Z"/></svg></span></a>
             </div>
           </div>
           <div class="robin-real-stage robin-gripper-stage">
