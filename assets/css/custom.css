@@ -2371,14 +2371,21 @@ body {
     background: #101d24;
   }
 
-  /* Preserve the full dual-arm scene on portrait displays instead of cropping it. */
+  /* Fill portrait displays without exposing letterbox bands. */
   body .robin-real-hero .robin-real-stage .robin-gripper-video {
     width: 100% !important;
     height: 100% !important;
     max-width: none !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    background: #d8d8d8 !important;
+    object-fit: cover !important;
+    object-position: center 55% !important;
+    background: #101d24 !important;
+  }
+
+  /* Keep the central work area in view on especially tall phones. */
+  @media (max-aspect-ratio: 9/16) {
+    body .robin-real-hero .robin-real-stage .robin-gripper-video {
+      object-position: center 60% !important;
+    }
   }
 
   body .robin-real-hero .robin-real-stage::after {
