@@ -13,7 +13,7 @@ summary: ROBIN Lab People Overview
   <article class="robin-info-card robin-info-card-featured">
     <p class="robin-card-kicker">LAB DIRECTOR & PROFESSOR</p>
     <h2>Principal Investigator (PI)</h2>
-    <p>Prof. Yong seok Lee leads research on high-fidelity teleoperation, digital twins, and physical AI systems at DGIST.</p>
+    <p>Prof. Yongseok Lee leads research on high-fidelity teleoperation, digital twins, and physical AI systems at DGIST.</p>
     <a href="/team/pi/" class="robin-card-link" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; background: #005b7c; color: #fff !important; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none;">View PI Profile <span>→</span></a>
   </article>
 
