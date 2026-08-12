@@ -13,27 +13,25 @@ sections:
       text: |-
         <section class="robin-real-hero">
           <div class="robin-real-copy">
-            <p class="robin-real-kicker">DGIST · Department of Robotics and Mechatronics Engineering</p>
-            <h1>ROBIN<br><em>Lab</em></h1>
             <p class="robin-real-statement">From human intent to physical intelligence.</p>
-            <div class="robin-real-actions">
-              <a href="/research/" class="robin-action-primary">Explore Research <span>→</span></a>
-              <a href="/publications/" class="robin-action-secondary">Publications <span>→</span></a>
-              <a href="#join-at-home" class="robin-action-secondary">Open Positions <span>→</span></a>
-              <a href="https://www.youtube.com/channel/UCC_Sw4ynsuwJ_RiO1LQwHew" target="_blank" rel="noopener noreferrer" class="robin-action-yt">YouTube <span class="robin-action-brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></span></a>
-            </div>
           </div>
           <div class="robin-real-stage robin-gripper-stage">
             <video class="robin-gripper-video" autoplay muted playsinline preload="auto" aria-label="ROBIN dual RB5 cloth demonstration"><source src="/media/dual-rb5-robin-cloth-1440p.mp4?v=20260731-1" type="video/mp4"></video>
           </div>
+          <div class="robin-real-footer">
             <p class="robin-real-fullname"><span class="robin-home-lab-emph">ROB</span>OT <span class="robin-home-lab-emph">IN</span>TERFACE, <span class="robin-home-lab-emph">IN</span>TERACTION, AND <span class="robin-home-lab-emph">IN</span>TELLIGENCE LABORATORY</p>
+            <div class="robin-real-actions">
+              <a href="#join-at-home" class="robin-action-secondary">Open Positions <span>→</span></a>
+              <a href="https://www.youtube.com/channel/UCC_Sw4ynsuwJ_RiO1LQwHew" target="_blank" rel="noopener noreferrer" class="robin-action-yt">YouTube <span class="robin-action-brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></span></a>
+            </div>
+          </div>
         </section>
     design:
       columns: '1'
   - block: markdown
     id: research-in-action
     content:
-      title: "Research in Action"
+      title: "Research in ROBIN Lab"
       subtitle: "Systems built to move beyond the screen."
       text: |-
         <p class="robin-home-research-intro">We combine high-fidelity teleoperation, digital twins, and robot learning to build Physical AI systems that seamlessly operate in complex real-world environments.</p>

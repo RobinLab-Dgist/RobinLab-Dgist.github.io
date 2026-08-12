@@ -2723,6 +2723,45 @@ body .robin-team-heading h1 em {
   display: block;
 }
 
+/* Homepage hero: keep only the action links beneath the lab's full name. */
+body .robin-real-hero .robin-real-stage::after {
+  display: none !important;
+}
+
+body .robin-real-hero .robin-real-footer {
+  position: absolute;
+  z-index: 4;
+  right: max(var(--robin-page-gutter), env(safe-area-inset-right));
+  bottom: max(1.35rem, env(safe-area-inset-bottom));
+  left: max(var(--robin-page-gutter), env(safe-area-inset-left));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  color: #fff;
+  text-align: center;
+}
+
+body .robin-real-hero .robin-real-footer .robin-real-fullname {
+  margin: 0;
+  color: #fff !important;
+  font-size: clamp(.68rem, 2.5vw, .92rem) !important;
+  font-weight: 700;
+  letter-spacing: .045em;
+  line-height: 1.5;
+  text-shadow: 0 2px 14px rgba(0,0,0,.72);
+}
+
+body .robin-real-hero .robin-real-footer .robin-real-actions {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+body .robin-real-hero .robin-real-footer .robin-real-actions a {
+  border-bottom: 0;
+}
+
 /* Compact the transition from homepage research to recruitment. */
 @media (min-width: 901px) {
   #research-in-action {
