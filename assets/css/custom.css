@@ -2906,3 +2906,13 @@ html {
 body .robin-real-hero .robin-gripper-video {
   filter: brightness(.88) contrast(1.45) saturate(.85);
 }
+
+/* 홈 배경이 순백이라 화면에 따라 밋밋하게 보인다(맥북에서만 회색기가 도는 건
+   디스플레이 특성). 어느 화면에서든 흰 카드와 구분되도록 명시한다. */
+body:has(.robin-real-hero) {
+  background: #f1f5f6;
+}
+
+body:has(.robin-real-hero) .page-body {
+  background: transparent;
+}
