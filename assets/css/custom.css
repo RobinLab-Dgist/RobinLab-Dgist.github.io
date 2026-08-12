@@ -2227,15 +2227,26 @@ body {
 
   body #site-header .nav-dropdown-list,
   body .site-header .nav-dropdown-list {
-    display: block !important;
     position: static !important;
-    visibility: visible !important;
-    opacity: 1 !important;
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
     margin: 0.3rem 0 0 !important;
     box-shadow: none !important;
+  }
+
+  body #site-header .nav-dropdown > [aria-expanded="false"] + .nav-dropdown-list,
+  body .site-header .nav-dropdown > [aria-expanded="false"] + .nav-dropdown-list {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  body #site-header .nav-dropdown > [aria-expanded="true"] + .nav-dropdown-list,
+  body .site-header .nav-dropdown > [aria-expanded="true"] + .nav-dropdown-list {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .robin-research-videos,
@@ -2247,10 +2258,10 @@ body {
     transform: none !important;
   }
 
-  .robin-team-heading,
-  .robin-team-history,
-  .robin-join-detail-grid,
-  .robin-join-apply {
+  body .robin-team-heading,
+  body .robin-team-history,
+  body .robin-join-detail-grid,
+  body .robin-join-apply {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
@@ -2264,6 +2275,7 @@ body {
   body .robin-team-portrait {
     width: min(100%, 340px) !important;
     height: auto !important;
+    justify-self: start;
   }
 
   body:has(.robin-real-hero) .robin-real-hero {
