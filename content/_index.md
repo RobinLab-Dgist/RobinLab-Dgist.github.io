@@ -13,7 +13,6 @@ sections:
       text: |-
         <section class="robin-real-hero">
           <div class="robin-real-copy">
-            <p class="robin-real-statement">From human intent to physical intelligence.</p>
           </div>
           <div class="robin-real-stage robin-gripper-stage">
             <video class="robin-gripper-video" autoplay muted playsinline preload="auto" aria-label="ROBIN dual RB5 cloth demonstration"><source src="/media/dual-rb5-robin-cloth-1440p.mp4?v=20260731-1" type="video/mp4"></video>
