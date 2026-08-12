@@ -2622,8 +2622,7 @@ body:has(.robin-research-intro) {
   background: #005b7c;
 }
 
-.robin-publications.is-filtered li:not([data-selected]),
-.robin-publications.is-patent li:not([data-pubnum^="P"]) {
+.robin-publications.is-filtered li:not([data-selected]) {
   display: none;
 }
 
@@ -2635,6 +2634,14 @@ body:has(.robin-publications) .page-body section:first-of-type .mb-6.text-3xl.fo
   font-size: clamp(2.5rem, 4vw, 3.4rem) !important;
   line-height: 1.14;
   letter-spacing: -.035em;
+}
+
+/* Research의 하위 섹션 제목(Robot Interface/Interaction/Intelligence).
+   기본 1.875rem은 너무 작고, 위의 페이지 제목보다는 작아야 한다. */
+body:has(.robin-research-intro) .page-body section:not(:first-of-type) .mb-6.text-3xl.font-bold {
+  font-size: clamp(2rem, 3vw, 2.6rem) !important;
+  line-height: 1.18;
+  letter-spacing: -.03em;
 }
 
 /* 사진 옆 번호를 J1/C1/P1 형식으로. 오래된 논문이 1번이라
