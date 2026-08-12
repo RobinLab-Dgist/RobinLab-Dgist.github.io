@@ -2887,3 +2887,22 @@ body .robin-real-hero .robin-gripper-video { filter:brightness(.7) contrast(1.65
     background-size:auto 44px !important;
   }
 }
+
+/* 페이지마다 세로 스크롤바 유무가 갈려 헤더가 15px씩 어긋난다(news는 짧아서
+   스크롤바가 없다). 스크롤바 자리를 항상 비워 두면 위치가 고정된다. */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* 헤더 80px 안에서 로고 박스(68px)가 아래로 치우쳐 아래쪽이 헤더를 넘어간다.
+   위아래 여백이 각각 6px이 되도록 올린다. (측정: transform 없을 때 top=25.6px) */
+#site-header .navbar-brand,
+.site-header .navbar-brand {
+  transform: translateY(-19.6px);
+}
+
+/* 히어로 영상이 어두워 보인다. 원본 규칙은 brightness(.7)이었고,
+   흰 텍스트 가독성 때문에 contrast/saturate는 그대로 둔다. */
+body .robin-real-hero .robin-gripper-video {
+  filter: brightness(.88) contrast(1.45) saturate(.85);
+}
