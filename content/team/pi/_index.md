@@ -12,7 +12,7 @@ sections:
           <div class="robin-team-label">Principal Investigator</div>
           <div class="robin-team-heading">
             <div>
-              <h1>Yong-Seok Lee, <em>Ph.D.</em></h1>
+              <h1><span class="robin-team-name">Yong-Seok Lee</span><em>Ph.D.</em></h1>
               <p class="robin-team-role">Assistant Professor · Department of Robotics and Mechatronics Engineering · DGIST</p>
             </div>
             <div class="robin-team-contact">

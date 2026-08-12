@@ -140,6 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
           ? `<strong class="robin-author-highlight">${name}</strong>`
           : name;
       });
+      if (entry.dataset.pubnum === 'PR1') {
+        authorText.innerHTML = authorText.innerHTML.replace(
+          /\bK\. Lee\b/,
+          '<strong class="robin-author-highlight">K. Lee</strong>',
+        );
+      }
     }
   });
 });

@@ -2716,3 +2716,39 @@ body:has(.robin-research-intro) .page-body section:not(:first-of-type) .mb-6.tex
     padding: 1rem !important;
   }
 }
+
+/* Compact the transition from homepage research to recruitment. */
+@media (min-width: 901px) {
+  #research-in-action {
+    padding-bottom: 3rem !important;
+  }
+
+  #join-at-home {
+    padding-top: 3rem !important;
+  }
+
+  /* Balance the PI profile's two-line title with its portrait and contact block. */
+  body .robin-team-heading {
+    grid-template-columns: minmax(0, 1fr) 340px !important;
+    column-gap: 4rem !important;
+  }
+
+  body .robin-team-heading h1 {
+    font-size: clamp(2.8rem, 4.2vw, 4.6rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body .robin-team-heading h1 .robin-team-name,
+  body .robin-team-heading h1 em {
+    display: block;
+  }
+
+  body .robin-team-heading h1 em {
+    margin-top: 0.08em;
+  }
+
+  body .robin-team-portrait {
+    width: 340px !important;
+    height: 440px !important;
+  }
+}
