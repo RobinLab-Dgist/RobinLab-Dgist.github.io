@@ -2904,7 +2904,9 @@ html {
 /* 히어로 영상이 어두워 보인다. 원본 규칙은 brightness(.7)이었고,
    흰 텍스트 가독성 때문에 contrast/saturate는 그대로 둔다. */
 body .robin-real-hero .robin-gripper-video {
-  filter: brightness(.88) contrast(1.45) saturate(.85);
+  /* contrast를 올린 채 brightness까지 올리면 밝은 배경이 255를 넘어 흰색으로
+     뭉개진다(맥북은 대비가 높아 티가 덜 난다). contrast는 빼고 밝기만 조절한다. */
+  filter: brightness(.85) saturate(.9);
 }
 
 /* 홈 배경이 순백이라 화면에 따라 밋밋하게 보인다(맥북에서만 회색기가 도는 건
