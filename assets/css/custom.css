@@ -2930,3 +2930,15 @@ body:has(.robin-real-hero) {
 body:has(.robin-real-hero) .page-body {
   background: transparent;
 }
+
+/* The tablet header stays over the hero, so reserve its full height for the title. */
+@media (min-width:561px) and (max-width:1099px) {
+  body .robin-real-hero .robin-real-footer {
+    top:max(10rem, calc(env(safe-area-inset-top) + 2rem)) !important;
+  }
+
+  body .robin-real-hero .robin-real-footer .robin-real-fullname {
+    font-size:clamp(1.5rem, 3.5vw, 2rem) !important;
+    line-height:1.3;
+  }
+}
