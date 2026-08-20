@@ -20,7 +20,7 @@ summary: ROBIN Lab People Overview
   <article class="robin-info-card">
     <p class="robin-card-kicker">RESEARCH TEAM</p>
     <h2>Lab Members</h2>
-    <p>Master’s candidates and undergraduate student researchers working across robot interfaces, interaction, and intelligence.</p>
+    <p>Master’s candidates and research interns working across robot interfaces, interaction, and intelligence.</p>
     <a href="/team/members/" class="robin-card-link" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid #005b7c; color: #005b7c !important; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none;">View All Members <span>→</span></a>
   </article>
 </div>

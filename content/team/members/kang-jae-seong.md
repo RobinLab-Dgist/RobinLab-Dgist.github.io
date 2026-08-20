@@ -6,5 +6,5 @@ sections:
     content:
       title: ""
       text: |-
-        <section class="robin-member-profile-page"><img src="/images/members/jae-song-kang.jpg" alt="Seongjae Kang"><div><p class="robin-page-kicker">ROBIN LAB MEMBER</p><h1>Seongjae Kang</h1><p class="robin-member-profile-role">Undergraduate student</p><a class="robin-member-profile-email" href="mailto:rkd020320@kangwon.ac.kr">rkd020320@kangwon.ac.kr</a><a class="robin-member-profile-back" href="/team/members/">← Back to Members</a></div></section>
+        <section class="robin-member-profile-page"><img src="/images/members/jae-song-kang.jpg" alt="Seongjae Kang"><div><p class="robin-page-kicker">ROBIN LAB MEMBER</p><h1>Seongjae Kang</h1><p class="robin-member-profile-role">Research Intern</p><a class="robin-member-profile-email" href="mailto:rkd020320@kangwon.ac.kr">rkd020320@kangwon.ac.kr</a><a class="robin-member-profile-back" href="/team/members/">← Back to Members</a></div></section>
 ---
