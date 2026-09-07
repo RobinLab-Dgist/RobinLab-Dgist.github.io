@@ -27,7 +27,7 @@ sections:
             <p class="robin-member-empty-note">Ph.D. researcher profiles will be added as the cohort grows.</p>
           </div>
           <div class="robin-member-group">
-            <h3>Research Interns <span class="robin-group-count">11</span></h3>
+            <h3>Research Interns <span class="robin-group-count">14</span></h3>
             <div class="robin-member-grid robin-member-grid-undergraduate">
               <article class="robin-member-card"><img src="/images/members/hye-sung-lee.jpg" alt="Hyesung Lee"><h4><a class="robin-member-name-link" href="/team/members/hye-sung-lee/">Hyesung Lee</a></h4><p>Research Intern</p><a class="robin-member-email" href="mailto:mireflare@snu.ac.kr">mireflare@snu.ac.kr</a></article>
               <article class="robin-member-card"><img src="/images/members/jun-hyeok-lee.jpg" alt="Junhyeok Lee"><h4><a class="robin-member-name-link" href="/team/members/jun-hyeok-lee/">Junhyeok Lee</a></h4><p>Research Intern</p><a class="robin-member-email" href="mailto:leejh9396@dgist.ac.kr">leejh9396@dgist.ac.kr</a></article>
@@ -40,6 +40,9 @@ sections:
               <article class="robin-member-card"><img src="/images/members/min-jae-kim.jpg" alt="Minjae Kim"><h4><a class="robin-member-name-link" href="https://mjkim001130.github.io/">Minjae Kim</a></h4><p>Research Intern</p><a class="robin-member-email" href="mailto:mjkim00@yonsei.ac.kr">mjkim00@yonsei.ac.kr</a></article>
               <article class="robin-member-card"><img src="/images/members/min-hyung-lee.jpg" alt="Minhyung Lee"><h4><a class="robin-member-name-link" href="/team/members/min-hyung-lee/">Minhyung Lee</a></h4><p>Research Intern</p><a class="robin-member-email" href="mailto:fnskspdk0719@naver.com">fnskspdk0719@naver.com</a></article>
               <article class="robin-member-card"><img src="/images/members/joo-yun-kim.jpg" alt="JooYun Kim"><h4><a class="robin-member-name-link" href="/team/members/joo-yun-kim/">JooYun Kim</a></h4><p>Research Intern</p><a class="robin-member-email" href="mailto:rlawndus4801@gmail.com">rlawndus4801@gmail.com</a></article>
+              <article class="robin-member-card"><img src="/images/members/jae-seong-hwang.jpg" alt="Jaeseong Hwang"><h4><a class="robin-member-name-link" href="/team/members/jae-seong-hwang/">Jaeseong Hwang</a></h4><p>Research Intern</p><a class="robin-member-email" href="mailto:hjs3169@dgist.ac.kr">hjs3169@dgist.ac.kr</a></article>
+              <article class="robin-member-card"><img src="/images/members/chi-hun-yu.jpg" alt="Chihun Yu"><h4><a class="robin-member-name-link" href="/team/members/chi-hun-yu/">Chihun Yu</a></h4><p>Research Intern</p><a class="robin-member-email" href="mailto:ridoyu29@gmail.com">ridoyu29@gmail.com</a></article>
+              <article class="robin-member-card"><img src="/images/members/jun-han-jeong.jpg" alt="Junhan Jeong"><h4><a class="robin-member-name-link" href="/team/members/jun-han-jeong/">Junhan Jeong</a></h4><p>Research Intern</p><a class="robin-member-email" href="mailto:kevin1579@naver.com">kevin1579@naver.com</a></article>
             </div>
           </div>
           <div class="robin-member-group robin-member-group-empty">
