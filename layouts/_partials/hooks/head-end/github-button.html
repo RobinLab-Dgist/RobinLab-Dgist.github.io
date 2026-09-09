@@ -210,21 +210,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const heroVideo = document.querySelector('.robin-gripper-video');
+  const heroVideo = document.querySelector('.robin-cinematic-video');
   if (!heroVideo) return;
-
+  const hero = heroVideo.closest('.robin-cinematic-hero');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   heroVideo.loop = false;
-  const holdFinalFrame = () => {
-    if (!Number.isFinite(heroVideo.duration)) return;
-    // The source clip returns to its opening pose during its final second.
-    // Hold on the authored ROBIN end card before that reset begins.
-    const finalFrameTime = Math.max(0, heroVideo.duration - 1);
-    if (heroVideo.currentTime < finalFrameTime) return;
-    heroVideo.pause();
-    heroVideo.currentTime = finalFrameTime;
+  heroVideo.muted = true;
+  const play = () => {
+    hero.classList.remove('is-static');
+    hero.classList.add('is-motion-enabled');
+    heroVideo.play().catch(() => {
+      if (!heroVideo.currentTime) hero.classList.add('is-static');
+    });
   };
-
-  heroVideo.addEventListener('timeupdate', holdFinalFrame);
-  heroVideo.addEventListener('ended', holdFinalFrame);
+  // The encoded final frame holds naturally; never seek on timeupdate/ended.
+  heroVideo.addEventListener('error', () => {
+    hero.classList.add('is-static');
+  });
+  reducedMotion.addEventListener('change', ({ matches }) => {
+    if (matches) {
+      heroVideo.pause();
+      hero.classList.remove('is-motion-enabled');
+      hero.classList.add('is-static');
+    }
+  });
+  if (reducedMotion.matches) hero.classList.add('is-static');
+  else play();
 });
 </script>

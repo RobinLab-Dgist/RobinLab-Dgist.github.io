@@ -11,11 +11,12 @@ sections:
       title: ""
       subtitle: ""
       text: |-
-        <section class="robin-real-hero">
+        <section class="robin-real-hero robin-cinematic-hero">
           <div class="robin-real-copy">
           </div>
           <div class="robin-real-stage robin-gripper-stage">
-            <video class="robin-gripper-video" autoplay muted playsinline preload="auto" aria-label="ROBIN dual RB5 cloth demonstration"><source src="/media/dual-rb5-robin-cloth-1440p.mp4?v=20260731-1" type="video/mp4"></video>
+            <img class="robin-cinematic-poster" src="/media/robin-logo-cinematic-poster.jpg" alt="" aria-hidden="true" fetchpriority="high">
+            <video id="robin-cinematic-video" class="robin-gripper-video robin-cinematic-video" muted playsinline preload="none" poster="/media/robin-logo-cinematic-poster.jpg" aria-label="The white ROBIN logo arm places its glowing blue tesseract above the I, completing the lab logo"><source src="/media/robin-logo-cinematic.mp4" type="video/mp4"></video>
           </div>
           <div class="robin-real-footer">
             <p class="robin-real-fullname"><span class="robin-home-lab-emph">ROB</span>OT <span class="robin-home-lab-emph">IN</span>TERFACE, <span class="robin-home-lab-emph">IN</span>TERACTION, AND <span class="robin-home-lab-emph">IN</span>TELLIGENCE LABORATORY</p>
