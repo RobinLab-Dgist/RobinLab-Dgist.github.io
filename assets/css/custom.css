@@ -2968,6 +2968,27 @@ body .robin-cinematic-hero.is-static .robin-cinematic-video {
   visibility: hidden;
 }
 
+/* Keep the full laboratory name proportional at narrow and short viewports. */
+body .robin-real-hero .robin-real-footer .robin-real-fullname {
+  max-width: min(100%, 70rem);
+  font-size: clamp(1rem, min(calc(.65rem + 1vw), 3.5svh), 1.625rem) !important;
+  font-weight: 600;
+  letter-spacing: clamp(.02em, .12vw, .045em);
+  line-height: 1.45;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-shadow: 0 2px 6px rgba(0,0,0,.55) !important;
+}
+
+body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
+  color: #2786c6 !important;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: inherit;
+  text-shadow: inherit !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   body .robin-cinematic-hero:not(.is-motion-enabled) .robin-cinematic-video {
     visibility: hidden;
