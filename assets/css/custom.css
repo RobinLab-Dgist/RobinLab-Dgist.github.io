@@ -2964,8 +2964,14 @@ body .robin-cinematic-hero .robin-real-stage .robin-cinematic-poster {
   filter: none;
 }
 
-body .robin-cinematic-hero.is-static .robin-cinematic-video {
-  visibility: hidden;
+/* Default to the logo even if playback is blocked, delayed or JavaScript fails. */
+body .robin-cinematic-hero .robin-real-stage .robin-cinematic-poster {
+  z-index: 1;
+  pointer-events: none;
+}
+
+body .robin-cinematic-hero.is-video-ready .robin-cinematic-poster {
+  opacity: 0;
 }
 
 /* Keep the full laboratory name proportional at narrow and short viewports. */
@@ -2990,7 +2996,10 @@ body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body .robin-cinematic-hero:not(.is-motion-enabled) .robin-cinematic-video {
+  body .robin-cinematic-hero .robin-cinematic-video {
     visibility: hidden;
+  }
+  body .robin-cinematic-hero .robin-cinematic-poster {
+    opacity: 1;
   }
 }

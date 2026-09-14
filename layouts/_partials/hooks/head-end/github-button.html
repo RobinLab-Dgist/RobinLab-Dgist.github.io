@@ -216,25 +216,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   heroVideo.loop = false;
   heroVideo.muted = true;
+  // The poster stays above a visible video so iOS can start inline playback.
+  const showPoster = () => hero.classList.remove('is-video-ready');
+  const showPlayingFrame = () => {
+    if (!reducedMotion.matches && !heroVideo.paused &&
+        heroVideo.readyState >= 2 && heroVideo.currentTime >= 0.2) {
+      hero.classList.add('is-video-ready');
+    }
+  };
   const play = () => {
-    hero.classList.remove('is-static');
-    hero.classList.add('is-motion-enabled');
-    heroVideo.play().catch(() => {
-      if (!heroVideo.currentTime) hero.classList.add('is-static');
-    });
+    if (reducedMotion.matches || heroVideo.ended || heroVideo.error) return;
+    try {
+      const pending = heroVideo.play();
+      if (pending && pending.catch) pending.catch(showPoster);
+    } catch (_) {
+      showPoster();
+    }
   };
   // The encoded final frame holds naturally; never seek on timeupdate/ended.
-  heroVideo.addEventListener('error', () => {
-    hero.classList.add('is-static');
+  heroVideo.addEventListener('timeupdate', showPlayingFrame);
+  heroVideo.addEventListener('playing', showPlayingFrame);
+  ['error', 'waiting', 'emptied'].forEach((event) => heroVideo.addEventListener(event, showPoster));
+  heroVideo.addEventListener('stalled', () => {
+    if (heroVideo.readyState < 3) showPoster();
   });
-  reducedMotion.addEventListener('change', ({ matches }) => {
-    if (matches) {
+  heroVideo.addEventListener('pause', () => {
+    if (!heroVideo.ended) showPoster();
+  });
+  const onMotionChange = () => {
+    if (reducedMotion.matches) {
+      showPoster();
       heroVideo.pause();
-      hero.classList.remove('is-motion-enabled');
-      hero.classList.add('is-static');
+    } else {
+      play();
     }
+  };
+  if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', onMotionChange);
+  else if (reducedMotion.addListener) reducedMotion.addListener(onMotionChange);
+
+  // An intentional tap on the film can unlock an in-app browser's autoplay policy.
+  // Keep navigation links untouched and do not introduce playback controls.
+  let tapRetried = false;
+  hero.addEventListener('pointerup', (event) => {
+    if (tapRetried || reducedMotion.matches || heroVideo.ended ||
+        event.target.closest('a, button, input, select, textarea')) return;
+    if (!hero.classList.contains('is-video-ready')) {
+      tapRetried = true;
+      play();
+    }
+  }, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && !heroVideo.ended) showPoster();
   });
-  if (reducedMotion.matches) hero.classList.add('is-static');
-  else play();
+  showPoster();
+  play();
 });
 </script>
