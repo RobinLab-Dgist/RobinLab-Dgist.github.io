@@ -16,7 +16,7 @@ sections:
           </div>
           <div class="robin-real-stage robin-gripper-stage">
             <img class="robin-cinematic-poster" src="/media/robin-logo-cinematic-poster.jpg" alt="" aria-hidden="true" fetchpriority="high">
-            <video id="robin-cinematic-video" class="robin-gripper-video robin-cinematic-video" muted playsinline preload="none" poster="/media/robin-logo-cinematic-poster.jpg" aria-label="The white ROBIN logo arm places its glowing blue tesseract above the I, completing the lab logo"><source src="/media/robin-logo-cinematic.mp4" type="video/mp4"></video>
+            <video id="robin-cinematic-video" class="robin-gripper-video robin-cinematic-video" autoplay muted playsinline webkit-playsinline preload="metadata" poster="/media/robin-logo-cinematic-poster.jpg" aria-label="The white ROBIN logo arm places its glowing blue tesseract above the I, completing the lab logo"><source src="/media/robin-logo-cinematic-mobile.mp4" type="video/mp4" media="(max-width: 900px)"><source src="/media/robin-logo-cinematic.mp4" type="video/mp4"></video>
           </div>
           <div class="robin-real-footer">
             <p class="robin-real-fullname"><span class="robin-home-lab-emph">ROB</span>OT <span class="robin-home-lab-emph">IN</span>TERFACE, <span class="robin-home-lab-emph">IN</span>TERACTION, AND <span class="robin-home-lab-emph">IN</span>TELLIGENCE LABORATORY</p>

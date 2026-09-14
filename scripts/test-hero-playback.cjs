@@ -7,7 +7,7 @@ const path = require('node:path');
 const source = fs.readFileSync(path.join(__dirname, '../layouts/_partials/hooks/head-end/github-button.html'), 'utf8');
 const controller = source.slice(source.lastIndexOf("document.addEventListener('DOMContentLoaded'"), source.lastIndexOf('</script>'));
 function fixture({ reduced = false, legacy = false, play = () => Promise.resolve() } = {}) {
-  const classes = new Set(), events = {}, documentEvents = {}, heroEvents = {};
+  const classes = new Set(), events = {}, documentEvents = {}, heroEvents = {}, windowEvents = {};
   const hero = { classList: { add: x => classes.add(x), remove: x => classes.delete(x), contains: x => classes.has(x) },
     addEventListener: (e, fn) => heroEvents[e] = fn };
   let plays = 0;
@@ -19,8 +19,9 @@ function fixture({ reduced = false, legacy = false, play = () => Promise.resolve
   else motion.addEventListener = (_, fn) => motion.change = fn;
   const document = { hidden: false, querySelector: () => video,
     addEventListener: (e, fn) => { if (e === 'DOMContentLoaded') fn(); else documentEvents[e] = fn; } };
-  vm.runInNewContext(controller, { document, window: { matchMedia: () => motion } });
-  return { video, events, motion, document, documentEvents, heroEvents,
+  vm.runInNewContext(controller, { document, window: { PointerEvent: function () {}, matchMedia: () => motion,
+    addEventListener: (e, fn) => windowEvents[e] = fn } });
+  return { video, events, motion, document, documentEvents, heroEvents, windowEvents,
     ready: () => classes.has('is-video-ready'), plays: () => plays,
     advance: () => { Object.assign(video, { currentTime: 0.3, readyState: 2, paused: false }); events.timeupdate(); } };
 }
@@ -69,13 +70,35 @@ test('reduced motion works with modern and legacy WebView listeners', () => {
   }
 });
 
-test('one tap retries synchronously while links, reduced motion and ended video do not', () => {
+test('a real tap retries playback, permits explicit reduced-motion playback, and ignores links/end', () => {
   const f = fixture();
   const tap = link => f.heroEvents.pointerup({ target: { closest: () => link } });
   tap({}); assert.equal(f.plays(), 1);
   tap(null); assert.equal(f.plays(), 2);
-  tap(null); assert.equal(f.plays(), 2);
+  f.video.ended = true; tap(null); assert.equal(f.plays(), 2);
   const reduced = fixture({ reduced: true });
   reduced.heroEvents.pointerup({ target: { closest: () => null } });
-  assert.equal(reduced.plays(), 0);
+  assert.equal(reduced.plays(), 1);
+  reduced.advance(); assert.equal(reduced.ready(), true);
+});
+
+test('canplay and foreground restoration retry an interrupted video without restarting an ended one', () => {
+  const f = fixture();
+  f.events.canplay(); assert.equal(f.plays(), 2);
+  f.document.hidden = true; f.documentEvents.visibilitychange();
+  assert.equal(f.plays(), 2);
+  f.document.hidden = false; f.documentEvents.visibilitychange();
+  assert.equal(f.plays(), 3);
+  f.windowEvents.pageshow(); assert.equal(f.plays(), 4);
+  f.video.ended = true; f.windowEvents.pageshow(); f.events.canplay();
+  assert.equal(f.plays(), 4);
+});
+
+test('fixed light configuration overrides a stale dark class without changing stored preferences', () => {
+  const script = fs.readFileSync(path.join(__dirname, '../layouts/_partials/hooks/head-end/light-theme.html'), 'utf8').match(/<script>([\s\S]*?)<\/script>/)[1];
+  const classes = new Set(['dark']);
+  const root = { dataset: { wcThemeDefault: 'light' }, classList: { remove: x => classes.delete(x) }, style: {} };
+  vm.runInNewContext(script, { document: { documentElement: root, addEventListener: () => {} }, window: { addEventListener: () => {} } });
+  assert.equal(classes.has('dark'), false);
+  assert.equal(root.style.colorScheme, 'only light');
 });

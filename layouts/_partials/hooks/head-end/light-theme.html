@@ -1,0 +1,15 @@
+<meta name="color-scheme" content="only light">
+<script>
+// This site has a fixed light theme and no theme switcher. An old saved dark
+// preference must not override the configured theme on individual devices.
+(() => {
+  const applyConfiguredTheme = () => {
+    if (document.documentElement.dataset.wcThemeDefault !== 'light') return;
+    document.documentElement.classList.remove('dark');
+    document.documentElement.style.colorScheme = 'only light';
+  };
+  applyConfiguredTheme();
+  document.addEventListener('DOMContentLoaded', applyConfiguredTheme);
+  window.addEventListener('pageshow', applyConfiguredTheme);
+})();
+</script>

@@ -2996,10 +2996,10 @@ body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body .robin-cinematic-hero .robin-cinematic-video {
+  body .robin-cinematic-hero:not(.is-user-playing) .robin-cinematic-video {
     visibility: hidden;
   }
-  body .robin-cinematic-hero .robin-cinematic-poster {
+  body .robin-cinematic-hero:not(.is-user-playing) .robin-cinematic-poster {
     opacity: 1;
   }
 }
