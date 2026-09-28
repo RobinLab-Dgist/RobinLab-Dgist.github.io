@@ -61,11 +61,23 @@ sections:
                 <p class="robin-card-kicker">WHY APPLY</p>
                 <h2>Why Apply to ROBIN Lab?</h2>
                 <div class="robin-join-reason">
-                  <h3>01. Proven Publication Track Record &amp; Mentorship</h3>
-                  <p>The PI has published as first author in <strong>Science Robotics</strong>, one of the most authoritative venues in robotics. During his tenure as a research professor at Seoul National University, he co-advised 7 students and achieved <strong>5 paper acceptances as first or co-corresponding author in the past year alone</strong>. At ROBIN Lab, undergraduate and graduate students have already submitted <strong>five papers to major robotics conferences</strong>. Students can take on ambitious research and receive close, hands-on mentorship toward submitting their work to leading robotics venues.</p>
+                  <details class="robin-join-reason-disclosure" open>
+                    <summary><h3>01. Proven Publication Track Record &amp; Mentorship</h3></summary>
+                    <div class="robin-join-reason-content"><p>The PI has published as first author in <strong>Science Robotics</strong>, one of the most authoritative venues in robotics. During his tenure as a research professor at Seoul National University, he co-advised 7 students and achieved <strong>5 paper acceptances as first or co-corresponding author in the past year alone</strong>. At ROBIN Lab, undergraduate and graduate students have already submitted <strong>five papers to major robotics conferences</strong>. Students can take on ambitious research and receive close, hands-on mentorship toward submitting their work to leading robotics venues.</p></div>
+                  </details>
                 </div>
-                <div class="robin-join-reason"><h3>02. Strong Academic &amp; Industry Alumni Network</h3><p>The professional network built during <strong>three years at Samsung Research</strong>, together with the network of his former lab (<a href="https://www.inrol.snu.ac.kr/alumni" target="_blank" rel="noopener noreferrer">INROL</a>), now extends across Samsung, Hyundai, Naver, humanoid startups (e.g., Rainbow Robotics and Holiday Robotics), and academia. Drawing on these connections and experience, we will do our utmost to help students secure positions at the companies or academic institutions they aspire to join after graduation.</p></div>
-                <div class="robin-join-reason"><h3>03. Cutting-Edge Topics &amp; Global Competitiveness</h3><p>Our lab continuously drives research on the most advanced frontiers in robotics, including <strong>Humanoids, Robot Foundation Models, and Digital Twins</strong>. Upon graduation, students emerge as globally competitive researchers equipped with both world-class academic achievements and high-demand practical expertise.</p></div>
+                <div class="robin-join-reason">
+                  <details class="robin-join-reason-disclosure" open>
+                    <summary><h3>02. Strong Academic &amp; Industry Alumni Network</h3></summary>
+                    <div class="robin-join-reason-content"><p>The professional network built during <strong>three years at Samsung Research</strong>, together with the network of his former lab (<a href="https://www.inrol.snu.ac.kr/alumni" target="_blank" rel="noopener noreferrer">INROL</a>), now extends across Samsung, Hyundai, Naver, humanoid startups (e.g., Rainbow Robotics and Holiday Robotics), and academia. Drawing on these connections and experience, we will do our utmost to help students secure positions at the companies or academic institutions they aspire to join after graduation.</p></div>
+                  </details>
+                </div>
+                <div class="robin-join-reason">
+                  <details class="robin-join-reason-disclosure" open>
+                    <summary><h3>03. Cutting-Edge Topics &amp; Global Competitiveness</h3></summary>
+                    <div class="robin-join-reason-content"><p>Our lab continuously drives research on the most advanced frontiers in robotics, including <strong>Humanoids, Robot Foundation Models, and Digital Twins</strong>. Upon graduation, students emerge as globally competitive researchers equipped with both world-class academic achievements and high-demand practical expertise.</p></div>
+                  </details>
+                </div>
               </article>
               <article class="robin-join-card robin-join-apply">
                 <p class="robin-card-kicker">APPLICATION PROCESS</p>
@@ -94,11 +106,23 @@ sections:
                 <p class="robin-card-kicker">WHY APPLY</p>
                 <h2>Why Apply to ROBIN Lab?</h2>
                 <div class="robin-join-reason">
-                  <h3>01. 검증된 연구 성과와 멘토링</h3>
-                  <p>지도교수는 로봇 분야의 권위 있는 저널인 <strong>Science Robotics</strong>에 1저자로 논문을 게재했습니다. 서울대학교 연구교수로 재직하며 7명의 학생을 공동 지도했고, 작년 한 해 <strong>5편의 논문</strong>을 1저자 또는 공동교신저자로 게재 승인시켰습니다. ROBIN Lab 학부생과 대학원생은 이미 <strong>주요 로봇 학회에 논문 5편을 제출</strong>했습니다. 학생들은 도전적인 연구를 수행하고 주요 학회 투고를 목표로 밀착 멘토링을 받을 수 있습니다.</p>
+                  <details class="robin-join-reason-disclosure" open>
+                    <summary><h3>01. 검증된 연구 성과와 멘토링</h3></summary>
+                    <div class="robin-join-reason-content"><p>지도교수는 로봇 분야의 권위 있는 저널인 <strong>Science Robotics</strong>에 1저자로 논문을 게재했습니다. 서울대학교 연구교수로 재직하며 7명의 학생을 공동 지도했고, 작년 한 해 <strong>5편의 논문</strong>을 1저자 또는 공동교신저자로 게재 승인시켰습니다. ROBIN Lab 학부생과 대학원생은 이미 <strong>주요 로봇 학회에 논문 5편을 제출</strong>했습니다. 학생들은 도전적인 연구를 수행하고 주요 학회 투고를 목표로 밀착 멘토링을 받을 수 있습니다.</p></div>
+                  </details>
                 </div>
-                <div class="robin-join-reason"><h3>02. 탄탄한 학계·산업계 동문 네트워크</h3><p><strong>삼성리서치에서 3년간 재직</strong>하며 얻은 네트워크 및 출신 연구실(<a href="https://www.inrol.snu.ac.kr/alumni" target="_blank" rel="noopener noreferrer"><strong>INROL</strong></a>)의 인적 네트워크는 현재 삼성, 현대, 네이버, 휴머노이드 스타트업(레인보우 로보틱스, 홀리데이 로보틱스 등) 및 학계 곳곳에 퍼져 있습니다. 이러한 역량과 네트워크를 살려 학생들이 졸업 이후에도 원하는 기업, 학교에 자리 잡을 수 있도록 최대한 지원할 예정입니다.</p></div>
-                <div class="robin-join-reason"><h3>03. 최첨단 연구 주제와 글로벌 경쟁력</h3><p>우리 연구실은 <strong>휴머노이드(Humanoid), 로봇 파운데이션 모델(Robot Foundation Models), 디지털 트윈(Digital Twin)</strong> 등 로봇 공학에서 가장 앞선 주제들을 지속적으로 다루는 만큼, 졸업 시점에서 세계 수준의 연구와 트렌디한 실무 경험을 동시에 갖춘 회사와 학계 모두에서 원하는 글로벌 인재가 될 수 있습니다.</p></div>
+                <div class="robin-join-reason">
+                  <details class="robin-join-reason-disclosure" open>
+                    <summary><h3>02. 탄탄한 학계·산업계 동문 네트워크</h3></summary>
+                    <div class="robin-join-reason-content"><p><strong>삼성리서치에서 3년간 재직</strong>하며 얻은 네트워크 및 출신 연구실(<a href="https://www.inrol.snu.ac.kr/alumni" target="_blank" rel="noopener noreferrer"><strong>INROL</strong></a>)의 인적 네트워크는 현재 삼성, 현대, 네이버, 휴머노이드 스타트업(레인보우 로보틱스, 홀리데이 로보틱스 등) 및 학계 곳곳에 퍼져 있습니다. 이러한 역량과 네트워크를 살려 학생들이 졸업 이후에도 원하는 기업, 학교에 자리 잡을 수 있도록 최대한 지원할 예정입니다.</p></div>
+                  </details>
+                </div>
+                <div class="robin-join-reason">
+                  <details class="robin-join-reason-disclosure" open>
+                    <summary><h3>03. 최첨단 연구 주제와 글로벌 경쟁력</h3></summary>
+                    <div class="robin-join-reason-content"><p>우리 연구실은 <strong>휴머노이드(Humanoid), 로봇 파운데이션 모델(Robot Foundation Models), 디지털 트윈(Digital Twin)</strong> 등 로봇 공학에서 가장 앞선 주제들을 지속적으로 다루는 만큼, 졸업 시점에서 세계 수준의 연구와 트렌디한 실무 경험을 동시에 갖춘 회사와 학계 모두에서 원하는 글로벌 인재가 될 수 있습니다.</p></div>
+                  </details>
+                </div>
               </article>
               <article class="robin-join-card robin-join-apply">
                 <p class="robin-card-kicker">APPLICATION PROCESS</p>

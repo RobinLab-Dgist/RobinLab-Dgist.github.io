@@ -38,6 +38,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  const disclosures = document.querySelectorAll('.robin-join-reason-disclosure');
+  if (!disclosures.length) return;
+
+  const mobile = window.matchMedia('(max-width: 700px)');
+  const syncDisclosureState = () => {
+    disclosures.forEach((disclosure) => {
+      disclosure.open = !mobile.matches;
+    });
+  };
+
+  disclosures.forEach((disclosure) => {
+    const summary = disclosure.querySelector(':scope > summary');
+    if (summary) {
+      summary.addEventListener('click', (event) => {
+        if (mobile.matches) return;
+        event.preventDefault();
+        disclosure.open = true;
+      });
+    }
+  });
+
+  syncDisclosureState();
+  mobile.addEventListener('change', syncDisclosureState);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   const publications = document.querySelector('.robin-publications');
   if (!publications) return;
 
