@@ -303,6 +303,8 @@ body .robin-real-hero .robin-real-fullname .robin-home-lab-emph {
 .robin-publications { margin-top:1rem; }.robin-publications-note { margin:0 0 2.5rem; color:#64748b; font-size:.95rem; }.robin-publications h2 { margin:3.5rem 0 1rem; border-top:1px solid #c9c7bf; padding-top:1rem; font-size:clamp(1.6rem,3.1vw,2.45rem); }.robin-publications ol { margin:0; padding:0; list-style:none; counter-reset:publication; }.robin-publications li { counter-increment:publication; position:relative; min-height:182px; margin-bottom:.4rem; border-top:1px solid #e1e4e6; padding:1.3rem 0 3.8rem 232px; color:#53646b; font-size:1rem; line-height:1.68; }.robin-publications li::before { content:counter(publication,decimal-leading-zero); position:absolute; z-index:2; top:1.55rem; left:0; color:#64748b; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.7rem; font-weight:600; }.robin-publications li::after { content:''; position:absolute; top:1.25rem; left:24px; width:188px; height:120px; border:1px solid #d8e0e3; border-radius:3px; background:#edf3f4 url('/images/publications/HIL-GS.gif') center/cover no-repeat; }.robin-publications em { color:#005b7c; font-weight:650; }.robin-publication-copy { display:flex; flex-direction:column; gap:.35rem; min-width:0; }.robin-publication-authors { color:#64748b; font-size:.84rem; line-height:1.5; }.robin-author-highlight { color:#102a3a; font-weight:800; }.robin-publication-title { color:#102a3a; font-size:1.12rem; font-weight:700; letter-spacing:-.02em; line-height:1.42; }.robin-publication-meta { color:#53646b; font-size:.88rem; line-height:1.5; }.robin-publications .robin-publication-entry > div { min-width:0; }.robin-publication-entry::after { display:none; }.robin-publication-entry video,.robin-publication-entry .robin-publication-image { position:absolute; z-index:1; top:1.25rem; left:24px; display:block; width:188px; height:120px; border-radius:3px; background:#121b20; object-fit:cover; }.pub-badges { position:absolute; left:232px; right:0; bottom:1rem; display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }.pub-badge { display:inline-flex; align-items:center; justify-content:center; min-height:1.55rem; border:1px solid #8aa8b5; border-radius:999px; padding:.2rem .6rem; color:#005b7c; background:#f5fafb; font-family:'Lexend Deca','Pretendard',sans-serif; font-size:.72rem; font-weight:700; line-height:1; text-decoration:none; transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease; }.pub-badge:hover { border-color:#005b7c; background:#e8f4f5; color:#003f57; transform:translateY(-1px); }.pub-badge.is-pending { border-color:#d4dce0; color:#8b989d; background:#f7f8f8; cursor:not-allowed; }.pub-badge-video { border-color:#005b7c; color:#fff; background:#005b7c; }.pub-badge-video:hover { border-color:#003f57; color:#fff; background:#003f57; }
 @media (max-width:700px) { .robin-publications li { min-height:0; padding:1rem 0 4.6rem 2.5rem; }.robin-publications li::after { position:static; display:block; width:100%; height:auto; aspect-ratio:16/9; margin-top:.85rem; }.robin-publication-entry video,.robin-publication-entry .robin-publication-image { position:static; width:100%; height:auto; aspect-ratio:16/9; margin-top:.85rem; }.pub-badges { left:2.5rem; right:0; bottom:1rem; } }
 .robin-projects-list { margin-top:1rem; }.robin-projects-list article { border-top:1px solid #c9c7bf; padding:1.3rem 0 1.7rem; }.robin-projects-list article:last-child { border-bottom:1px solid #c9c7bf; }.robin-projects-list h2 { margin:0; color:#102a3a; font-size:clamp(1.35rem,2.5vw,2.25rem); font-weight:600; letter-spacing:-.045em; line-height:1.18; }.robin-project-meta { margin:.7rem 0 .85rem !important; color:#005b7c !important; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.65rem !important; font-weight:600; letter-spacing:.04em; line-height:1.6 !important; }.robin-projects-list ul { margin:0; padding-left:1.25rem; }.robin-projects-list li { margin:.28rem 0; color:#53646b; font-size:.94rem; line-height:1.6; }
+.robin-projects-group-title { margin:2.4rem 0 0; border-left:4px solid #005b7c; padding:.75rem 1rem; color:#102a3a; background:#edf4f6; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:clamp(1.05rem,1.8vw,1.3rem); font-weight:700; letter-spacing:.04em; text-transform:uppercase; }.robin-projects-group-title:first-child { margin-top:0; }
+.robin-team-members .robin-member-group > h3 { margin:0 0 1.1rem; border-left:4px solid #005b7c; padding:.7rem .9rem; color:#102a3a; background:#edf4f6; font-size:1.2rem; letter-spacing:-.02em; }.robin-team-members .robin-member-group > h3 .robin-group-count { padding-top:.45rem; font-size:.68rem; }
 .robin-3d-stage { background:radial-gradient(circle at 55% 40%,#f7fbfc 0%,#e5edf0 54%,#d8e2e6 100%); }
 .robin-3d-stage::after { content:''; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,rgba(255,255,255,.4),transparent 27%),linear-gradient(0deg,rgba(7,25,38,.09),transparent 35%); }
 .robin-3d-stage canvas { display:block; width:100%; height:100%; cursor:grab; outline:none; touch-action:none; }
@@ -897,7 +899,28 @@ body .robin-member-grid-undergraduate {
 @media (max-width: 640px) {
   body .robin-member-grid,
   body .robin-member-grid-undergraduate {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.65rem !important;
+  }
+
+  body .robin-member-card h4 {
+    margin: 0.65rem 0.65rem 0.2rem !important;
+    font-size: 0.88rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body .robin-member-card p {
+    margin: 0 0.65rem 0.55rem !important;
+    font-size: 0.72rem !important;
+    line-height: 1.4 !important;
+  }
+
+  body .robin-member-card .robin-member-email {
+    margin: 0 0.65rem 0.75rem !important;
+    font-size: 0.68rem !important;
+    line-height: 1.35 !important;
+    overflow-wrap: anywhere;
+    white-space: normal;
   }
 }
 
@@ -2031,9 +2054,15 @@ body .site-header .nav-dropdown-link:hover {
     grid-column: 1;
   }
 
-  #join-at-home .robin-join-home .robin-join-apply > .robin-apply-notice {
+  #join-at-home .robin-join-home .robin-join-apply > .robin-apply-opportunities {
     grid-column: 2;
     grid-row: 3 / span 2;
+    display: grid;
+    gap: 1rem;
+    margin: 0 !important;
+  }
+
+  #join-at-home .robin-join-home .robin-apply-opportunities > .robin-apply-notice {
     margin: 0 !important;
   }
 }
