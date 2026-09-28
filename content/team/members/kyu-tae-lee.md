@@ -6,5 +6,5 @@ sections:
     content:
       title: ""
       text: |-
-        <section class="robin-member-profile-page"><img src="/images/members/kyu-tae-lee.jpg" alt="Kyutae Lee"><div><p class="robin-page-kicker">ROBIN LAB MEMBER</p><h1>Kyutae Lee</h1><p class="robin-member-profile-role">MS student · 2026S–</p><a class="robin-member-profile-email" href="mailto:leekyutae@dgist.ac.kr">leekyutae@dgist.ac.kr</a><a class="robin-member-profile-back" href="/team/members/">← Back to Members</a></div></section>
+        <section class="robin-member-profile-page"><img src="/images/members/kyu-tae-lee.jpg" alt="Kyutae Lee"><div><p class="robin-page-kicker">ROBIN LAB MEMBER</p><h1>Kyutae Lee</h1><p class="robin-member-profile-role">M.S. Student · 2026 Spring</p><a class="robin-member-profile-email" href="mailto:leekyutae@dgist.ac.kr">leekyutae@dgist.ac.kr</a><a class="robin-member-profile-back" href="/team/members/">← Back to Members</a></div></section>
 ---
