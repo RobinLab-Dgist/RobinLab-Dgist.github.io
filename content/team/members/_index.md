@@ -39,11 +39,12 @@ sections:
             </div>
           </div>
           <div class="robin-member-group">
-            <h3>Co-workers <span class="robin-group-count">03</span></h3>
+            <h3>Co-workers <span class="robin-group-count">04</span></h3>
             <div class="robin-member-grid">
               <article class="robin-member-card"><img src="/images/members/hye-sung-lee.jpg" alt="Hyesung Lee"><h4><a class="robin-member-name-link" href="/team/members/hye-sung-lee/">Hyesung Lee</a></h4><p><strong>ETH Zurich</strong></p><a class="robin-member-email" href="mailto:mireflare@snu.ac.kr">mireflare@snu.ac.kr</a></article>
               <article class="robin-member-card"><img src="/images/members/co-workers/jeongseob-lee.avif" alt="Jeongseob Lee"><h4><a class="robin-member-name-link" href="/team/members/jeongseob-lee/">Jeongseob Lee</a></h4><p><strong>Samsung Future Robotics</strong></p></article>
               <article class="robin-member-card"><img src="/images/members/co-workers/ilkwon_hong.avif" alt="Ilkwon Hong"><h4><a class="robin-member-name-link" href="/team/members/ilkwon-hong/">Ilkwon Hong</a></h4><p><strong>KIST</strong></p></article>
+              <article class="robin-member-card"><img src="/images/members/co-workers/seongmin_jung.jpg" alt="Seongmin Jung"><h4><a class="robin-member-name-link" href="/team/members/seongmin-jung/">Seongmin Jung</a></h4><p><strong>Hyundai Motor Company</strong></p></article>
             </div>
           </div>
         </section>
