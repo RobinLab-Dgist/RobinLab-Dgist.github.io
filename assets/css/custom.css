@@ -3299,15 +3299,91 @@ body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
   }
 }
 
-/* 단체 사진처럼 가로로 넓은 사진: 띄우지 않고 본문 아래 크게 */
-.robin-news-list .robin-news-image--wide {
-  float: none;
-  width: 100%;
+/* 뉴스 사진 슬라이드. 브라우저 기본 scroll-snap이라 모바일은 손가락으로 밀어 넘기고,
+   데스크톱은 좌우 버튼으로 넘긴다. */
+.robin-news-carousel {
+  position: relative;
   max-width: 46rem;
-  height: auto;
-  max-height: none;
-  margin: 1.1rem 0 0;
+  margin-top: 1.1rem;
+}
+
+.robin-news-carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  border: 1px solid #d8e0e3;
+  border-radius: 10px;
+  background: #eef3f4;
+  scrollbar-width: none;
+}
+
+.robin-news-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.robin-news-carousel-track img {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;                     /* 본문(prose)이 이미지에 붙이는 위아래 여백 제거 */
+  aspect-ratio: 3 / 2;
   object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.robin-news-carousel-btn {
+  position: absolute;
+  top: calc(50% - 1.2rem);
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 50%;
+  padding: 0 0 .15rem;
+  color: #102a3a;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 2px 10px rgba(16, 42, 58, .22);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity .2s ease, background .2s ease;
+}
+
+.robin-news-carousel-btn:hover {
+  background: #fff;
+}
+
+.robin-news-carousel-btn.is-prev {
+  left: .75rem;
+}
+
+.robin-news-carousel-btn.is-next {
+  right: .75rem;
+}
+
+.robin-news-carousel-btn:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.robin-news-list .robin-news-carousel-count {
+  margin: .5rem 0 0;
+  color: #64748b;
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .robin-news-carousel-btn {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1.35rem;
+  }
 }
 
 /* People 뉴스: 합류한 멤버 사진을 오른쪽에 나란히 */

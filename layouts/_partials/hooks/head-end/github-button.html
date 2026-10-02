@@ -311,4 +311,38 @@ document.addEventListener('DOMContentLoaded', () => {
   showPoster();
   onMotionChange();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-carousel]').forEach((root) => {
+    const track = root.querySelector('.robin-news-carousel-track');
+    const total = track.children.length;
+    const prev = root.querySelector('.is-prev');
+    const next = root.querySelector('.is-next');
+    const count = root.querySelector('.robin-news-carousel-count');
+    const current = () => Math.round(track.scrollLeft / track.clientWidth);
+    // 현재 장은 변수로 들고 있는다. 부드러운 스크롤이 도는 중에 버튼을 연타하면
+    // 스크롤 좌표가 아직 이전 장이라, 좌표로 계산하면 같은 장에 머문다.
+    let index = 0;
+    const show = (i) => {
+      index = i;
+      count.textContent = `${i + 1} / ${total}`;
+    };
+    // 끝에서 넘기면 반대쪽 끝으로 돌아간다. 이때는 사이 사진을 훑고 지나가지 않게 바로 이동.
+    const go = (step) => {
+      const i = (index + step + total) % total;
+      const wrapped = Math.abs(i - index) !== 1;
+      track.scrollTo({ left: i * track.clientWidth, behavior: wrapped ? 'instant' : 'smooth' });
+      show(i);
+    };
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    // 손가락으로 밀어 넘긴 경우: 스크롤이 멈춘 뒤 실제 위치로 맞춘다
+    let settle;
+    track.addEventListener('scroll', () => {
+      clearTimeout(settle);
+      settle = setTimeout(() => show(current()), 120);
+    }, { passive: true });
+    show(0);
+  });
+});
 </script>
