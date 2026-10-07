@@ -3328,7 +3328,7 @@ body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
   width: 100%;
   max-width: 100%;
   margin: 0;                     /* 본문(prose)이 이미지에 붙이는 위아래 여백 제거 */
-  aspect-ratio: 3 / 2;
+  aspect-ratio: var(--robin-carousel-ratio, 3 / 2);   /* 사진 비율이 다른 묶음은 인라인으로 지정 */
   object-fit: cover;
   scroll-snap-align: start;
 }

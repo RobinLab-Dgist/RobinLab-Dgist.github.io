@@ -5,6 +5,17 @@ summary: Official announcements and research updates from ROBIN Lab.
 
 <section class="robin-news-list robin-news-timeline">
   <article>
+    <p>2026.10 · Visit</p>
+    <h2>Dr. Thomas Vögele of DFKI visits ROBIN Lab.</h2>
+    <p>Dr. Thomas Vögele from the German Research Center for Artificial Intelligence (DFKI) visited ROBIN Lab at DGIST.</p>
+    <div class="robin-news-carousel" data-carousel style="--robin-carousel-ratio: 4 / 3">
+      <div class="robin-news-carousel-track" tabindex="0" aria-label="Photos from Dr. Thomas Vögele's visit"><img src="/images/news/dfki-visit/01.jpg" alt="Dr. Thomas Vögele of DFKI visiting ROBIN Lab, photo 1 of 3"><img src="/images/news/dfki-visit/02.jpg" alt="Dr. Thomas Vögele of DFKI visiting ROBIN Lab, photo 2 of 3" loading="lazy"><img src="/images/news/dfki-visit/03.jpg" alt="Dr. Thomas Vögele of DFKI visiting ROBIN Lab, photo 3 of 3" loading="lazy"></div>
+      <button type="button" class="robin-news-carousel-btn is-prev" aria-label="Previous photo">‹</button>
+      <button type="button" class="robin-news-carousel-btn is-next" aria-label="Next photo">›</button>
+      <p class="robin-news-carousel-count" aria-live="polite">1 / 3</p>
+    </div>
+  </article>
+  <article>
     <p>2026.09 · Research</p>
     <h2>ROBIN Lab students submit five papers to major robotics conferences.</h2>
     <p>Undergraduate and graduate researchers have submitted five papers to major robotics conferences, reflecting the lab's hands-on research and mentorship.</p>
