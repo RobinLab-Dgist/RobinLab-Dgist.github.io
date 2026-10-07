@@ -172,6 +172,14 @@ document.addEventListener('DOMContentLoaded', () => {
           '<strong class="robin-author-highlight">K. Lee</strong>',
         );
       }
+      // data-highlight-authors="A. Name|B. Name": Y. Lee 외에 굵게 표시할 저자
+      (entry.dataset.highlightAuthors || '').split('|').filter(Boolean).forEach((name) => {
+        const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        authorText.innerHTML = authorText.innerHTML.replace(
+          new RegExp(`(^|[^\\w.])(${escaped})(?!\\w)`),
+          '$1<strong class="robin-author-highlight">$2</strong>',
+        );
+      });
     }
   });
 });
