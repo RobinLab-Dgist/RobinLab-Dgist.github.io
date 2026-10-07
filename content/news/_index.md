@@ -5,7 +5,7 @@ summary: Official announcements and research updates from ROBIN Lab.
 
 <section class="robin-news-list robin-news-timeline">
   <article>
-    <p>2026.10 · Visit</p>
+    <p>2026.10 · Lab</p>
     <h2>Dr. Thomas Vögele of DFKI visits ROBIN Lab.</h2>
     <p>Dr. Thomas Vögele from the German Research Center for Artificial Intelligence (DFKI) visited ROBIN Lab at DGIST.</p>
     <div class="robin-news-carousel" data-carousel style="--robin-carousel-ratio: 4 / 3">
