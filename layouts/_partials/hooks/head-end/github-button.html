@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   publications.querySelectorAll('li').forEach((entry) => {
     const video = entry.querySelector('video source');
-    if (!video || entry.querySelector('.pub-badge-video')) return;
+    if (!video || entry.querySelector('.pub-badge-video') || entry.hasAttribute('data-no-video-badge')) return;
 
     let badges = entry.querySelector('.pub-badges');
     if (!badges) {
