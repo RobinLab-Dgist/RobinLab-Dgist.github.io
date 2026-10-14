@@ -3438,3 +3438,26 @@ body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
     height: 9.25rem;
   }
 }
+
+/* 논문 미리보기 영상은 잘리지 않게: 칸에 맞춰 잘라 채우던(cover) 방식 대신 원본 비율로 넣는다.
+   칸은 대부분의 영상과 같은 16:9로 고정하고, 비율이 다른 영상은 그 안에 통째로 넣는다(contain). */
+@media (min-width: 701px) {
+  body .robin-publications .robin-publication-entry > video {
+    height: auto;
+    aspect-ratio: 16 / 9;          /* 첫 화면 그림 비율에 끌려가지 않게 칸을 고정 (재생 시작 때 들썩임 방지) */
+    object-fit: contain;
+  }
+}
+
+/* 논문 썸네일 사진도 영상과 같은 방식: 16:9 칸 안에 잘림 없이 통째로 넣는다.
+   비율이 다른 그림 주변 여백은 흰 바탕으로 둔다(어두운 바탕은 도표·그림에서 어색하다).
+   RORA(PR1)는 세로형이라 위쪽의 높이 예외를 유지한다 — 그쪽도 contain이라 잘리지 않는다. */
+@media (min-width: 701px) {
+  body .robin-publications .robin-publication-entry > .robin-publication-image {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid #d8e0e3;
+    background: #fff;
+    object-fit: contain;
+  }
+}
