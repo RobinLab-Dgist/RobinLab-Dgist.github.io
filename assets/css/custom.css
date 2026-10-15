@@ -1078,6 +1078,22 @@ body .robin-member-grid-undergraduate {
   margin-bottom: 0.45rem !important;
 }
 
+.robin-apply-note {
+  margin: -1.2rem 0 1.5rem !important;
+  font-size: 0.92rem !important;
+  color: #4b636e !important;
+  line-height: 1.6 !important;
+}
+
+.robin-apply-note code {
+  background: rgba(0, 91, 124, 0.08) !important;
+  color: #005b7c !important;
+  padding: 0.15rem 0.4rem !important;
+  border-radius: 4px !important;
+  font-size: 0.88em !important;
+  font-weight: 600 !important;
+}
+
 .robin-apply-notice p:not(.robin-notice-heading) {
   font-size: 0.97rem !important;
   line-height: 1.7 !important;

@@ -84,6 +84,7 @@ sections:
                 <h2>How to Apply</h2>
                 <p class="robin-apply-intro">If you are interested in undergraduate research, graduate studies, or post-doc positions, please send the following materials to <a href="mailto:yslee@dgist.ac.kr">yslee@dgist.ac.kr</a>:</p>
                 <ol class="robin-apply-list"><li><strong>Self-Introduction</strong> (motivation, research interests, personal strengths)</li><li><strong>CV</strong> (technical skills in hardware/programming &amp; project experience)</li><li><strong>Academic Transcripts</strong></li></ol>
+                <p class="robin-apply-note"><em>* Please name your CV file using the format: <code>CV_YourName</code> (e.g., <code>CV_Yslee.pdf</code>).</em></p>
                 <div class="robin-apply-opportunities">
                   <div class="robin-apply-notice">
                     <p class="robin-notice-heading">Graduate Student Applications</p>
@@ -129,6 +130,7 @@ sections:
                 <h2>How to Apply</h2>
                 <p class="robin-apply-intro">실험실 학부연구생 / 대학원 진학 / post-doc에 관심있는 분들은 아래 자료들을 <a href="mailto:yslee@dgist.ac.kr">yslee@dgist.ac.kr</a>로 보내주시기 바랍니다.</p>
                 <ol class="robin-apply-list"><li><strong>자기소개</strong> (지원 동기, 관심 연구 분야, 본인의 강점 등)</li><li><strong>CV</strong> (하드웨어/프로그래밍 등 기술 스택 및 연구/프로젝트 경험 포함)</li><li><strong>성적표</strong></li></ol>
+                <p class="robin-apply-note">※ CV 파일명은 <code>CV_본인이름</code> (예: <code>CV_Yslee.pdf</code>) 형식으로 작성하여 첨부해 주시기 바랍니다.</p>
                 <div class="robin-apply-opportunities">
                   <div class="robin-apply-notice">
                     <p class="robin-notice-heading">대학원생 모집</p>
