@@ -3477,3 +3477,11 @@ body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
     object-fit: contain;
   }
 }
+
+/* 뉴스 사진을 기본(280px)보다 한 단계 크게 */
+@media (min-width: 701px) {
+  .robin-news-list .robin-news-image--lg {
+    max-width: min(42%, 20rem);
+    max-height: 22.5rem;
+  }
+}

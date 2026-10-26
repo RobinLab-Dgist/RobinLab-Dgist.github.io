@@ -5,6 +5,12 @@ summary: Official announcements and research updates from ROBIN Lab.
 
 <section class="robin-news-list robin-news-timeline">
   <article>
+    <p>2026.10 · Award</p>
+    <img class="robin-news-image robin-news-image--lg" src="/images/news/pac-2026-award.jpg" alt="Kyutae Lee receiving an award at PAC 2026" loading="lazy">
+    <h2>Kyutae Lee receives an award at PAC 2026.</h2>
+    <p>Kyutae Lee of ROBIN Lab received an award at PAC 2026.</p>
+  </article>
+  <article>
     <p>2026.10 · Lab</p>
     <h2>Dr. Thomas Vögele of DFKI visits ROBIN Lab.</h2>
     <p>Dr. Thomas Vögele from the German Research Center for Artificial Intelligence (DFKI) visited ROBIN Lab at DGIST.</p>
