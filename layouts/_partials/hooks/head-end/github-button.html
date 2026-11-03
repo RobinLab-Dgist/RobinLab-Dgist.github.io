@@ -139,14 +139,42 @@ document.addEventListener('DOMContentLoaded', () => {
       title.textContent = match[2].replace(/,\s*$/, '');
       const meta = document.createElement('div');
       meta.className = 'robin-publication-meta';
-      meta.textContent = match[4];
+      // 본문의 {Cover Paper} 같은 수상·선정 표기는 따로 떼어 줄 맨 끝(링크 뒤)에 붙인다
+      const honors = [...match[4].matchAll(/\{([^}]+)\}/g)].map((h) => h[1].trim());
+      meta.textContent = match[4].replace(/\s*\{[^}]+\}/g, '');
+      entry.dataset.honors = honors.join('|');
       // 본문의 [ICRA] 표기는 (ICRA)로, Top n%는 별도 색으로 승격.
       // textContent를 먼저 넣었으므로 innerHTML은 이미 이스케이프된 상태다.
       meta.innerHTML = meta.innerHTML
-        .replace(/\[([^\]]+)\]/g, '<strong class="robin-venue-abbr">($1)</strong>')
+        .replace(/\[([^\]]+)\]/g, '($1)')
         .replace(/\bTop\s+\d+(?:\.\d+)?%/g, '<strong class="robin-venue-top">$&</strong>')
         .replace(/\bOral\s+Paper\b/g, '<strong class="robin-venue-top">$&</strong>');
-      copy.append(authors, title, meta);
+      // 제목 → 저자 → 학회·링크 순으로 보여준다
+      // 학회·저널 이름(본문의 <em>)만 굵게
+      const venue = host.querySelector('em');
+      if (venue) {
+        const esc = document.createElement('span');
+        esc.textContent = venue.textContent.trim();
+        meta.innerHTML = meta.innerHTML.replace(esc.innerHTML, `<strong class="robin-venue-name">${esc.innerHTML}</strong>`);
+      }
+      // 연도도 굵게 (preprint처럼 이름에 연도가 이미 들어 있으면 그대로).
+      // 맨 뒤에 나오는 단독 네 자리 연도만 잡아 특허 번호(20240242502) 등은 건드리지 않는다.
+      const named = meta.querySelector('.robin-venue-name');
+      if (!(named && /\b(19|20)\d{2}\b/.test(named.textContent))) {
+        const texts = [...meta.childNodes].filter((n) => n.nodeType === Node.TEXT_NODE);
+        for (let i = texts.length - 1; i >= 0; i -= 1) {
+          const hit = [...texts[i].textContent.matchAll(/(?<![\w.])(?:19|20)\d{2}(?!\w)/g)].pop();
+          if (!hit) continue;
+          const year = document.createElement('strong');
+          year.className = 'robin-venue-name';
+          year.textContent = hit[0];
+          const rest = texts[i].splitText(hit.index);
+          rest.textContent = rest.textContent.slice(hit[0].length);
+          meta.insertBefore(year, rest);
+          break;
+        }
+      }
+      copy.append(title, authors, meta);
     } else {
       const title = document.createElement('div');
       title.className = 'robin-publication-title';
@@ -155,7 +183,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const badges = entry.querySelector('.pub-badges');
     host.replaceChildren(copy);
-    if (badges) entry.appendChild(badges);
+    // 링크는 학회 줄 끝에 붙인다 (SRL 식 한 줄 구성)
+    const metaLine = copy.querySelector('.robin-publication-meta') || copy.lastElementChild;
+    const honorList = (entry.dataset.honors || '').split('|').filter(Boolean);
+    // 학회 줄 끝 마침표는 항상 뗀다 ("ICRA 2026." → "ICRA 2026")
+    const last = metaLine.lastChild;
+    if (last && last.nodeType === Node.TEXT_NODE) last.textContent = last.textContent.replace(/\.\s*$/, '');
+    if (badges) metaLine.appendChild(badges);
+    honorList.forEach((label) => {
+      const honor = document.createElement('em');
+      honor.className = 'robin-pub-honor';
+      honor.textContent = label;
+      metaLine.appendChild(honor);
+    });
     const authorText = copy.querySelector('.robin-publication-authors');
     if (authorText) {
       const highlightedOccurrence = Number(entry.dataset.highlightYLee || 1);

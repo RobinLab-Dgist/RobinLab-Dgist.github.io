@@ -2772,53 +2772,6 @@ body:has(.robin-research-intro) {
   white-space: nowrap;
 }
 
-/* 배지는 원래 카드 바닥에 absolute로 고정돼 제목과 크게 벌어졌다.
-   흐름으로 되돌려 venue 줄 바로 아래에 붙인다. */
-.robin-publications .pub-badges {
-  position: static !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-  margin-top: .8rem;
-}
-
-/* 배지 자리로 비워두던 아래 여백 회수 */
-.robin-publications li {
-  padding-bottom: 1.4rem !important;
-}
-
-/* RORA 표지는 862x1058 세로형이라 가로 썸네일 칸(330x211)에 contain으로 넣으면
-   폭을 절반밖에 못 쓴다. 이 항목만 칸을 세로로 키운다. */
-.robin-publications li[data-pubnum="PR1"] {
-  min-height: 215px;
-}
-
-.robin-publications li[data-pubnum="PR1"] .robin-publication-image {
-  height: 180px !important;
-}
-
-@media (min-width: 1100px) {
-  .robin-publications li[data-pubnum="PR1"] {
-    min-height: 320px;
-  }
-
-  .robin-publications li[data-pubnum="PR1"] .robin-publication-image {
-    height: 280px !important;
-  }
-}
-
-/* 모바일에서는 썸네일이 폭 100%로 흐르므로 원본 비율을 그대로 쓴다 */
-@media (max-width: 700px) {
-  .robin-publications li[data-pubnum="PR1"] {
-    min-height: 0;
-  }
-
-  .robin-publications li[data-pubnum="PR1"] .robin-publication-image {
-    height: auto !important;
-    aspect-ratio: 862 / 1058 !important;
-  }
-}
-
 /* 실제 썸네일이 따로 있는데도 모바일에서 되살아나던 장식 배경.
    274행의 `.robin-publications li::after`가 특정성 싸움에서 이기고 있었다. */
 .robin-publications li::after {
@@ -2841,16 +2794,6 @@ body:has(.robin-research-intro) .page-body section:not(:first-of-type) .mb-6.tex
   font-size: clamp(2rem, 3vw, 2.6rem) !important;
   line-height: 1.18;
   letter-spacing: -.03em;
-}
-
-/* 사진 옆 번호를 J1/C1/P1 형식으로. 오래된 논문이 1번이라
-   새 논문이 추가돼도 기존 번호가 밀리지 않는다. */
-.robin-publications li[data-pubnum]::before {
-  content: attr(data-pubnum);
-  font-size: .78rem;
-  font-weight: 700;
-  color: #005b7c;
-  letter-spacing: -.01em;
 }
 
 /* 상위 백분위 표기 */
@@ -3391,33 +3334,190 @@ body .robin-real-hero .robin-real-footer .robin-home-lab-emph {
   }
 }
 
-/* 논문 미리보기 영상은 잘리지 않게: 칸에 맞춰 잘라 채우던(cover) 방식 대신 원본 비율로 넣는다.
-   칸은 대부분의 영상과 같은 16:9로 고정하고, 비율이 다른 영상은 그 안에 통째로 넣는다(contain). */
-@media (min-width: 701px) {
-  body .robin-publications .robin-publication-entry > video {
-    height: auto;
-    aspect-ratio: 16 / 9;          /* 첫 화면 그림 비율에 끌려가지 않게 칸을 고정 (재생 시작 때 들썩임 방지) */
-    object-fit: contain;
-  }
-}
-
-/* 논문 썸네일 사진도 영상과 같은 방식: 16:9 칸 안에 잘림 없이 통째로 넣는다.
-   비율이 다른 그림 주변 여백은 흰 바탕으로 둔다(어두운 바탕은 도표·그림에서 어색하다).
-   RORA(PR1)는 세로형이라 위쪽의 높이 예외를 유지한다 — 그쪽도 contain이라 잘리지 않는다. */
-@media (min-width: 701px) {
-  body .robin-publications .robin-publication-entry > .robin-publication-image {
-    height: auto;
-    aspect-ratio: 16 / 9;
-    border: 1px solid #d8e0e3;
-    background: #fff;
-    object-fit: contain;
-  }
-}
-
 /* 뉴스 사진을 기본(280px)보다 한 단계 크게 */
 @media (min-width: 701px) {
   .robin-news-list .robin-news-image--lg {
     max-width: min(42%, 20rem);
     max-height: 22.5rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PUBLICATIONS — 촘촘한 목록형 (SRL 페이지 참고)
+   [썸네일 260px] [제목 / 저자 / 학회·연도 / PDF / Video]
+   앞쪽에 흩어진 절대배치·고정 높이·알약 버튼 규칙들을 여기서 한 번에 덮어쓴다.
+   ══════════════════════════════════════════════════════════════════════════════ */
+body .robin-publications {
+  width: 100% !important;
+  max-width: 1120px !important;
+  margin-inline: auto !important;
+}
+
+body .robin-publications h2 {
+  margin: 3.6rem 0 1.8rem !important;
+  border-top: 0 !important;
+  padding-top: 0 !important;
+  color: #102a3a;
+  font-size: 1.6rem !important;
+  font-weight: 650;
+  letter-spacing: -.02em;
+}
+
+body .robin-publications ol > li.robin-publication-entry {
+  display: grid !important;
+  grid-template-columns: 260px minmax(0, 1fr);
+  column-gap: 2.2rem;
+  align-items: start;
+  min-height: 0 !important;
+  margin: 0 0 2.8rem !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* 번호(J9 등)는 화면에 표시하지 않는다. data-pubnum은 항목 식별용으로만 남긴다 */
+body .robin-publications li.robin-publication-entry::before {
+  display: none !important;
+}
+
+body .robin-publications li.robin-publication-entry > div:first-child {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+/* 썸네일: 260px 칸, 원본 비율 그대로(잘림 없음), 세로형은 높이 195px로 묶어 가운데 */
+body .robin-publications li.robin-publication-entry > :is(video, .robin-publication-image, .robin-publication-placeholder) {
+  position: static !important;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 195px !important;
+  margin: 0 !important;
+  aspect-ratio: auto !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  box-shadow: 0 2px 10px rgba(16, 42, 58, .13);
+  object-fit: contain !important;
+}
+
+body .robin-publications li.robin-publication-entry > video {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  background: #eef2f3 !important;
+}
+
+body .robin-publications li.robin-publication-entry > .robin-publication-placeholder {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+}
+
+body .robin-publications .robin-publication-copy {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+
+body .robin-publications .robin-publication-title {
+  color: #102a3a;
+  font-size: 1.15rem !important;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  line-height: 1.4 !important;
+}
+
+body .robin-publications .robin-publication-authors {
+  color: #6b7a82;
+  font-size: .98rem !important;
+  line-height: 1.5 !important;
+}
+
+body .robin-publications .robin-publication-authors .robin-author-highlight {
+  color: #102a3a;
+}
+
+body .robin-publications .robin-publication-meta {
+  color: #40535b;
+  font-size: .98rem !important;
+  line-height: 1.55 !important;
+}
+
+/* 학회 줄에서 굵은 글씨는 학회·저널 이름 하나뿐 */
+body .robin-publications .robin-venue-name {
+  color: #102a3a;
+  font-weight: 700;
+}
+
+body .robin-publications .robin-venue-top {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* 링크: 학회 줄 끝에 " / PDF / Video" 글자 링크로 */
+body .robin-publications .robin-publication-meta .pub-badges {
+  display: inline !important;
+  position: static !important;
+  margin: 0 !important;
+}
+
+body .robin-publications .robin-publication-meta .pub-badge {
+  display: inline !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  color: #005b7c !important;
+  background: none !important;
+  font: inherit !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  text-underline-offset: .18em;
+  transform: none !important;
+}
+
+body .robin-publications .robin-publication-meta .pub-badge::before {
+  content: " / ";
+  display: inline-block;     /* 밑줄이 구분자까지 번지지 않게 */
+  margin: 0 .1rem;
+  color: #9aa8ae;
+  white-space: pre;
+}
+
+body .robin-publications .robin-pub-honor {
+  color: #c0392b;
+  font-style: italic;
+  font-weight: 700;
+}
+
+body .robin-publications .robin-pub-honor::before {
+  content: " / ";
+  display: inline-block;
+  margin: 0 .1rem;
+  color: #9aa8ae;
+  font-style: normal;
+  font-weight: 400;
+  white-space: pre;
+}
+
+body .robin-publications .robin-publication-meta .pub-badge:hover {
+  color: #003f57 !important;
+}
+
+/* 모바일: 썸네일은 기존대로 숨기고 글만 한 줄로 */
+@media (max-width: 700px) {
+  body .robin-publications ol > li.robin-publication-entry {
+    grid-template-columns: minmax(0, 1fr);
+    margin-bottom: 1.6rem !important;
+  }
+
+  body .robin-publications li.robin-publication-entry > div:first-child {
+    grid-column: 1;
+  }
+
+  body .robin-publications h2 {
+    margin: 2.2rem 0 1rem !important;
+    font-size: 1.4rem !important;
   }
 }
