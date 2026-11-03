@@ -3475,6 +3475,8 @@ body .robin-publications .robin-publication-meta .pub-badge {
   text-decoration: underline !important;
   text-underline-offset: .18em;
   transform: none !important;
+  box-shadow: none !important;   /* 예전 배지 hover의 빨간 그림자 제거 */
+  transition: none !important;
 }
 
 body .robin-publications .robin-publication-meta .pub-badge::before {
@@ -3499,10 +3501,6 @@ body .robin-publications .robin-pub-honor::before {
   font-style: normal;
   font-weight: 400;
   white-space: pre;
-}
-
-body .robin-publications .robin-publication-meta .pub-badge:hover {
-  color: #003f57 !important;
 }
 
 /* 모바일: 썸네일은 기존대로 숨기고 글만 한 줄로 */
