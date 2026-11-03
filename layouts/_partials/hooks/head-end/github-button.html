@@ -185,39 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('.robin-publications');
-  const buttons = root ? root.querySelectorAll('.robin-pub-filter-btn') : [];
-  if (!buttons.length) return;
-
-  // 모드별로 남길 항목의 셀렉터. all은 전부 표시.
-  const MODES = {
-    selected: { cls: 'is-filtered', keep: 'li[data-selected]' },
-    all: { cls: null, keep: null },
-  };
-
-  const apply = (mode) => {
-    const conf = MODES[mode] || MODES.all;
-    Object.values(MODES).forEach(({ cls }) => cls && root.classList.remove(cls));
-    if (conf.cls) root.classList.add(conf.cls);
-    buttons.forEach((btn) => {
-      const on = btn.dataset.filter === mode;
-      btn.classList.toggle('is-active', on);
-      btn.setAttribute('aria-pressed', String(on));
-    });
-    // 남는 항목이 없는 분류는 제목까지 숨긴다
-    root.querySelectorAll('ol').forEach((ol) => {
-      const keep = !conf.keep || ol.querySelector(conf.keep);
-      ol.hidden = !keep;
-      const heading = ol.previousElementSibling;
-      if (heading && heading.tagName === 'H2') heading.hidden = !keep;
-    });
-  };
-
-  buttons.forEach((btn) => btn.addEventListener('click', () => apply(btn.dataset.filter)));
-  apply('selected');
-});
-
-document.addEventListener('DOMContentLoaded', () => {
   const publicationVideos = document.querySelectorAll('.robin-publication-entry video');
 
   if ('IntersectionObserver' in window) {

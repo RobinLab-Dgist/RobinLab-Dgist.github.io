@@ -2819,63 +2819,10 @@ body:has(.robin-research-intro) {
   }
 }
 
-/* Selected / All 필터 */
-.robin-pub-filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .8rem;
-  justify-content: center;
-  margin: .5rem 0 2.75rem;
-}
-
-/* 좁은 화면에서 버튼 3개가 한 줄을 강제해 문서를 밀어내던 문제 */
-@media (max-width: 520px) {
-  .robin-pub-filter {
-    gap: .5rem;
-  }
-
-  .robin-pub-filter-btn {
-    min-width: 0;
-    flex: 1 1 auto;
-    padding: .6rem 1.15rem;
-    font-size: .95rem;
-  }
-}
-
 /* 실제 썸네일이 따로 있는데도 모바일에서 되살아나던 장식 배경.
    274행의 `.robin-publications li::after`가 특정성 싸움에서 이기고 있었다. */
 .robin-publications li::after {
   display: none !important;
-}
-
-.robin-pub-filter-btn {
-  min-width: 9rem;
-  border: 1.5px solid #c6dce1;
-  border-radius: 999px;
-  padding: .72rem 2rem;
-  color: #40535b;
-  background: #fff;
-  font-family: 'Lexend Deca', 'Pretendard', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: -.01em;
-  cursor: pointer;
-  transition: border-color .16s ease, background .16s ease, color .16s ease;
-}
-
-.robin-pub-filter-btn:hover {
-  border-color: #6fa9b8;
-  background: #f2f9fa;
-}
-
-.robin-pub-filter-btn.is-active {
-  border-color: #005b7c;
-  color: #fff;
-  background: #005b7c;
-}
-
-.robin-publications.is-filtered li:not([data-selected]) {
-  display: none;
 }
 
 /* 페이지 최상단 제목이 하위 섹션 제목(h2, 최대 2.8rem)보다 커야 위계가 산다.
@@ -2931,17 +2878,6 @@ body:has(.robin-research-intro) .page-body section:not(:first-of-type) .mb-6.tex
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
     line-height: 1.65;
-  }
-
-  .robin-pub-filter {
-    gap: 0.55rem;
-    margin-bottom: 2rem;
-  }
-
-  .robin-pub-filter-btn {
-    min-height: 2.75rem;
-    padding: 0.55rem 1rem;
-    font-size: 0.9rem;
   }
 
   .robin-publications h2 {

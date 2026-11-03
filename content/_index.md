@@ -49,12 +49,12 @@ sections:
     content:
       title: ""
       text: |-
-        <section class="robin-join-page robin-join-home" data-join-language="en">
+        <section class="robin-join-page robin-join-home" data-join-language="ko">
           <div class="robin-join-language-toggle" role="group" aria-label="Join language">
-            <button type="button" class="is-active" data-join-language-option="en" aria-pressed="true">English</button>
-            <button type="button" data-join-language-option="ko" aria-pressed="false">한국어</button>
+            <button type="button" data-join-language-option="en" aria-pressed="false">English</button>
+            <button type="button" class="is-active" data-join-language-option="ko" aria-pressed="true">한국어</button>
           </div>
-          <div class="robin-join-language-panel" data-join-language-panel="en">
+          <div class="robin-join-language-panel" data-join-language-panel="en" hidden>
             <div class="robin-page-lede"><p class="robin-page-kicker">OPEN POSITIONS</p><h1>Join the ROBIN Lab:<br><em>Seeking Future Co-founders</em></h1><p>At ROBIN Lab, we believe <strong>robots will transform the world</strong>. We are actively seeking <strong>self-directed</strong>, ambitious graduate students (M.S. / Ph.D. candidates) and undergraduate interns who <strong>share this vision</strong>.</p></div>
             <div class="robin-join-detail-grid">
               <article class="robin-join-card robin-join-why">
@@ -100,7 +100,7 @@ sections:
               </article>
             </div>
           </div>
-          <div class="robin-join-language-panel" data-join-language-panel="ko" lang="ko" hidden>
+          <div class="robin-join-language-panel" data-join-language-panel="ko" lang="ko">
             <div class="robin-page-lede"><p class="robin-page-kicker">OPEN POSITIONS</p><h1>Join the ROBIN Lab:<br><em>Seeking Future Co-founders</em></h1><p>ROBIN Lab에서는 <strong>로봇이 세상을 바꿀 것이라 확신</strong>하고, <strong>자기주도적</strong>이며 무엇보다 <strong>향상심</strong>이 있는 대학원생(석사/박사 과정) 및 학부 인턴을 모집하고 있습니다.</p></div>
             <div class="robin-join-detail-grid">
               <article class="robin-join-card robin-join-why">
