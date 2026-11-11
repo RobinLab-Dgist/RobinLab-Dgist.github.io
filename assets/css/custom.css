@@ -3519,3 +3519,27 @@ body .robin-publications .robin-pub-honor::before {
     font-size: 1.4rem !important;
   }
 }
+
+/* 뉴스 슬라이드도 단독 사진(--lg)과 같은 크기로 오른쪽에 띄운다 */
+.robin-news-list article:has(.robin-news-carousel) {
+  display: flow-root;
+}
+
+@media (min-width: 701px) {
+  .robin-news-list .robin-news-carousel {
+    float: right;
+    width: min(42%, 20rem);
+    margin: .15rem 2.5rem .5rem 1.75rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .robin-news-list article:has(.robin-news-carousel) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .robin-news-list .robin-news-carousel {
+    order: 1;
+  }
+}
