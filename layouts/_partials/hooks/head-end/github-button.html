@@ -198,21 +198,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const authorText = copy.querySelector('.robin-publication-authors');
     if (authorText) {
-      const highlightedOccurrence = Number(entry.dataset.highlightYLee || 1);
-      let occurrence = 0;
-      authorText.innerHTML = authorText.textContent.replace(/\bY\. Lee\b/g, (name) => {
-        occurrence += 1;
-        return occurrence === highlightedOccurrence
-          ? `<strong class="robin-author-highlight">${name}</strong>`
-          : name;
-      });
-      if (entry.dataset.pubnum === 'PR1') {
-        authorText.innerHTML = authorText.innerHTML.replace(
-          /\bK\. Lee\b/,
-          '<strong class="robin-author-highlight">K. Lee</strong>',
-        );
-      }
-      // data-highlight-authors="A. Name|B. Name": Y. Lee 외에 굵게 표시할 저자
+      // 이용석 교수는 항상 굵게
+      authorText.innerHTML = authorText.textContent.replace(
+        /\bYongseok Lee\b/,
+        '<strong class="robin-author-highlight">$&</strong>',
+      );
+      // data-highlight-authors="Full Name|Full Name": 그 외에 굵게 표시할 랩 인원
       (entry.dataset.highlightAuthors || '').split('|').filter(Boolean).forEach((name) => {
         const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         authorText.innerHTML = authorText.innerHTML.replace(
@@ -220,6 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
           '$1<strong class="robin-author-highlight">$2</strong>',
         );
       });
+      // 이름 중간(성과 이름 사이)에서 줄이 바뀌지 않게 한다
+      authorText.innerHTML = authorText.innerHTML.replace(/(?<!\band)(?<=[\w.\-]) (?=[A-Z])/g, '\u00A0');
     }
   });
 });
