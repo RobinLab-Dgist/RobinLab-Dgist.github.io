@@ -3503,7 +3503,7 @@ body .robin-publications .robin-pub-honor::before {
   white-space: pre;
 }
 
-/* 모바일: 썸네일은 기존대로 숨기고 글만 한 줄로 */
+/* 모바일: 한 줄로 쌓는다 */
 @media (max-width: 700px) {
   body .robin-publications ol > li.robin-publication-entry {
     grid-template-columns: minmax(0, 1fr);
@@ -3512,6 +3512,18 @@ body .robin-publications .robin-pub-honor::before {
 
   body .robin-publications li.robin-publication-entry > div:first-child {
     grid-column: 1;
+    grid-row: auto;
+  }
+
+  /* 모바일에서도 영상·그림을 글 위에 보여 준다 */
+  body .robin-publications li.robin-publication-entry > :is(video, .robin-publication-image) {
+    display: block !important;
+    order: -1;
+    grid-column: 1;
+    grid-row: auto;
+    width: 100% !important;
+    max-height: none !important;
+    margin-bottom: .8rem;
   }
 
   body .robin-publications h2 {
