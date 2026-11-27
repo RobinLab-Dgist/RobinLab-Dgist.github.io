@@ -45,6 +45,11 @@ imaging:
   anchor: smart
   hint: picture
 timeout: 600000
+# Deadlines 페이지의 원격 데이터(ccfddl)를 CI 캐시에 묶어 두지 않도록 1시간만 캐시
+caches:
+  getresource:
+    dir: :cacheDir/:project
+    maxAge: 1h
 taxonomies:
   author: authors
   tag: tags

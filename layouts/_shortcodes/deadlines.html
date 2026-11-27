@@ -1,0 +1,139 @@
+{{- /* 학회 마감일: 빌드 시점에 ccfddl 데이터를 받아 오고, 시간 변환·카운트다운은 브라우저에서 처리 */ -}}
+{{- /* 표시할 학회(ccfddl title) → 분야 태그 */ -}}
+{{- $areas := dict
+  "AAAI" "AI" "ICML" "ML" "ICLR" "ML" "NeurIPS" "ML"
+  "IROS" "Robotics" "ICRA" "Robotics" "RSS" "Robotics" "CoRL" "Robotics"
+  "CVPR" "Vision" "ICCV" "Vision" "ECCV" "Vision"
+  "ACM SIGGRAPH" "Graphics" "ACM SIGGRAPH ASIA" "Graphics" -}}
+{{- $minYear := sub now.Year 4 -}}{{- /* 격년 학회(ICCV/ECCV) 주기를 알 수 있게 몇 해치 가져옴 */ -}}
+{{- $confs := slice -}}
+{{- with try (resources.GetRemote "https://ccfddl.github.io/conference/allconf.yml") -}}
+  {{- with .Err -}}
+    {{- warnf "deadlines: failed to fetch ccfddl data: %s" . -}}
+  {{- else with .Value -}}
+    {{- range transform.Unmarshal . -}}
+      {{- $area := index $areas .title -}}
+      {{- if $area -}}
+        {{- $name := replace .title "ACM SIGGRAPH" "SIGGRAPH" -}}
+        {{- range .confs -}}
+          {{- if ge (int .year) $minYear -}}
+            {{- $confs = $confs | append (dict "name" $name "area" $area "year" .year "link" .link "timeline" .timeline "timezone" .timezone "date" .date "place" .place) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<section class="robin-deadlines" data-deadlines>
+  <p class="robin-deadlines-meta">Last update: {{ (now.UTC.Add (time.ParseDuration "9h")).Format "2006-01-02" }} · All times in KST (UTC+9) · Data from <a href="https://ccfddl.github.io/" target="_blank" rel="noopener noreferrer">ccfddl</a>. Dates may be inaccurate, so please check the official website.</p>
+  <h2>Up next</h2>
+  <div class="robin-deadlines-list" data-upcoming><p class="robin-deadlines-empty">No upcoming deadlines announced yet.</p></div>
+  <script type="application/json">{{ $confs | jsonify | safeJS }}</script>
+</section>
+<script>
+(() => {
+  const root = document.querySelector('[data-deadlines]');
+  const confs = JSON.parse(root.querySelector('script[type="application/json"]').textContent);
+  // ccfddl timezone 값: AoE, PT, UTC, UTC+8, UTC-12 ...
+  const offset = (tz, y, mo, d) => {
+    if (!tz || tz === 'AoE') return -12;
+    if (tz === 'PT') {
+      const name = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', timeZoneName: 'shortOffset' })
+        .formatToParts(new Date(Date.UTC(y, mo - 1, d, 12))).find((p) => p.type === 'timeZoneName').value;
+      return Number(name.slice(3)) || -8;
+    }
+    return Number(tz.replace('UTC', '')) || 0;
+  };
+  const toTime = (s, tz) => {
+    const m = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/.exec(s || '');
+    if (!m) return null;
+    const [y, mo, d, h, mi, se] = m.slice(1).map(Number);
+    return Date.UTC(y, mo - 1, d, h, mi, se) - offset(tz, y, mo, d) * 3600e3;
+  };
+  const kst = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
+  const pad = (n) => String(n).padStart(2, '0');
+  const left = (ms) => {
+    const s = Math.max(0, Math.floor(ms / 1000));
+    return `${Math.floor(s / 86400)}d ${pad(Math.floor(s % 86400 / 3600))}h ${pad(Math.floor(s % 3600 / 60))}m ${pad(s % 60)}s`;
+  };
+  const el = (tag, cls, text) => {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text) node.textContent = text;
+    return node;
+  };
+
+  const now = Date.now();
+  const rows = [];
+  for (const c of confs) {
+    for (const t of c.timeline || []) {
+      const due = toTime(t.deadline, c.timezone);
+      if (due) rows.push({ ...c, due, abstract: toTime(t.abstract_deadline, c.timezone), comment: t.comment });
+    }
+  }
+  const upcoming = rows.filter((r) => r.due > now);
+
+  // 다음 마감일이 아직 안 나온 학회: 가장 최근 마감일을 개최 주기만큼 미뤄 Expected로 표시
+  const addYears = (ms, k) => { const d = new Date(ms); d.setUTCFullYear(d.getUTCFullYear() + k); return +d; };
+  for (const name of new Set(confs.map((c) => c.name))) {
+    if (upcoming.some((r) => r.name === name)) continue;
+    const last = rows.filter((r) => r.name === name).sort((a, b) => b.due - a.due)[0];
+    if (!last) continue;
+    const years = [...new Set(confs.filter((c) => c.name === name).map((c) => Number(c.year)))].sort((a, b) => a - b);
+    const period = years.length > 1 ? Math.min(...years.slice(1).map((y, i) => y - years[i])) : 1;
+    let shift = period;
+    while (addYears(last.due, shift) <= now) shift += period;
+    const year = Number(last.year) + shift;
+    const next = confs.find((c) => c.name === name && Number(c.year) === year) || {};
+    upcoming.push({
+      name, area: last.area, year, expected: true, basis: last.year,
+      link: next.link || last.link, date: next.date, place: next.place,
+      due: addYears(last.due, shift), abstract: last.abstract && addYears(last.abstract, shift),
+    });
+  }
+  upcoming.sort((a, b) => a.due - b.due);
+
+  const render = (list, target) => {
+    if (!list.length) return;
+    target.replaceChildren(...list.map((r) => {
+      const item = el('article');
+      const side = el('div', 'robin-deadlines-side');
+      side.append(el('span', 'robin-deadlines-area', r.area));
+      if (r.expected) {
+        item.className = 'is-expected';
+        side.append(el('span', 'robin-deadlines-area is-expected', 'Expected'));
+        side.append(el('p', 'robin-deadlines-count', `~${Math.ceil((r.due - now) / 864e5)}d`));
+      } else {
+        const count = el('p', 'robin-deadlines-count', left(r.due - now));
+        count.dataset.due = r.due;
+        side.append(count);
+      }
+
+      const body = el('div');
+      const title = el('h3');
+      const link = el('a', '', `${r.name} ${r.year}`);
+      link.href = r.link;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      title.append(link);
+      body.append(title);
+      const fmt = (ms) => (r.expected ? `~${kst.format(ms).slice(0, 10)}` : kst.format(ms));
+      const due = [`Deadline ${fmt(r.due)}`];
+      if (r.abstract) due.unshift(`Abstract ${fmt(r.abstract)}`);
+      body.append(el('p', 'robin-deadlines-due', due.join(' · ')));
+      body.append(el('p', '', [r.date, r.place].filter(Boolean).join(' · ')));
+      if (r.comment) body.append(el('p', 'robin-deadlines-note', r.comment));
+      if (r.expected) body.append(el('p', 'robin-deadlines-note', `Not announced yet. Estimated from the ${r.name} ${r.basis} deadline.`));
+      item.append(side, body);
+      return item;
+    }));
+  };
+  render(upcoming, root.querySelector('[data-upcoming]'));
+
+  const counters = root.querySelectorAll('[data-due]');
+  setInterval(() => {
+    const t = Date.now();
+    counters.forEach((node) => { node.textContent = left(Number(node.dataset.due) - t); });
+  }, 1000);
+})();
+</script>

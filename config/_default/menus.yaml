@@ -27,3 +27,6 @@ main:
   - name: News
     url: /news/
     weight: 50
+  - name: Deadlines
+    url: /deadlines/
+    weight: 60

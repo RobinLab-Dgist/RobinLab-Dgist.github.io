@@ -3555,3 +3555,15 @@ body .robin-publications .robin-pub-honor::before {
     order: 1;
   }
 }
+/* Deadlines */
+.robin-deadlines-meta { margin:0 0 1.5rem; color:#64748b; font-size:.85rem; line-height:1.6; }.robin-deadlines-meta a { color:#005b7c; font-weight:600; text-decoration:none; }
+.robin-deadlines h2 { margin:2rem 0 0; color:#64748b; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.75rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+.robin-deadlines-list { margin-top:.75rem; border-top:1px solid #c9c7bf; }.robin-deadlines-list article { display:grid; grid-template-columns:11rem minmax(0,1fr); column-gap:2rem; border-bottom:1px solid #d8dfe2; padding:1.25rem 0; }
+.robin-deadlines-area { display:inline-block; border:1px solid #b9d3dd; border-radius:999px; padding:.1rem .55rem; color:#005b7c; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:.65rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+.robin-deadlines-count { margin:.5rem 0 0; color:#102a3a; font-family:'Lexend Deca','Space Grotesk',sans-serif; font-size:1rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.robin-deadlines-list h3 { margin:0; font-size:clamp(1.15rem,1.8vw,1.45rem); font-weight:600; letter-spacing:-.03em; }.robin-deadlines-list h3 a { color:#102a3a; text-decoration:none; }.robin-deadlines-list h3 a:hover { color:#005b7c; text-decoration:underline; }
+.robin-deadlines-list article p { margin:.35rem 0 0; color:#53646b; font-size:.92rem; line-height:1.55; }.robin-deadlines-list .robin-deadlines-due { color:#102a3a; font-weight:500; }.robin-deadlines-note { font-size:.82rem !important; color:#64748b !important; }
+.robin-deadlines-empty { margin:0; padding:1.25rem 0; color:#64748b; }
+
+.robin-deadlines-area.is-expected { margin-left:.35rem; border-color:#e2d3a8; color:#8a6d1d; }.robin-deadlines-list article.is-expected .robin-deadlines-count { color:#64748b; }
+@media (max-width:700px) { .robin-deadlines-list article { grid-template-columns:1fr; gap:.5rem; } }
